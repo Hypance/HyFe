@@ -1,0 +1,122 @@
+{
+  "GetIntervals": [
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "1m",
+      "value": "0"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "3m",
+      "value": "1"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "5m",
+      "value": "2"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "15m",
+      "value": "3"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "30m",
+      "value": "4"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "1H",
+      "value": "5"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "2H",
+      "value": "6"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "4H",
+      "value": "7"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "6H",
+      "value": "8"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "8H",
+      "value": "9"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "12H",
+      "value": "10"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "1D",
+      "value": "11"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "3D",
+      "value": "12"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "1W",
+      "value": "13"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "1M",
+      "value": "14"
+    }
+  ],
+  "Strategy": [
+    {
+      "name": "test",
+      "description": "test",
+      "signalName": "test",
+      "period": "9",
+      "indicator": "1",
+      "value": "3",
+      "interval": "0",
+      "orderSignal": "2",
+      "id": 1
+    }
+  ]
+}

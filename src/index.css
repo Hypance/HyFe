@@ -1,0 +1,18 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.material-symbols-outlined{
+font-size: 20px;
+font-weight: 300;
+}
+.fs-6 {
+    font-size: .8rem!important;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar{
+    width:280px;
+}
