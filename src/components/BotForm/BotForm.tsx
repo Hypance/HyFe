@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 // import { CreateStrategyProps } from '../../pages/Strategy/interafeces'
@@ -8,13 +8,17 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { BotFormInputs } from './interface'
 import { CreateBotProps } from '../../pages/Bots/interfaces'
 import { botServiceCreateBot } from '../../services/botService/botService'
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
+
+
 
 export const BotForm: React.FC<CreateBotProps> = () => {
   const { register, handleSubmit } = useForm<BotFormInputs>({
     mode: 'onBlur',
   })
 
-//   const intervals = useFetchIntervals();
+  //   const intervals = useFetchIntervals();
   const onSubmit: SubmitHandler<BotFormInputs> = async (data) => {
     await botServiceCreateBot(data)
   }
@@ -23,6 +27,16 @@ export const BotForm: React.FC<CreateBotProps> = () => {
 
   //   return () => { }
   // }, [])
+
+
+  const [radioValue, setRadioValue] = useState('1');
+
+  const radios = [
+    { name: '25%', value: '1' },
+    { name: '50%', value: '2' },
+    { name: '75%', value: '3' },
+    { name: '100%', value: '4' },
+  ];
 
   return (
     <Fragment>
@@ -64,11 +78,11 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please give a name to your signal',
                 })}
               >
-              <option>Select a Market</option>
+                <option>Select a Market</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
-                </Form.Select>
+              </Form.Select>
             </Form.Group>
           </Col>
           <Col xs sm="6">
@@ -142,6 +156,45 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </Form.Select>
+            </Form.Group>
+          </Col>
+          <Col xs sm="6">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Trend Strategy</Form.Label>
+              <Form.Select
+                {...register('trendStrategy', {
+                  required: 'Please choose an interval',
+                })}
+              >
+                {/* {intervals.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.text}
+                  </option>
+                ))} */}
+              </Form.Select>
+            </Form.Group>
+          </Col>
+          <Col xs sm="6">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Price Volume</Form.Label>
+              <br />
+              <ButtonGroup>
+                {radios.map((radio, idx) => (
+                  <ToggleButton
+                    key={idx}
+                    id={`radio-${idx}`}
+                    type="radio"
+                    // variant={idx % 2 ? 'outline-success' : 'outline-danger'}
+                    variant={'outline-primary'}
+                    name="radio"
+                    value={radio.value}
+                    checked={radioValue === radio.value}
+                    onChange={(e) => setRadioValue(e.currentTarget.value)}
+                  >
+                    {radio.name}
+                  </ToggleButton>
+                ))}
+              </ButtonGroup>
             </Form.Group>
           </Col>
         </Row>

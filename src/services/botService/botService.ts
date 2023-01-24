@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import $api from "../../http";
 import { BOT_URLS } from "../../mock/constants";
 import { ICreateBot } from "../../models/ICreateBot";
-import { ISelectListItem } from "../../models/ISelectListItem";
+// import { ISelectListItem } from "../../models/ISelectListItem";
 import { botServiceCreateBotInput } from "./interfaces";
 
 export const botServiceCreateBot = async (
