@@ -10,6 +10,7 @@ import { CreateBotProps } from '../../pages/Bots/interfaces'
 import { botServiceCreateBot } from '../../services/botService/botService'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import { useFetchMarkets } from '../../hooks/useFetchMarket'
 
 
 
@@ -18,7 +19,7 @@ export const BotForm: React.FC<CreateBotProps> = () => {
     mode: 'onBlur',
   })
 
-  //   const intervals = useFetchIntervals();
+  const markets = useFetchMarkets();
   const onSubmit: SubmitHandler<BotFormInputs> = async (data) => {
     await botServiceCreateBot(data)
   }
@@ -78,10 +79,11 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please give a name to your signal',
                 })}
               >
-                <option>Select a Market</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                 {markets.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.text}
+                  </option>
+                ))}
               </Form.Select>
             </Form.Group>
           </Col>

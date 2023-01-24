@@ -106,6 +106,23 @@
       "value": "14"
     }
   ],
+  
+  "GetMarkets":[
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Spot",
+      "value": "0"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Future",
+      "value": "1"
+    }
+  ],
   "Strategy": [
     {
       "name": "test",
