@@ -59,13 +59,16 @@ export const BotForm: React.FC<CreateBotProps> = () => {
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Predefined Market</Form.Label>
-              <Form.Control
+              <Form.Select
                 {...register('predefinedMarket', {
                   required: 'Please give a name to your signal',
                 })}
-                type="text"
-                placeholder="Select a Market"
-              />
+              >
+              <option>Select a Market</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </Form.Select>
             </Form.Group>
           </Col>
           <Col xs sm="6">
