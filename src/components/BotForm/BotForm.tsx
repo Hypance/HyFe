@@ -11,6 +11,8 @@ import { botServiceCreateBot } from '../../services/botService/botService'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import { useFetchMarkets } from '../../hooks/useFetchMarket'
+import { useFetchOrderType } from '../../hooks/useFetchOrderType'
+import { useFetchStrategy } from '../../hooks/useFetchStrategy'
 
 
 
@@ -20,6 +22,8 @@ export const BotForm: React.FC<CreateBotProps> = () => {
   })
 
   const markets = useFetchMarkets();
+  const orderType = useFetchOrderType();
+  const strategy = useFetchStrategy();
   const onSubmit: SubmitHandler<BotFormInputs> = async (data) => {
     await botServiceCreateBot(data)
   }
@@ -107,10 +111,11 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please choose an indicator',
                 })}
               >
-                <option>Choose an Indicator</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                {orderType.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.text}
+                  </option>
+                  ))}
               </Form.Select>
             </Form.Group>
           </Col>
@@ -137,11 +142,11 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please choose an interval',
                 })}
               >
-                {/* {intervals.map((item) => (
+                {strategy.map((item) => (
                   <option key={item.value} value={item.value}>
-                    {item.text}
+                    {item.name}
                   </option>
-                ))} */}
+                  ))}
               </Form.Select>
             </Form.Group>
           </Col>

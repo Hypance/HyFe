@@ -14,3 +14,11 @@ export const botServiceCreateBot = async (
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(BOT_URLS.GET_MARKETS);
   };
+  export const botServiceGetAllOrderType = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_ORDERTYPE);
+  };
+  export const botServiceGetAllStrategy = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_STRATEGY);
+  };

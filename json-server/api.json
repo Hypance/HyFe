@@ -106,8 +106,7 @@
       "value": "14"
     }
   ],
-  
-  "GetMarkets":[
+  "GetMarkets": [
     {
       "disabled": false,
       "group": null,
@@ -123,6 +122,47 @@
       "value": "1"
     }
   ],
+  "GetOrderType": [
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Market",
+      "value": "0"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Limit",
+      "value": "1"
+    }
+  ],
+  "GetTrendStrategies": [
+    [
+      {
+        "disabled": false,
+        "group": null,
+        "selected": false,
+        "text": "UpTrend",
+        "value": "0"
+      },
+      {
+        "disabled": false,
+        "group": null,
+        "selected": false,
+        "text": "DownTrend",
+        "value": "1"
+      },
+      {
+        "disabled": false,
+        "group": null,
+        "selected": false,
+        "text": "Horizontal",
+        "value": "2"
+      }
+    ]
+  ],
   "Strategy": [
     {
       "name": "test",
@@ -134,6 +174,17 @@
       "interval": "0",
       "orderSignal": "2",
       "id": 1
+    },
+    {
+      "name": "test2",
+      "description": "test2",
+      "signalName": "test2",
+      "period": "10",
+      "indicator": "1",
+      "value": "2",
+      "interval": "4",
+      "orderSignal": "3",
+      "id": 2
     }
   ]
 }
