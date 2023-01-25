@@ -14,3 +14,15 @@ export const stratgeyServiceCreateStratgey = async (
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(STRATEGY_URLS.GET_INTERVALS);
   };
+  export const strategyServiceGetAllIndicators = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(STRATEGY_URLS.GET_INDICATORS);
+  };
+  export const strategyServiceGetAllValue = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(STRATEGY_URLS.GET_VALUE);
+  };
+  export const strategyServiceGetAllOrderSignal = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(STRATEGY_URLS.GET_ORDERSIGNAL);
+  };

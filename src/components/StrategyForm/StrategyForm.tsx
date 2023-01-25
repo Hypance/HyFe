@@ -5,6 +5,10 @@ import { CreateStrategyProps } from '../../pages/Strategy/interafeces'
 import { StrategyFormInputs } from './interface'
 import { stratgeyServiceCreateStratgey } from '../../services/strategyService/strategyService'
 import { useFetchIntervals } from '../../hooks/useFetchInterval'
+import { useFetchIndicators } from '../../hooks/useFetchIndicators'
+import { useFetchValue } from '../../hooks/useFetchValue'
+import { useFetchOrderSignal } from '../../hooks/useFetchOrderSignal'
+
 
 export const StrategyForm: React.FC<CreateStrategyProps> = () => {
   const { register, handleSubmit } = useForm<StrategyFormInputs>({
@@ -12,6 +16,12 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
   })
 
   const intervals = useFetchIntervals();
+  const indicators = useFetchIndicators();
+  const value = useFetchValue();
+  const orderSignal = useFetchOrderSignal();
+
+
+
   const onSubmit: SubmitHandler<StrategyFormInputs> = async (data) => {
     await stratgeyServiceCreateStratgey(data)
   }
@@ -86,10 +96,11 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                   required: 'Please choose an indicator',
                 })}
               >
-                <option>Choose an Indicator</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+               {indicators.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.text}
+                  </option>
+                ))}
               </Form.Select>
             </Form.Group>
           </Col>
@@ -101,10 +112,11 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                   required: 'Please choose a alert value',
                 })}
               >
-                <option>Choose an Indicator</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                 {value.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.text}
+                  </option>
+                ))}
               </Form.Select>
             </Form.Group>
           </Col>
@@ -132,10 +144,11 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                   required: 'Please choose an order signal',
                 })}
               >
-                <option>Choose an Order Signal</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+               {orderSignal.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.text}
+                  </option>
+                ))}
               </Form.Select>
             </Form.Group>
           </Col>
