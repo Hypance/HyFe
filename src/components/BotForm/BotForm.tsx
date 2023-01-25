@@ -1,10 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Form, Button, Row, Col } from 'react-bootstrap'
-// import { CreateStrategyProps } from '../../pages/Strategy/interafeces'
-// import { StrategyFormInputs } from './interface'
-// import { stratgeyServiceCreateStratgey } from '../../services/strategyService/strategyService'
-// import { useFetchIntervals } from '../../hooks/useFetchInterval'
 import { BotFormInputs } from './interface'
 import { CreateBotProps } from '../../pages/Bots/interfaces'
 import { botServiceCreateBot } from '../../services/botService/botService'
@@ -13,8 +9,10 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 import { useFetchMarkets } from '../../hooks/useFetchMarket'
 import { useFetchOrderType } from '../../hooks/useFetchOrderType'
 import { useFetchStrategy } from '../../hooks/useFetchStrategy'
-
-
+import { useFetchAssets } from '../../hooks/useFetchAssets'
+import {useFetchFormation } from '../../hooks/useFetchFormation'
+import {useFetchTrendStrategy } from '../../hooks/useFetchTrendStrategy'
+import {useFetchPriceStrategy } from '../../hooks/useFetchPriceStrategy'
 
 export const BotForm: React.FC<CreateBotProps> = () => {
   const { register, handleSubmit } = useForm<BotFormInputs>({
@@ -24,6 +22,11 @@ export const BotForm: React.FC<CreateBotProps> = () => {
   const markets = useFetchMarkets();
   const orderType = useFetchOrderType();
   const strategy = useFetchStrategy();
+  const trendStrategy = useFetchTrendStrategy();
+  const assets = useFetchAssets();
+  const formation = useFetchFormation();
+  const priceStrategy = useFetchPriceStrategy();
+
   const onSubmit: SubmitHandler<BotFormInputs> = async (data) => {
     await botServiceCreateBot(data)
   }
@@ -45,6 +48,7 @@ export const BotForm: React.FC<CreateBotProps> = () => {
 
   return (
     <Fragment>
+      
       <Form onSubmit={handleSubmit(onSubmit)} className="w-100 px-5">
         <h1 className="h3 mb-3">Create Your Bot</h1>
         <Row>
@@ -94,13 +98,17 @@ export const BotForm: React.FC<CreateBotProps> = () => {
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Price Strategy</Form.Label>
-              <Form.Control
+              <Form.Select
                 {...register('priceStrategy', {
-                  required: 'Please give a number of period for your indicator',
+                  required: 'Please give a name to your signal',
                 })}
-                type="number"
-                placeholder="Select a Price Strategy"
-              />
+              >
+                 {priceStrategy.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.text}
+                  </option>
+                ))}
+              </Form.Select>
             </Form.Group>
           </Col>
           <Col xs sm="6">
@@ -127,10 +135,11 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please choose a alert value',
                 })}
               >
-                <option>Choose an Indicator</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                {assets.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.name}
+                  </option>
+                  ))}
               </Form.Select>
             </Form.Group>
           </Col>
@@ -158,10 +167,11 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please choose an order signal',
                 })}
               >
-                <option>Choose an Order Signal</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                 {formation.map((item) => (
+                <option key={item.value} value={item.value}>
+                    {item.name}
+                  </option>
+                  ))}
               </Form.Select>
             </Form.Group>
           </Col>
@@ -173,11 +183,11 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please choose an interval',
                 })}
               >
-                {/* {intervals.map((item) => (
+              {trendStrategy.map((item) => (
                   <option key={item.value} value={item.value}>
-                    {item.text}
+                    {item.text} {item.value}
                   </option>
-                ))} */}
+                  ))}
               </Form.Select>
             </Form.Group>
           </Col>
@@ -191,7 +201,6 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                     key={idx}
                     id={`radio-${idx}`}
                     type="radio"
-                    // variant={idx % 2 ? 'outline-success' : 'outline-danger'}
                     variant={'outline-primary'}
                     name="radio"
                     value={radio.value}

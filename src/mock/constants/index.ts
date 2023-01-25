@@ -8,4 +8,8 @@ export const STRATEGY_URLS = {
     GET_MARKETS:"/GetMarkets",
     GET_ORDERTYPE:"/GetOrderType",
     GET_STRATEGY:"/Strategy",
+    GET_ASSETS:"/GetAssets",
+    GET_FORMATION:"/GetFormation",
+    GET_TRENDSTRATEGY:"/GetTrendStrategy",
+    GET_PRICESTRATEGY:"/GetPriceStrategy",
   };

@@ -22,3 +22,20 @@ export const botServiceCreateBot = async (
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(BOT_URLS.GET_STRATEGY);
   };
+  export const botServiceGetAllAssets = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_ASSETS);
+    
+  };
+  export const botServiceGetAllFormation = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_FORMATION);
+  };
+  export const botServiceGetAllTrendStrategy = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_TRENDSTRATEGY);
+  };
+  export const botServiceGetAllPriceStrategy = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_PRICESTRATEGY);
+  };

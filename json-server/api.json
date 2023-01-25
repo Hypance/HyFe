@@ -138,32 +138,89 @@
       "value": "1"
     }
   ],
-  "GetTrendStrategies": [
-    [
-      {
-        "disabled": false,
-        "group": null,
-        "selected": false,
-        "text": "UpTrend",
-        "value": "0"
-      },
-      {
-        "disabled": false,
-        "group": null,
-        "selected": false,
-        "text": "DownTrend",
-        "value": "1"
-      },
-      {
-        "disabled": false,
-        "group": null,
-        "selected": false,
-        "text": "Horizontal",
-        "value": "2"
-      }
-    ]
+  "GetTrendStrategy": [
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "UpTrend",
+      "value": "0"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "DownTrend",
+      "value": "1"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Horizontal",
+      "value": "2"
+    }
   ],
   "Strategy": [
+    {
+      "name": "test",
+      "description": "test",
+      "signalName": "test",
+      "period": "9",
+      "indicator": "1",
+      "value": "3",
+      "interval": "0",
+      "orderSignal": "2",
+      "id": 1
+    },
+    {
+      "name": "test2",
+      "description": "test2",
+      "signalName": "test2",
+      "period": "10",
+      "indicator": "1",
+      "value": "2",
+      "interval": "4",
+      "orderSignal": "3",
+      "id": 2
+    },
+    {
+      "name": "asd12",
+      "description": "asd12",
+      "signalName": "asd12",
+      "period": "12",
+      "indicator": "1",
+      "value": "1",
+      "interval": "7",
+      "orderSignal": "2",
+      "id": 3
+    }
+  ],
+  "GetAssets": [
+    {
+      "name": "test",
+      "description": "test",
+      "signalName": "test",
+      "period": "9",
+      "indicator": "1",
+      "value": "3",
+      "interval": "0",
+      "orderSignal": "2",
+      "id": 1
+    },
+    {
+      "name": "test2",
+      "description": "test2",
+      "signalName": "test2",
+      "period": "10",
+      "indicator": "1",
+      "value": "2",
+      "interval": "4",
+      "orderSignal": "3",
+      "id": 2
+    }
+  ],
+  "GetFormation": [
     {
       "name": "test",
       "description": "test",
