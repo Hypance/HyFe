@@ -17,8 +17,14 @@ import {useFetchPriceStrategy } from '../../hooks/useFetchPriceStrategy'
 export const BotForm: React.FC<CreateBotProps> = () => {
   const { register, handleSubmit } = useForm<BotFormInputs>({
     mode: 'onBlur',
-  })
+    defaultValues:{
+      predefinedMarket:"0",
+      priceStrategy:0,
+      tradeType:"0",
+      trendStrategy:"0"
 
+    }
+  })
   const markets = useFetchMarkets();
   const orderType = useFetchOrderType();
   const strategy = useFetchStrategy();
@@ -28,9 +34,13 @@ export const BotForm: React.FC<CreateBotProps> = () => {
   const priceStrategy = useFetchPriceStrategy();
 
   const onSubmit: SubmitHandler<BotFormInputs> = async (data) => {
-    await botServiceCreateBot(data)
+    const result = await botServiceCreateBot(data);
+    if (result.status===201) {
+      alert("İşlem Başarılı");
+    }else{
+      alert("İşlem Başarısız");
+    }
   }
-
   // useEffect(() => {
 
   //   return () => { }
@@ -87,8 +97,8 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please give a name to your signal',
                 })}
               >
-                 {markets.map((item) => (
-                  <option key={item.value} value={item.value}>
+                 {markets.map((item,index) => (
+                  <option key={index} value={item.value}>
                     {item.text}
                   </option>
                 ))}
@@ -113,6 +123,38 @@ export const BotForm: React.FC<CreateBotProps> = () => {
           </Col>
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Assets</Form.Label>
+              <Form.Select multiple
+                {...register('assets', {
+                  required: 'Please choose a alert value',
+                })}
+              >
+                {assets.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.name}
+                  </option>
+                  ))}
+              </Form.Select>
+            </Form.Group>
+          </Col>
+          <Col xs sm="6">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Strategy</Form.Label>
+              <Form.Select multiple
+                {...register('strategy', {
+                  required: 'Please choose an interval',
+                })}
+              >
+                {strategy.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.name}
+                  </option>
+                  ))}
+              </Form.Select>
+            </Form.Group>
+          </Col>
+          <Col xs sm="6">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Trade Type</Form.Label>
               <Form.Select
                 {...register('tradeType', {
@@ -129,44 +171,10 @@ export const BotForm: React.FC<CreateBotProps> = () => {
           </Col>
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Assets</Form.Label>
-              <Form.Select
-                {...register('assets', {
-                  required: 'Please choose a alert value',
-                })}
-              >
-                {assets.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.name}
-                  </option>
-                  ))}
-              </Form.Select>
-            </Form.Group>
-          </Col>
-          <Col xs sm="6">
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Strategy</Form.Label>
-              <Form.Select
-                {...register('strategy', {
-                  required: 'Please choose an interval',
-                })}
-              >
-                {strategy.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.name}
-                  </option>
-                  ))}
-              </Form.Select>
-            </Form.Group>
-          </Col>
-          <Col xs sm="6">
-            <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Formation</Form.Label>
               <Form.Select
-                {...register('formation', {
-                  required: 'Please choose an order signal',
-                })}
-              >
+                {...register('formation')}>
+                 <option value="">Choose a Formation</option>
                  {formation.map((item) => (
                 <option key={item.value} value={item.value}>
                     {item.name}

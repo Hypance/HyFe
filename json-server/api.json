@@ -161,6 +161,29 @@
       "value": "2"
     }
   ],
+  "GetPriceStrategy": [
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "BUY",
+      "value": "0"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "SELL",
+      "value": "1"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "BUY-SELL",
+      "value": "2"
+    }
+  ],
   "Strategy": [
     {
       "name": "test",
@@ -242,6 +265,86 @@
       "interval": "4",
       "orderSignal": "3",
       "id": 2
+    }
+  ],
+  "Bot": [
+    {
+      "name": "Test Bot",
+      "description": "Test bot description.",
+      "predefinedMarket": "0",
+      "priceStrategy": "0",
+      "tradeType": "0",
+      "assets": "3",
+      "strategy": "3",
+      "formation": "3",
+      "trendStrategy": "0",
+      "id": 1
+    },
+    {
+      "predefinedMarket": "0",
+      "priceStrategy": 0,
+      "tradeType": "0",
+      "trendStrategy": "0",
+      "name": "test",
+      "description": "test",
+      "assets": [
+        "3",
+        "2"
+      ],
+      "strategy": [
+        "3",
+        "2"
+      ],
+      "formation": "",
+      "id": 2
+    },
+    {
+      "predefinedMarket": "0",
+      "priceStrategy": 0,
+      "tradeType": "0",
+      "trendStrategy": "0",
+      "name": "test",
+      "description": "test",
+      "assets": [
+        "3"
+      ],
+      "strategy": [
+        "1"
+      ],
+      "formation": "",
+      "id": 3
+    },
+    {
+      "predefinedMarket": "0",
+      "priceStrategy": 0,
+      "tradeType": "0",
+      "trendStrategy": "0",
+      "name": "test",
+      "description": "test",
+      "assets": [
+        "3"
+      ],
+      "strategy": [
+        "2"
+      ],
+      "formation": "",
+      "id": 4
+    },
+    {
+      "predefinedMarket": "0",
+      "priceStrategy": 0,
+      "tradeType": "0",
+      "trendStrategy": "0",
+      "name": "teet",
+      "description": "tet",
+      "assets": [
+        "3"
+      ],
+      "strategy": [
+        "2"
+      ],
+      "formation": "",
+      "id": 5
     }
   ]
 }
