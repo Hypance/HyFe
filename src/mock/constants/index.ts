@@ -13,3 +13,6 @@ export const BOT_URLS = {
   GET_TRENDSTRATEGY: '/GetTrendStrategy',
   GET_PRICESTRATEGY: '/GetPriceStrategy',
 }
+export const TRADES_URLS = {
+  GET_ALL_OPEN_TRADES: '/OpenTrades',
+}

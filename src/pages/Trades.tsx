@@ -1,14 +1,10 @@
 import React, { Fragment } from 'react'
+import { useFetchOpenTrades } from '../hooks/useFetchOpenTrades';
 export const Trades: React.FC = () => {
+  const data = useFetchOpenTrades();
   return (
     <Fragment>
-      <h1>Trades</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-        possimus doloribus error cumque autem asperiores, ullam deserunt quidem
-        omnis doloremque itaque eius eaque sint facilis unde tenetur reiciendis
-        aliquam soluta?
-      </p>
+      <h1>Open Trades</h1>
     </Fragment>
   )
 }
