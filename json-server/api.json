@@ -287,14 +287,8 @@
       "trendStrategy": "0",
       "name": "test",
       "description": "test",
-      "assets": [
-        "3",
-        "2"
-      ],
-      "strategy": [
-        "3",
-        "2"
-      ],
+      "assets": ["3", "2"],
+      "strategy": ["3", "2"],
       "formation": "",
       "id": 2
     },
@@ -305,12 +299,8 @@
       "trendStrategy": "0",
       "name": "test",
       "description": "test",
-      "assets": [
-        "3"
-      ],
-      "strategy": [
-        "1"
-      ],
+      "assets": ["3"],
+      "strategy": ["1"],
       "formation": "",
       "id": 3
     },
@@ -321,12 +311,8 @@
       "trendStrategy": "0",
       "name": "test",
       "description": "test",
-      "assets": [
-        "3"
-      ],
-      "strategy": [
-        "2"
-      ],
+      "assets": ["3"],
+      "strategy": ["2"],
       "formation": "",
       "id": 4
     },
@@ -337,14 +323,252 @@
       "trendStrategy": "0",
       "name": "teet",
       "description": "tet",
-      "assets": [
-        "3"
-      ],
-      "strategy": [
-        "2"
-      ],
+      "assets": ["3"],
+      "strategy": ["2"],
       "formation": "",
       "id": 5
+    }
+  ],
+  "Trades": [
+    {
+      "Id":1,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "BTC",
+        "Name": "Bitcoin"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":2,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "ETH",
+        "Name": "Ethereum"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":3,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "XRP",
+        "Name": "Ripple"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":4,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "SOL",
+        "Name": "Solana"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":5,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "USDT",
+        "Name": "TetherUS"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":6,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "BNB",
+        "Name": "BNB"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":7,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "BUSD",
+        "Name": "BUSD"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":8,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "ADA",
+        "Name": "Cardano"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":9,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "DOGE",
+        "Name": "Doge Coin"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":10,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "MATIC",
+        "Name": "Polygon"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":11,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "BTC",
+        "Name": "Bitcoin"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":12,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "ETH",
+        "Name": "Ethereum"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":13,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "XRP",
+        "Name": "Ripple"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":14,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "SOL",
+        "Name": "Solana"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":15,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "USDT",
+        "Name": "TetherUS"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":16,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "BNB",
+        "Name": "BNB"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":17,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "BUSD",
+        "Name": "BUSD"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":18,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "ADA",
+        "Name": "Cardano"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":19,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "DOGE",
+        "Name": "Doge Coin"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
+    },
+    {
+      "Id":20,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "ShortName": "MATIC",
+        "Name": "Polygon"
+      },
+      "EntryPrice":11911.48,
+      "CurrentPrice":11911.48,
+      "Profit":2.54,
+      "Graph":[]
     }
   ]
 }

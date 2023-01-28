@@ -14,5 +14,5 @@ export const BOT_URLS = {
   GET_PRICESTRATEGY: '/GetPriceStrategy',
 }
 export const TRADES_URLS = {
-  GET_ALL_OPEN_TRADES: '/OpenTrades',
+  GET_ALL_OPEN_TRADES: '/Trades',
 }

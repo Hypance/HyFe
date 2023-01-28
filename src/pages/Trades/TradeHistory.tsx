@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { useFetchOpenTrades } from '../hooks/useFetchOpenTrades';
+import { useFetchOpenTrades } from '../../hooks/useFetchOpenTrades';
 export const Trades: React.FC = () => {
   const data = useFetchOpenTrades();
   return (
