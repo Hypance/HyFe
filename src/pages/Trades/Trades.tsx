@@ -2,6 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Button, Pagination, Table } from 'react-bootstrap'
 import { useFetchOpenTrades } from '../../hooks/useFetchOpenTrades'
 import { tradeServiceOpenTrade } from '../../services/tradeService/interfaces'
+import Example from '../../components/AppGraph/AppGraph';
+
 export const Trades: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0)
   const data = useFetchOpenTrades()
@@ -57,8 +59,8 @@ export const Trades: React.FC = () => {
               </td>
               <td className="text-center">{item.EntryPrice}</td>
               <td className="text-center">{item.CurrentPrice}</td>
-              <td className="text-center">{item.Profit}</td>
-              <td className="text-center">{item.Graph}</td>
+              <td className={item.Profit > 0 ? "text-center text-success" : "text-center text-danger"}> <b>{item.Profit}</b> </td>
+              <td className="text-center cursor-none"><Example color={item.Profit > 0 ? "#09BD3C" : "#FD5353"} stock={item.Graph} width={150} height={36} /></td>
               <td>
                 <Button type="button">
                   <span className="material-symbols-outlined">more_vert</span>

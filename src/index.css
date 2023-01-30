@@ -23,3 +23,6 @@ font-weight: 300;
 tbody, td, tfoot, th, thead, tr {
     vertical-align: middle;
 }
+.cursor-none{
+    cursor: none !important;
+}
