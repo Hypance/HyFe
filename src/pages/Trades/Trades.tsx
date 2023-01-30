@@ -62,7 +62,7 @@ export const Trades: React.FC = () => {
               <td className={item.Profit > 0 ? "text-center text-success" : "text-center text-danger"}> <b>{item.Profit}</b> </td>
               <td className="text-center cursor-none"><Example color={item.Profit > 0 ? "#09BD3C" : "#FD5353"} stock={item.Graph} width={150} height={36} /></td>
               <td>
-                <Button type="button">
+                <Button type="button" variant='light'>
                   <span className="material-symbols-outlined">more_vert</span>
                 </Button>
               </td>
