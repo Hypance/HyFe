@@ -9,6 +9,7 @@ export interface tradeServiceOpenTrade {
 
 interface Coin {
   Image: string
-  ShortName: String
+  BaseAsset: String
+  QuoteAsset: String
   Name: string
 }

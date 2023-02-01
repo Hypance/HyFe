@@ -7,7 +7,7 @@ import { scaleTime, scaleLinear } from '@visx/scale';
 import { withTooltip, TooltipWithBounds, defaultStyles } from '@visx/tooltip';
 import { WithTooltipProvidedProps } from '@visx/tooltip/lib/enhancers/withTooltip';
 import { localPoint } from '@visx/event';
-import { min,max, extent, bisector } from 'd3-array';
+import {extent, bisector } from 'd3-array';
 
 type TooltipData = AppGraphData;
 
@@ -19,7 +19,8 @@ const tooltipStyles = {
   ...defaultStyles,
   background,
   border: '1px solid white',
-  color: 'white'
+  color: 'white',
+  zIndex:999
 };
 
 // accessors
@@ -49,7 +50,11 @@ export default withTooltip<AreaProps, TooltipData>(
     tooltipLeft = 0,
   }: AreaProps & WithTooltipProvidedProps<TooltipData>) => {
     if (width < 10) return null;
-
+    //zi = (xi – min(x)) / (max(x) – min(x)) * 100
+    const scaledPrice = stock.map(p=>{return p.close});
+    const minValue = Math.min(...scaledPrice);
+    const maxValue = Math.max(...scaledPrice);
+    const stock2:AppGraphData[] = stock.map(s=> {return {close:Number(((s.close-minValue)/(maxValue-minValue)*100).toFixed(0)),date:s.date}});
     // bounds
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
@@ -67,7 +72,7 @@ export default withTooltip<AreaProps, TooltipData>(
       () =>
         scaleLinear({
           range: [innerHeight + margin.top, margin.top],
-          domain: [(min(stock, getStockValue) || 0), (max(stock, getStockValue) || 0) + innerHeight / 3],
+          domain: [(0), (100) + innerHeight / 3],
           nice: true,
         }),
       [margin.top, innerHeight],
@@ -88,7 +93,7 @@ export default withTooltip<AreaProps, TooltipData>(
         showTooltip({
           tooltipData: d,
           tooltipLeft: x,
-          tooltipTop: stockValueScale(getStockValue(d)),
+          tooltipTop: 35,
         });
       },
       [showTooltip, stockValueScale, dateScale],
@@ -124,7 +129,7 @@ export default withTooltip<AreaProps, TooltipData>(
             pointerEvents="none"
           />
           <AreaClosed<AppGraphData>
-            data={stock}
+            data={stock2}
             x={(d) => dateScale(getDate(d)) ?? 0}
             y={(d) => stockValueScale(getStockValue(d)) ?? 0}
             yScale={stockValueScale}

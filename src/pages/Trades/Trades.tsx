@@ -3,6 +3,7 @@ import { Button, Pagination, Table } from 'react-bootstrap'
 import { useFetchOpenTrades } from '../../hooks/useFetchOpenTrades'
 import { tradeServiceOpenTrade } from '../../services/tradeService/interfaces'
 import Example from '../../components/AppGraph/AppGraph';
+//import ws from "ws";
 
 export const Trades: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0)
@@ -27,13 +28,39 @@ export const Trades: React.FC = () => {
   initPagination()
   const [openTrades, setOpenTrades] = useState<tradeServiceOpenTrade[]>(data)
   useEffect(() => {
-    console.log("useEffect");
     setOpenTrades(
       data.slice(currentPage * perPage, (currentPage + 1) * perPage)
     )
   }, [currentPage, data])
 
+  // const getProfit = (oldPrice:number, newPrice:number) => {
+  //   if (oldPrice === 0) oldPrice += 1;
+  //   if (newPrice === 0) newPrice = oldPrice;
+  //   return Number((((newPrice - oldPrice) / oldPrice) * 100).toFixed(2));
+  // };
 
+  // function connectBinanceFeatureWS(baseAsset:string,quoteAsset:string){
+  //   const pair = baseAsset+quoteAsset;
+  //   const wsc = new ws.WebSocket(`wss://fstream.binance.com/ws/${pair}@kline_1m`);
+
+  //   // wsc.on("open", () => wsc.send(Date.now().toString(), { mask: true }));
+  //   // wsc.on("close", () => console.log("disconnected"));
+  //   // wsc.on("error", error => {
+  //   //     console.log(`unexpected response: ${error}`);
+  //   // });
+  //   wsc.on("message", (wsData) => {
+  //      if (wsData) {
+  //       const trade = JSON.parse(wsData.toString());
+  //       let getAsset:any = openTrades.find(op=>`${op.Coin.BaseAsset}${op.Coin.QuoteAsset}` == trade.s);
+  //       getAsset.CurrentPrice = parseFloat(trade.k.c);
+  //       getAsset.Profit = getProfit(getAsset.EntryPrice,getAsset.CurrentPrice);
+  //       getAsset.Graph.shift();
+  //       getAsset.Graph.push({ "close": parseFloat(trade.k.c),"date": trade.k.T});
+  //      }
+  //   });
+  // }
+
+  // openTrades.map(ot=> connectBinanceFeatureWS(ot.Coin.BaseAsset.toString(),ot.Coin.QuoteAsset.toString()))
   return (
     <Fragment>
       <h1>Open Trades</h1>
@@ -55,7 +82,7 @@ export const Trades: React.FC = () => {
               <td>{item.Id}</td>
               <td>
                 <img width={25} src={item.Coin.Image} alt={item.Coin.Name} />{' '}
-                <b>{item.Coin.ShortName}</b> {item.Coin.Name}
+                <b>{item.Coin.BaseAsset}</b> {item.Coin.Name}
               </td>
               <td className="text-center">{item.EntryPrice}</td>
               <td className="text-center">{item.CurrentPrice}</td>
