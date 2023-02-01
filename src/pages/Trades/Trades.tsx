@@ -31,7 +31,7 @@ export const Trades: React.FC = () => {
     setOpenTrades(
       data.slice(currentPage * perPage, (currentPage + 1) * perPage)
     )
-  }, [currentPage,data])
+  }, [currentPage, data])
 
 
   return (
@@ -72,8 +72,22 @@ export const Trades: React.FC = () => {
         </tbody>
       </Table>
 
-      <Pagination size="sm">{pages}</Pagination>
-      {totalCount} 
+      <Pagination size="sm">
+        <Pagination.Prev
+          onClick={() => {
+             { if (currentPage > 0)
+              setCurrentPage(currentPage - 1);
+            }
+          }} />{pages}
+        <Pagination.Next
+          onClick={() => {
+             { if (currentPage < 1)
+              setCurrentPage(currentPage + 1);
+            }
+          }} />
+      </Pagination>
+      {totalCount} <br />
+      {currentPage}
     </Fragment>
   )
 }
