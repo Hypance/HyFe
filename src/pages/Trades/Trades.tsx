@@ -59,7 +59,8 @@ export const Trades: React.FC = () => {
               </td>
               <td className="text-center">{item.EntryPrice}</td>
               <td className="text-center">{item.CurrentPrice}</td>
-              <td className={item.Profit > 0 ? "text-center text-success" : "text-center text-danger"}> <b>{item.Profit}</b> </td>
+              <td className={`text-center ${item.Profit > 0 ? "text-success" : "text-danger"}`}> <b>{item.Profit}</b> </td>
+              {/* {item.Profit > 0 ? "text-center text-success" : "text-center text-danger"} */}
               <td className="text-center cursor-none"><Example color={item.Profit > 0 ? "#09BD3C" : "#FD5353"} stock={item.Graph} width={150} height={36} /></td>
               <td>
                 <Button type="button" variant='light'>
@@ -72,7 +73,7 @@ export const Trades: React.FC = () => {
       </Table>
 
       <Pagination size="sm">{pages}</Pagination>
-      {totalCount}
+      {totalCount} 
     </Fragment>
   )
 }
