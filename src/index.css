@@ -15,4 +15,12 @@ font-weight: 300;
 
 .sidebar{
     width:280px;
+    margin-right: 2rem;
+}
+.ovw{
+    color:#757575;
+    font-family: Inter;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
