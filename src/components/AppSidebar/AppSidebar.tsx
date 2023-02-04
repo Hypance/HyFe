@@ -1,12 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import './styles'
 import '../../index.css'
 import {  Nav } from 'react-bootstrap'
 import logo from './logo.jpg'
-
-
-
 
 export const AppSidebar: React.FC = () => (
   // <div className="sidebar d-flex flex-column flex-shrink-0 p-3 bg-light min-vh-100">
