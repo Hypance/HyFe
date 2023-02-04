@@ -56,7 +56,7 @@ export const AppSidebar: React.FC = () => (
     <h5 className='ovw'>OVERVIEW</h5>
     <Nav className='flex-column' variant="pills" >
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/dashboard">Dashboard</Nav.Link> 
+      <Nav.Link as={NavLink} to="/">Dashboard</Nav.Link> 
     </Nav.Item>
     <Nav.Item>
       <Nav.Link as={NavLink} to="/market">Market</Nav.Link>
