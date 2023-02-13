@@ -19,12 +19,14 @@ font-weight: 300;
 }
 .ovw{
     color:#757575;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     font-weight: bold;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: .8rem;
 }
 .nav-link{
     color: #757575;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
+    font-size: .7rem;
 }
