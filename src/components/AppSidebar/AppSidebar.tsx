@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import '../../index.css'
+import './style.css'
+
 import {  Nav } from 'react-bootstrap'
 import logo from './logo.jpg'
 
@@ -56,35 +58,35 @@ export const AppSidebar: React.FC = () => (
     <h5 className='ovw'>OVERVIEW</h5>
     <Nav className='flex-column' variant="pills" >
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/">Dashboard</Nav.Link> 
+      <Nav.Link as={NavLink} to="/"> <span className='icon-home me-3'></span>Dashboard</Nav.Link> 
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/market">Market</Nav.Link>
+      <Nav.Link as={NavLink} to="/market"><span className='icon-markets me-3'><span/></span>Market </Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/strategy">Strategy</Nav.Link>
+      <Nav.Link as={NavLink} to="/strategy"><span className='icon-strategy me-3'></span>Strategy</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/bot">Bot</Nav.Link>
+      <Nav.Link as={NavLink} to="/bot"><span className='icon-bot me-3'></span>Bot</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/backtest">Backtest</Nav.Link>
+      <Nav.Link as={NavLink} to="/backtest"><span className='icon-backtest me-3'></span>Backtest</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/alerts">Alerts</Nav.Link>
+      <Nav.Link as={NavLink} to="/alerts"><span className='icon-alerts me-3'></span>Alerts</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/trades">Trades</Nav.Link>
+      <Nav.Link as={NavLink} to="/trades"><span className='icon-trades me-3'></span>Trades</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/portfolios">Portfolios</Nav.Link>
+      <Nav.Link as={NavLink} to="/portfolios"><span className='icon-portfolios me-3'></span>Portfolios</Nav.Link>
     </Nav.Item>
     <h5 className='ovw'>OTHER</h5>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/settings">Settings</Nav.Link>
+      <Nav.Link as={NavLink} to="/settings"><span className='icon-settings me-3'></span>Settings</Nav.Link>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link as={NavLink} to="/logout">Logout</Nav.Link>
+      <Nav.Link as={NavLink} to="/logout"><span className='icon-logout me-3'></span>Logout</Nav.Link>
     </Nav.Item>
     </Nav>
   </div>
