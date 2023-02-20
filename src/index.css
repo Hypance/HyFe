@@ -12,7 +12,13 @@ font-weight: 300;
     align-items: center;
     justify-content: center;
 }
-
+.bg-success-emphasis{
+    background-color: rgba(0,184,74,1);
+}
+.btn-success-emphasis{
+    background-color: rgba(0,184,74,.30);
+    color:rgba(0,184,74,1);
+}
 .sidebar{
     width:280px;
 }

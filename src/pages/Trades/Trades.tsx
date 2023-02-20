@@ -2,8 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Button, Pagination, Table } from 'react-bootstrap'
 import { useFetchOpenTrades } from '../../hooks/useFetchOpenTrades'
 import { tradeServiceOpenTrade } from '../../services/tradeService/interfaces'
-import Example from '../../components/AppGraph/AppGraph';
-//import ws from "ws";
+import Example from '../../components/AppGraph/AppGraph'
+//import { useFetchWebSocket } from '../../hooks/useFetchWebSocket'
 
 export const Trades: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0)
@@ -24,6 +24,12 @@ export const Trades: React.FC = () => {
         </Pagination.Item>
       )
     }
+    // data.map((item) => {
+    //   let price = useFetchWebSocket(
+    //     `${item.Coin.BaseAsset}${item.Coin.QuoteAsset}`
+    //   )
+    //   console.log(price)
+    // })
   }
   initPagination()
   const [openTrades, setOpenTrades] = useState<tradeServiceOpenTrade[]>(data)
@@ -77,41 +83,58 @@ export const Trades: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {openTrades.map((item) => (
-            <tr key={item.Id}>
-              <td>{item.Id}</td>
-              <td>
-                <img width={25} src={item.Coin.Image} alt={item.Coin.Name} />{' '}
-                <b>{item.Coin.BaseAsset}</b> {item.Coin.Name}
-              </td>
-              <td className="text-center">{item.EntryPrice}</td>
-              <td className="text-center">{item.CurrentPrice}</td>
-              <td className={`text-center ${item.Profit > 0 ? "text-success" : "text-danger"}`}> <b>{item.Profit}</b> </td>
-              {/* {item.Profit > 0 ? "text-center text-success" : "text-center text-danger"} */}
-              <td className="text-center cursor-none"><Example color={item.Profit > 0 ? "#09BD3C" : "#FD5353"} stock={item.Graph} width={150} height={36} /></td>
-              <td>
-                <Button type="button" variant='light'>
-                  <span className="material-symbols-outlined">more_vert</span>
-                </Button>
-              </td>
-            </tr>
-          ))}
+          {openTrades.map((item) => {
+            return (
+              <tr key={item.Id}>
+                <td>{item.Id}</td>
+                <td>
+                  <img width={25} src={item.Coin.Image} alt={item.Coin.Name} />{' '}
+                  <b>{item.Coin.BaseAsset}</b> {item.Coin.Name}
+                </td>
+                <td className="text-center">{item.EntryPrice}</td>
+                <td className="text-center">{item.CurrentPrice}</td>
+                <td
+                  className={`text-center ${
+                    item.Profit > 0 ? 'text-success' : 'text-danger'
+                  }`}
+                >
+                  {' '}
+                  <b>{item.Profit}</b>{' '}
+                </td>
+                <td className="text-center cursor-none">
+                  <Example
+                    color={item.Profit > 0 ? '#09BD3C' : '#FD5353'}
+                    stock={item.Graph}
+                    width={150}
+                    height={36}
+                  />
+                </td>
+                <td>
+                  <Button type="button" variant="light">
+                    <span className="material-symbols-outlined">more_vert</span>
+                  </Button>
+                </td>
+              </tr>
+            )
+          })}
         </tbody>
       </Table>
-
       <Pagination size="sm">
         <Pagination.Prev
           onClick={() => {
-             { if (currentPage > 0)
-              setCurrentPage(currentPage - 1);
+            {
+              if (currentPage > 0) setCurrentPage(currentPage - 1)
             }
-          }} />{pages}
+          }}
+        />
+        {pages}
         <Pagination.Next
           onClick={() => {
-             { if (currentPage < 1)
-              setCurrentPage(currentPage + 1);
+            {
+              if (currentPage < 1) setCurrentPage(currentPage + 1)
             }
-          }} />
+          }}
+        />
       </Pagination>
       {totalCount} <br />
       {currentPage}

@@ -2,7 +2,7 @@ export interface tradeServiceOpenTrade {
   Id: number
   Coin: Coin
   EntryPrice: number
-  CurrentPrice: number
+  CurrentPrice: number|undefined
   Profit: number
   Graph: any
 }
