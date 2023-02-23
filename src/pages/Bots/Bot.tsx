@@ -14,12 +14,6 @@ export const Bot: React.FC = () => {
         </NavLink>
       </Stack>
       <Row>
-
-
-
-
-
-
       <Col md={6} xxl={4} className="p-3">
          <div className='border p-4 rounded-4'>
          <Stack
