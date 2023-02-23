@@ -8,4 +8,8 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 600;
     
 }
+
+.card{
+    min-height:340px;
+}
 `

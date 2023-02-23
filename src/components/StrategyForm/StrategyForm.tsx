@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { CreateStrategyProps } from '../../pages/Strategy/interafeces'
 import { StrategyFormInputs } from './interface'
-import { stratgeyServiceCreateStratgey } from '../../services/strategyService/strategyService'
+import { strategyServiceCreateStrategy } from '../../services/strategyService/strategyService'
 import { useFetchIntervals } from '../../hooks/useFetchInterval'
 
 export const StrategyForm: React.FC<CreateStrategyProps> = () => {
@@ -13,7 +13,7 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
 
   const intervals = useFetchIntervals();
   const onSubmit: SubmitHandler<StrategyFormInputs> = async (data) => {
-    await stratgeyServiceCreateStratgey(data)
+    await strategyServiceCreateStrategy(data)
   }
 
   // useEffect(() => {

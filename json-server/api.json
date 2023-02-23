@@ -188,46 +188,93 @@
     {
       "name": "test",
       "description": "test",
-      "signalName": "test",
       "period": "9",
       "indicator": "1",
-      "value": "3",
+      "value1": "3",
+      "value2": "",
       "interval": "0",
       "orderSignal": "2",
       "id": 1
+    }
+  ],
+  "GetMyStrategies": [
+    {
+      "id": 1,
+      "name": "test",
+      "description": "test",
+      "orderSignal": "BUY",
+      "interval": "30m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Above",
+          "indicator": "RSI",
+          "value": "3"         
+        },
+        {
+          "period": "9",
+          "rule": "Above",
+          "indicator": "RSI",
+          "value": "3"
+        }
+      ]
     },
     {
-      "name": "test2",
-      "description": "test2",
-      "signalName": "test2",
-      "period": "10",
-      "indicator": "1",
-      "value": "2",
-      "interval": "4",
-      "orderSignal": "3",
-      "id": 2
+      "id": 2,
+      "name": "test",
+      "description": "test",
+      "orderSignal": "BUY",
+      "interval": "30m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Above",
+          "indicator": "RSI",
+          "value": "3"
+        }
+      ]
     },
     {
-      "name": "asd12",
-      "description": "asd12",
-      "signalName": "asd12",
-      "period": "12",
-      "indicator": "1",
-      "value": "1",
-      "interval": "7",
-      "orderSignal": "2",
-      "id": 3
+      "id": 3,
+      "name": "test",
+      "description": "test",
+      "orderSignal": "BUY",
+      "interval": "30m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Above",
+          "indicator": "RSI",
+          "value": "3"         
+        },
+        {
+          "period": "9",
+          "rule": "Above",
+          "indicator": "RSI",
+          "value": "3"
+        }
+      ]
     },
     {
-      "name": "RSI",
-      "description": "RSI below 20",
-      "signalName": "RSI",
-      "period": "40",
-      "indicator": "1",
-      "value": "1",
-      "interval": "0",
-      "orderSignal": "1",
-      "id": 4
+      "id": 4,
+      "name": "test",
+      "description": "test",
+      "orderSignal": "BUY",
+      "interval": "30m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Above",
+          "indicator": "RSI",
+          "value": "3"         
+        },
+        {
+          "period": "9",
+          "rule": "Above",
+          "indicator": "RSI",
+          "value": "3"
+        }
+      ]
     }
   ],
   "GetAssets": [
