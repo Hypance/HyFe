@@ -12,12 +12,19 @@ font-weight: 300;
     align-items: center;
     justify-content: center;
 }
-.bg-success-emphasis{
+.bg-active-emphasis{
     background-color: rgba(0,184,74,1);
 }
-.btn-success-emphasis{
+.btn-active-emphasis{
     background-color: rgba(0,184,74,.30);
     color:rgba(0,184,74,1);
+}
+.bg-passive-emphasis{
+    background-color: rgba(219, 25, 11,1);
+}
+.btn-passive-emphasis{
+    background-color: rgba(219, 25, 11, 0.3);
+    color:rgba(219, 25, 11,1);
 }
 .sidebar{
     width:280px;

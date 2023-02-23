@@ -2,6 +2,7 @@ import { AxiosResponse } from "axios";
 import $api from "../../http";
 import { BOT_URLS } from "../../mock/constants";
 import { ICreateBot } from "../../models/ICreateBot";
+import { IMyBot } from "../../models/IMyBot";
 import { ISelectListItem } from "../../models/ISelectListItem";
 import { botServiceCreateBotInput } from "./interfaces";
 
@@ -38,4 +39,12 @@ export const botServiceCreateBot = async (
   export const botServiceGetAllPriceStrategy = async ()
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(BOT_URLS.GET_PRICESTRATEGY);
+  };
+  export const botServiceGetAllBot = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_BOT);
+  };
+  export const botServiceGetAllMyBots = async ()
+  : Promise<AxiosResponse<IMyBot[]>> => {
+    return $api.get(BOT_URLS.GET_MYBOTS);
   };
