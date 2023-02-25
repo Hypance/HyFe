@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Form, Button, Row, Col } from 'react-bootstrap'
-import { CreateStrategyProps } from '../../pages/Strategy/interafeces'
+import { CreateStrategyProps } from '../../pages/Strategy/interfaces'
 import { StrategyFormInputs } from './interface'
 import { strategyServiceCreateStrategy as strategyServiceCreateStrategy } from '../../services/strategyService/strategyService'
 import { useFetchIntervals } from '../../hooks/useFetchInterval'
@@ -51,7 +51,7 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
     await strategyServiceCreateStrategy(data)
   }
 
-  // useEffect(() => {
+// useEffect(() => {
 
   //   return () => { }
   // }, [])
