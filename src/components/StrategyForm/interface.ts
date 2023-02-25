@@ -4,7 +4,8 @@ export type StrategyFormInputs =
 {
     name:string,
     description:string,
-    signalName:string,
+    provision:string,
+    value2:number,
     period:number,
     indicator:number,
     value:number,

@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { CreateStrategyProps } from '../../pages/Strategy/interafeces'
 import { StrategyFormInputs } from './interface'
-import { stratgeyServiceCreateStratgey } from '../../services/strategyService/strategyService'
+import { strategyServiceCreateStrategy as strategyServiceCreateStrategy } from '../../services/strategyService/strategyService'
 import { useFetchIntervals } from '../../hooks/useFetchInterval'
 import { useFetchIndicators } from '../../hooks/useFetchIndicators'
 import { useFetchValue } from '../../hooks/useFetchValue'
@@ -20,10 +20,35 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
   const value = useFetchValue();
   const orderSignal = useFetchOrderSignal();
 
+  //***************Dependent Select *************************
+
+  const provisions = [
+    {label: "Below", value: "Below", isDisabled: true},
+    {label: "Above", value: "Above", isDisabled: true},
+    {label: "Crosses Under", value: "Crosses Under", isDisabled: true},
+    {label: "Crosses Over", value: "Crosses Over", isDisabled: true},
+    {label: "Equal", value: "aEqual", isDisabled: true},
+  ]
+
+  const [selectedProvision,setSelectedProvision] =useState("");
+
+  const changeSelectOptionHandler = (e: { target: { value: React.SetStateAction<string> } }) => {
+    setSelectedProvision(e.target.value);
+    console.log(selectedProvision)
+  }
+
+  let isCross = null;
+
+  if ((selectedProvision == ("Crosses Over")) || (selectedProvision ==("Crosses Under"))){
+    isCross = false;
+  } else {
+    isCross = true; 
+  }
+  /////////////////////////////////////////////////////////////
 
 
   const onSubmit: SubmitHandler<StrategyFormInputs> = async (data) => {
-    await stratgeyServiceCreateStratgey(data)
+    await strategyServiceCreateStrategy(data)
   }
 
   // useEffect(() => {
@@ -66,13 +91,32 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
         <Row>
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Signal Name</Form.Label>
-              <Form.Control
-                {...register('signalName', {
-                  required: 'Please give a name to your signal',
+              <Form.Label>Provision</Form.Label>
+              <Form.Select
+                {...register('provision', {
+                  required: 'Please choose an indicator',
                 })}
-                type="text"
-                placeholder="Give a name to your signal"
+                onChange={changeSelectOptionHandler}
+              >
+               {provisions.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.label}
+                  </option>
+                ))}
+              </Form.Select>
+            </Form.Group>
+          </Col>
+          <Col xs sm="6">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Value2</Form.Label>
+              <Form.Control 
+                {...register('value2', {
+                  required: 'Please give a number of period for your indicator',
+                })}
+                disabled={isCross}
+                
+                type="number"
+                placeholder="Give a number of period for your indicator"
               />
             </Form.Group>
           </Col>
