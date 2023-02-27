@@ -1,0 +1,50 @@
+import { AxiosResponse } from "axios";
+import $api from "../../http";
+import { BOT_URLS } from "../../mock/constants";
+import { ICreateBot } from "../../models/ICreateBot";
+import { IMyBot } from "../../models/IMyBot";
+import { ISelectListItem } from "../../models/ISelectListItem";
+import { botServiceCreateBotInput } from "./interfaces";
+
+export const botServiceCreateBot = async (
+    data: botServiceCreateBotInput
+  ): Promise<AxiosResponse<ICreateBot>> => {
+    return $api.post(BOT_URLS.CREATE_BOT, data);
+  };
+  export const botServiceGetAllMarket = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_MARKETS);
+  };
+  export const botServiceGetAllOrderType = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_ORDERTYPE);
+  };
+  export const botServiceGetAllStrategy = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_STRATEGY);
+  };
+  export const botServiceGetAllAssets = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_ASSETS);
+    
+  };
+  export const botServiceGetAllFormation = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_FORMATION);
+  };
+  export const botServiceGetAllTrendStrategy = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_TRENDSTRATEGY);
+  };
+  export const botServiceGetAllPriceStrategy = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_PRICESTRATEGY);
+  };
+  export const botServiceGetAllBot = async ()
+  : Promise<AxiosResponse<ISelectListItem[]>> => {
+    return $api.get(BOT_URLS.GET_BOT);
+  };
+  export const botServiceGetAllMyBots = async ()
+  : Promise<AxiosResponse<IMyBot[]>> => {
+    return $api.get(BOT_URLS.GET_MYBOTS);
+  };
