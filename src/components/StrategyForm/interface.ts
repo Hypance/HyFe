@@ -8,6 +8,8 @@ export type StrategyFormInputs =
     value2:number,
     period:number,
     indicator:number,
+    crossingIndicatorPeriod:number,
+    crossingIndicator:number,
     value:number,
     interval:number,
     orderSignal:number

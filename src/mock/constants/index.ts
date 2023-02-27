@@ -2,13 +2,12 @@ export const SERVICE_URL = 'http://localhost:3000'
 export const STRATEGY_URLS = {
     CREATE_STRATEGY: "/Strategy",
     GET_INTERVALS: "/GetIntervals",
+    GET_PROVISIONS:"/GetProvisions",
     GET_INDICATORS: "/GetIndicators",
     GET_VALUE: "/GetValue",
     GET_ORDERSIGNAL: "/GetOrderSignal",
     GET_MY_STRATEGIES:'/GetMyStrategies',
   };
-
-}
 export const BOT_URLS = {
   CREATE_BOT: '/Bot',
   GET_MARKETS: '/GetMarkets',

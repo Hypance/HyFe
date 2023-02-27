@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { ISelectListItem } from "../models/ISelectListItem";
+import { IIndicator } from "../models/IIndicator";
 import { strategyServiceGetAllIndicators} from "../services/strategyService/strategyService";
 
 export const useFetchIndicators = () => {
-  const [indicators, setIndicators] = useState([] as ISelectListItem[]);
+  const [indicators, setIndicators] = useState([] as IIndicator[]);
 
   const getIndicators = async () => {
     const { data } = await strategyServiceGetAllIndicators();

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment,useState} from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { CreateStrategyProps } from '../../pages/Strategy/interfaces'
@@ -6,45 +6,44 @@ import { StrategyFormInputs } from './interface'
 import { strategyServiceCreateStrategy } from '../../services/strategyService/strategyService'
 import { useFetchIntervals } from '../../hooks/useFetchInterval'
 import { useFetchIndicators } from '../../hooks/useFetchIndicators'
-import { useFetchValue } from '../../hooks/useFetchValue'
 import { useFetchOrderSignal } from '../../hooks/useFetchOrderSignal'
+import { useFetchProvisions } from '../../hooks/useFetchInterval copy'
 
 
 export const StrategyForm: React.FC<CreateStrategyProps> = () => {
-  const { register, handleSubmit } = useForm<StrategyFormInputs>({
+  const { register, handleSubmit,setValue } = useForm<StrategyFormInputs>({
     mode: 'onBlur',
   })
 
+  const [isCrossed,setIsCrossed] = useState(false)
+
+  
+
   const intervals = useFetchIntervals();
   const indicators = useFetchIndicators();
-  const value = useFetchValue();
   const orderSignal = useFetchOrderSignal();
+  const provisions = useFetchProvisions();
 
-  //***************Dependent Select *************************
 
-  const provisions = [
-    {label: "Below", value: "Below", isDisabled: true},
-    {label: "Above", value: "Above", isDisabled: true},
-    {label: "Crosses Under", value: "Crosses Under", isDisabled: true},
-    {label: "Crosses Over", value: "Crosses Over", isDisabled: true},
-    {label: "Equal", value: "aEqual", isDisabled: true},
-  ]
+  
 
-  const [selectedProvision,setSelectedProvision] =useState("");
+  const onChangeIndicator = (e:any) => {
+    const selectedIndicator:any = indicators.find(i=>i.value == e.target.value)
+    setValue('period', selectedIndicator.period , { shouldTouch: true })
+  } 
 
-  const changeSelectOptionHandler = (e: { target: { value: React.SetStateAction<string> } }) => {
-    setSelectedProvision(e.target.value);
-    console.log(selectedProvision)
-  }
+  const onChangeProvision = (e:any) => {
+    const crossingIDs = [3,4]
+    if (crossingIDs.find(i => i == e.target.value))
+    setIsCrossed(true)
+    else
+    setIsCrossed(false)
+    
+    
+  } 
 
-  let isCross = null;
 
-  if ((selectedProvision == ("Crosses Over")) || (selectedProvision ==("Crosses Under"))){
-    isCross = false;
-  } else {
-    isCross = true; 
-  }
-  /////////////////////////////////////////////////////////////
+  
 
 
   const onSubmit: SubmitHandler<StrategyFormInputs> = async (data) => {
@@ -52,9 +51,10 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
   }
 
 // useEffect(() => {
+  
 
-  //   return () => { }
-  // }, [])
+//     return () => { }
+//   }, [register])
 
   return (
     <Fragment>
@@ -90,36 +90,24 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
         <h3>Signal Options</h3>
         <Row>
           <Col xs sm="6">
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Provision</Form.Label>
-              <Form.Select
-                {...register('provision', {
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Indicators</Form.Label>
+              <Form.Select 
+                {...register('indicator', {
                   required: 'Please choose an indicator',
+                    onChange: (e) => onChangeIndicator(e)
                 })}
-                onChange={changeSelectOptionHandler}
               >
-               {provisions.map((item) => (
+               {indicators.map((item) => (
                   <option key={item.value} value={item.value}>
-                    {item.label}
+                    {item.text}
                   </option>
                 ))}
               </Form.Select>
             </Form.Group>
+            
           </Col>
-          <Col xs sm="6">
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Value2</Form.Label>
-              <Form.Control 
-                {...register('value2', {
-                  required: 'Please give a number of period for your indicator',
-                })}
-                disabled={isCross}
-                
-                type="number"
-                placeholder="Give a number of period for your indicator"
-              />
-            </Form.Group>
-          </Col>
+      
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Period</Form.Label>
@@ -133,11 +121,46 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
             </Form.Group>
           </Col>
           <Col xs sm="6">
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Indicators</Form.Label>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Provision</Form.Label>
               <Form.Select
-                {...register('indicator', {
+                {...register('provision', {
                   required: 'Please choose an indicator',
+                  onChange: (e) => onChangeProvision(e)
+                })}
+               
+              >
+               {provisions.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.text}
+                  </option>
+                ))}
+              </Form.Select>
+            </Form.Group>
+            
+          </Col>
+          <Col xs sm="6">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Value</Form.Label>
+              <Form.Control
+                {...register('value', {
+                  required: 'Please give a number of value for your indicator',
+                })}
+                type="number"
+                placeholder="Give a number of value for your indicator"
+              />
+        
+            </Form.Group>
+          </Col>
+         {isCrossed &&
+         <>
+           <Col xs sm="6" >
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Crossing indicator</Form.Label>
+              <Form.Select 
+                {...register('crossingIndicator', {
+                  required: 'Please choose an indicator',
+                    
                 })}
               >
                {indicators.map((item) => (
@@ -147,23 +170,24 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                 ))}
               </Form.Select>
             </Form.Group>
+            
           </Col>
+      
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Value</Form.Label>
-              <Form.Select
-                {...register('value', {
-                  required: 'Please choose a alert value',
+              <Form.Label>Crossing Indicator Period</Form.Label>
+              <Form.Control
+                {...register('crossingIndicatorPeriod', {
+                  required: 'Please give a number of period for your indicator',
                 })}
-              >
-                 {value.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.text}
-                  </option>
-                ))}
-              </Form.Select>
+                type="number"
+                placeholder="Give a number of period for your indicator"
+              />
             </Form.Group>
           </Col>
+
+         
+         </>}
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Interval</Form.Label>

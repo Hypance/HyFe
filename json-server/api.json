@@ -106,6 +106,75 @@
       "value": "14"
     }
   ],
+  "GetProvisions": [
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Above",
+      "value": "1"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Below",
+      "value": "2"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Crosses Over",
+      "value": "3"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Crosses Under",
+      "value": "4"
+    },
+    {
+      "disabled": false,
+      "group": null,
+      "selected": false,
+      "text": "Equal",
+      "value": "5"
+    }
+  ],
+  "GetIndicators": [
+    {
+      
+      "text": "RSI",
+      "period": 40,
+      "value": "0"
+    },
+    {
+      
+      "text": "EMA",
+      "period": 9,
+      "value": "1"
+    },
+    {
+      
+      "text": "DEMA",
+      "period": 12,
+      "value": "2"
+    },
+    {
+      
+      "text": "MACD",
+      "period": 26,
+      "value": "3"
+    },
+    {
+      
+      "text": "SMA",
+      "period": 15,
+      "value": "4"
+    }
+  ],
   "GetMarkets": [
     {
       "disabled": false,
