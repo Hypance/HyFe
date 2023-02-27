@@ -32,7 +32,8 @@
     "react-scripts": "5.0.1",
     "react-use-websocket": "^4.3.1",
     "redux-deep-persist": "^1.0.7",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "styled-components": "^5.3.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -59,6 +60,7 @@
   },
   "devDependencies": {
     "@types/d3-array": "^3.0.4",
-    "@types/d3-time-format": "^4.0.0"
+    "@types/d3-time-format": "^4.0.0",
+    "@types/styled-components": "^5.1.26"
   }
 }

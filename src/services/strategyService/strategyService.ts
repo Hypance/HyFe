@@ -14,6 +14,11 @@ export const strategyServiceCreateStrategy = async (
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(STRATEGY_URLS.GET_INTERVALS);
   };
+
+  export const strategyServiceGetMyStrategies = async ()
+  : Promise<AxiosResponse> => {
+    return $api.get(STRATEGY_URLS.GET_MY_STRATEGIES);
+    
   export const strategyServiceGetAllIndicators = async ()
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(STRATEGY_URLS.GET_INDICATORS);
@@ -25,4 +30,5 @@ export const strategyServiceCreateStrategy = async (
   export const strategyServiceGetAllOrderSignal = async ()
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(STRATEGY_URLS.GET_ORDERSIGNAL);
+
   };
