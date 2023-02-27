@@ -1,7 +1,7 @@
 export interface strategyServiceCreateStrategyInput {
     name:string,
     description:string,
-    signalName:string,
+    provision:string,
     period:number,
     indicator:number,
     value:number,

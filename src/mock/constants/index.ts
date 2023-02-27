@@ -1,7 +1,11 @@
 export const SERVICE_URL = 'http://localhost:3000'
 export const STRATEGY_URLS = {
-  CREATE_STRATEGY: '/Strategy',
-  GET_INTERVALS: '/GetIntervals',
+    CREATE_STRATEGY: "/Strategy",
+    GET_INTERVALS: "/GetIntervals",
+    GET_INDICATORS: "/GetIndicators",
+    GET_VALUE: "/GetValue",
+    GET_ORDERSIGNAL: "/GetOrderSignal",
+  };
 }
 export const BOT_URLS = {
   CREATE_BOT: '/Bot',
@@ -18,3 +22,4 @@ export const BOT_URLS = {
 export const TRADES_URLS = {
   GET_ALL_OPEN_TRADES: '/Trades',
 }
+
