@@ -141,3 +141,5 @@ export const Trades: React.FC = () => {
     </Fragment>
   )
 }
+
+

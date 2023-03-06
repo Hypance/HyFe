@@ -1,4 +1,4 @@
-import { Dashboard } from '../../pages/Dashboard'
+import { Dashboard } from '../../pages/Dashboard/Dashboard'
 import { Strategy } from '../../pages/Strategy/Strategy'
 import { Bot } from '../../pages/Bots/Bot'
 import { CreateBot } from '../../pages/Bots/CreateBot'
