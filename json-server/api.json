@@ -145,31 +145,26 @@
   ],
   "GetIndicators": [
     {
-      
       "text": "RSI",
       "period": 40,
       "value": "0"
     },
     {
-      
       "text": "EMA",
       "period": 9,
       "value": "1"
     },
     {
-      
       "text": "DEMA",
       "period": 12,
       "value": "2"
     },
     {
-      
       "text": "MACD",
       "period": 26,
       "value": "3"
     },
     {
-      
       "text": "SMA",
       "period": 15,
       "value": "4"
@@ -278,7 +273,7 @@
           "period": "9",
           "rule": "Above",
           "indicator": "RSI",
-          "value": "3"         
+          "value": "3"
         },
         {
           "period": "9",
@@ -314,7 +309,7 @@
           "period": "9",
           "rule": "Above",
           "indicator": "RSI",
-          "value": "3"         
+          "value": "3"
         },
         {
           "period": "9",
@@ -335,7 +330,7 @@
           "period": "9",
           "rule": "Above",
           "indicator": "RSI",
-          "value": "3"         
+          "value": "3"
         },
         {
           "period": "9",
@@ -4795,31 +4790,31 @@
           "interval": "30m"
         }
       ],
-      "totalEntryPrice":"350.49",
-      "assets":[
+      "totalEntryPrice": "350.49",
+      "assets": [
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive":true
+      "isActive": true
     },
     {
       "name": "Test Bot",
@@ -4843,31 +4838,40 @@
           "interval": "30m"
         }
       ],
-      "totalEntryPrice":"350.49",
-      "assets":[
+      "totalEntryPrice": "350.49",
+      "assets": [
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive":false
+      "isActive": false
     }
-  ]
+  ],
+  "Settings": {
+    "email": "berk@hypance.com",
+    "telegramToken": "5155431848:AAEloUrGxV90epvgF31XegNmwI9oTljQYXw",
+    "password": "123456",
+    "telegramChannelId": "-723963123",
+    "phone": "5555555555",
+    "newPassword": "berk",
+    "confirmNewPassword": "berk"
+  }
 }
