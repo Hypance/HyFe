@@ -33,13 +33,22 @@ p{
     font-weight:500;
 }
 
-.card{
-    min-height:340px;
-}
-
 .transactions-card{
     overflow-y:scroll;
     max-height:325px;
 }
+
+
+.strategy-signals-height{
+    min-height:140px;   
+    
+    
+}
+
+
+.strategy-card-buttons{
+}
+
+
 
 `

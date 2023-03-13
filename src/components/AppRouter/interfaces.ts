@@ -2,14 +2,14 @@ import { Dashboard } from '../../pages/Dashboard/Dashboard'
 import { Strategy } from '../../pages/Strategy/Strategy'
 import { Bot } from '../../pages/Bots/Bot'
 import { CreateBot } from '../../pages/Bots/CreateBot'
-import { Backtest } from '../../pages/Backtest'
+import { Backtest } from '../../pages/Backtest/Backtest'
 import { Alerts } from '../../pages/Alerts/Alerts'
 import { Trades } from '../../pages/Trades/Trades'
 import { Portfolios } from '../../pages/Portfolios'
 import { Settings } from '../../pages/Settings'
 import { Logout } from '../../pages/Logout'
 import { CreateStrategy } from '../../pages/Strategy/CreateStrategy'
-import { Market } from '../../pages/Market'
+import { Market } from '../../pages/Market/Market'
 
 export interface IRoute {
   path: string

@@ -4869,5 +4869,823 @@
       ],
       "isActive":false
     }
+  ],
+  "Backtest": [
+    {
+      "name": "Test Backtest",
+      "description": "Backtest Description.",
+      "id": 1,
+      "strategies": [
+        {
+          "name": "RSI",
+          "interval": "30m"
+        },
+        {
+          "name": "RSI",
+          "interval": "30m"
+        },
+        {
+          "name": "RSI",
+          "interval": "30m"
+        },
+        {
+          "name": "RSI",
+          "interval": "30m"
+        }
+      ],
+      "totalEntryPrice":"350.49",
+      "assets":[
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        }
+      ],
+      "isActive":true
+    },
+    {
+      "name": "Test Bot",
+      "description": "Test bot description.",
+      "id": 1,
+      "strategies": [
+        {
+          "name": "RSI",
+          "interval": "30m"
+        },
+        {
+          "name": "RSI",
+          "interval": "30m"
+        },
+        {
+          "name": "RSI",
+          "interval": "30m"
+        },
+        {
+          "name": "RSI",
+          "interval": "30m"
+        }
+      ],
+      "totalEntryPrice":"350.49",
+      "assets":[
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        },
+        {
+          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+        }
+      ],
+      "isActive":false
+    }
+  ],
+  "DashboardAssets": [
+    {
+      "Id": 1,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "BaseAsset": "SOL",
+        "QuoteAsset": "USDT",
+        "Name": "Bitcoin"
+      },
+      "EntryPrice": 11911.48,
+      "CurrentPrice": 11911.48,
+      "Profit": 2.54,
+      "Graph": [
+        {
+          "close": 23094.7,
+          "date": 1675101719999
+        },
+        {
+          "close": 23091.1,
+          "date": 1675101779999
+        },
+        {
+          "close": 23093.5,
+          "date": 1675101839999
+        },
+        {
+          "close": 23083.1,
+          "date": 1675101899999
+        },
+        {
+          "close": 23095.9,
+          "date": 1675101959999
+        },
+        {
+          "close": 23094.8,
+          "date": 1675102019999
+        },
+        {
+          "close": 23092.3,
+          "date": 1675102079999
+        },
+        {
+          "close": 23081.3,
+          "date": 1675102139999
+        },
+        {
+          "close": 23100,
+          "date": 1675102199999
+        },
+        {
+          "close": 23108.9,
+          "date": 1675102259999
+        },
+        {
+          "close": 23123.3,
+          "date": 1675102319999
+        },
+        {
+          "close": 23125.4,
+          "date": 1675102379999
+        },
+        {
+          "close": 23119.7,
+          "date": 1675102439999
+        },
+        {
+          "close": 23130.1,
+          "date": 1675102499999
+        },
+        {
+          "close": 23122.3,
+          "date": 1675102559999
+        },
+        {
+          "close": 23143.7,
+          "date": 1675102619999
+        },
+        {
+          "close": 23156.1,
+          "date": 1675102679999
+        },
+        {
+          "close": 23162.2,
+          "date": 1675102739999
+        },
+        {
+          "close": 23141.6,
+          "date": 1675102799999
+        },
+        {
+          "close": 23146.5,
+          "date": 1675102859999
+        },
+        {
+          "close": 23140.9,
+          "date": 1675102919999
+        },
+        {
+          "close": 23141.1,
+          "date": 1675102979999
+        },
+        {
+          "close": 23134.9,
+          "date": 1675103039999
+        },
+        {
+          "close": 23133.2,
+          "date": 1675103099999
+        },
+        {
+          "close": 23126.2,
+          "date": 1675103159999
+        },
+        {
+          "close": 23136.1,
+          "date": 1675103219999
+        },
+        {
+          "close": 23121.1,
+          "date": 1675103279999
+        },
+        {
+          "close": 23126.8,
+          "date": 1675103339999
+        },
+        {
+          "close": 23124.5,
+          "date": 1675103399999
+        },
+        {
+          "close": 23130,
+          "date": 1675103459999
+        },
+        {
+          "close": 23114.2,
+          "date": 1675103519999
+        },
+        {
+          "close": 23097.1,
+          "date": 1675103579999
+        },
+        {
+          "close": 23109,
+          "date": 1675103639999
+        },
+        {
+          "close": 23127.5,
+          "date": 1675103699999
+        },
+        {
+          "close": 23129.3,
+          "date": 1675103759999
+        },
+        {
+          "close": 23135.6,
+          "date": 1675103819999
+        },
+        {
+          "close": 23138.7,
+          "date": 1675103879999
+        },
+        {
+          "close": 23125.3,
+          "date": 1675103939999
+        },
+        {
+          "close": 23138.6,
+          "date": 1675103999999
+        },
+        {
+          "close": 23126.4,
+          "date": 1675104059999
+        },
+        {
+          "close": 23101.8,
+          "date": 1675104119999
+        },
+        {
+          "close": 23080.3,
+          "date": 1675104179999
+        },
+        {
+          "close": 23092,
+          "date": 1675104239999
+        },
+        {
+          "close": 23110.7,
+          "date": 1675104299999
+        },
+        {
+          "close": 23114.1,
+          "date": 1675104359999
+        },
+        {
+          "close": 23119.9,
+          "date": 1675104419999
+        },
+        {
+          "close": 23118.9,
+          "date": 1675104479999
+        },
+        {
+          "close": 23136.7,
+          "date": 1675104539999
+        },
+        {
+          "close": 23153.4,
+          "date": 1675104599999
+        },
+        {
+          "close": 23146.7,
+          "date": 1675104659999
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "BaseAsset": "SOL",
+        "QuoteAsset": "USDT",
+        "Name": "Ethereum"
+      },
+      "EntryPrice": 11911.48,
+      "CurrentPrice": 11911.48,
+      "Profit": 2.54,
+      "Graph": [
+        {
+          "close": 1581.01,
+          "date": 1675102319999
+        },
+        {
+          "close": 1580.89,
+          "date": 1675102379999
+        },
+        {
+          "close": 1580.7,
+          "date": 1675102439999
+        },
+        {
+          "close": 1581.54,
+          "date": 1675102499999
+        },
+        {
+          "close": 1580.18,
+          "date": 1675102559999
+        },
+        {
+          "close": 1581.38,
+          "date": 1675102619999
+        },
+        {
+          "close": 1582.97,
+          "date": 1675102679999
+        },
+        {
+          "close": 1583.42,
+          "date": 1675102739999
+        },
+        {
+          "close": 1580.13,
+          "date": 1675102799999
+        },
+        {
+          "close": 1580.77,
+          "date": 1675102859999
+        },
+        {
+          "close": 1580.47,
+          "date": 1675102919999
+        },
+        {
+          "close": 1580.91,
+          "date": 1675102979999
+        },
+        {
+          "close": 1580.27,
+          "date": 1675103039999
+        },
+        {
+          "close": 1579.81,
+          "date": 1675103099999
+        },
+        {
+          "close": 1579.41,
+          "date": 1675103159999
+        },
+        {
+          "close": 1579.74,
+          "date": 1675103219999
+        },
+        {
+          "close": 1578.19,
+          "date": 1675103279999
+        },
+        {
+          "close": 1578.74,
+          "date": 1675103339999
+        },
+        {
+          "close": 1578.68,
+          "date": 1675103399999
+        },
+        {
+          "close": 1579.46,
+          "date": 1675103459999
+        },
+        {
+          "close": 1578.18,
+          "date": 1675103519999
+        },
+        {
+          "close": 1576.38,
+          "date": 1675103579999
+        },
+        {
+          "close": 1577.31,
+          "date": 1675103639999
+        },
+        {
+          "close": 1579.25,
+          "date": 1675103699999
+        },
+        {
+          "close": 1579.1,
+          "date": 1675103759999
+        },
+        {
+          "close": 1580.11,
+          "date": 1675103819999
+        },
+        {
+          "close": 1580.27,
+          "date": 1675103879999
+        },
+        {
+          "close": 1578.9,
+          "date": 1675103939999
+        },
+        {
+          "close": 1579.57,
+          "date": 1675103999999
+        },
+        {
+          "close": 1578.29,
+          "date": 1675104059999
+        },
+        {
+          "close": 1576.29,
+          "date": 1675104119999
+        },
+        {
+          "close": 1573.96,
+          "date": 1675104179999
+        },
+        {
+          "close": 1574.91,
+          "date": 1675104239999
+        },
+        {
+          "close": 1575.81,
+          "date": 1675104299999
+        },
+        {
+          "close": 1575.91,
+          "date": 1675104359999
+        },
+        {
+          "close": 1576.6,
+          "date": 1675104419999
+        },
+        {
+          "close": 1575.22,
+          "date": 1675104479999
+        },
+        {
+          "close": 1577.27,
+          "date": 1675104539999
+        },
+        {
+          "close": 1578.67,
+          "date": 1675104599999
+        },
+        {
+          "close": 1579.46,
+          "date": 1675104659999
+        },
+        {
+          "close": 1577.11,
+          "date": 1675104719999
+        },
+        {
+          "close": 1576.09,
+          "date": 1675104779999
+        },
+        {
+          "close": 1576.78,
+          "date": 1675104839999
+        },
+        {
+          "close": 1578.52,
+          "date": 1675104899999
+        },
+        {
+          "close": 1577.44,
+          "date": 1675104959999
+        },
+        {
+          "close": 1576.24,
+          "date": 1675105019999
+        },
+        {
+          "close": 1576.45,
+          "date": 1675105079999
+        },
+        {
+          "close": 1577.68,
+          "date": 1675105139999
+        },
+        {
+          "close": 1578.49,
+          "date": 1675105199999
+        },
+        {
+          "close": 1577.6,
+          "date": 1675105259999
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Coin": {
+        "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "BaseAsset": "SOL",
+        "QuoteAsset": "USDT",
+        "Name": "Ripple"
+      },
+      "EntryPrice": 11911.48,
+      "CurrentPrice": 11911.48,
+      "Profit": 2.54,
+      "Graph": [
+        {
+          "close": 0.4123,
+          "date": 1675004399999
+        },
+        {
+          "close": 0.4119,
+          "date": 1675007999999
+        },
+        {
+          "close": 0.4119,
+          "date": 1675011599999
+        },
+        {
+          "close": 0.4138,
+          "date": 1675015199999
+        },
+        {
+          "close": 0.4145,
+          "date": 1675018799999
+        },
+        {
+          "close": 0.4158,
+          "date": 1675022399999
+        },
+        {
+          "close": 0.4134,
+          "date": 1675025999999
+        },
+        {
+          "close": 0.413,
+          "date": 1675029599999
+        },
+        {
+          "close": 0.4127,
+          "date": 1675033199999
+        },
+        {
+          "close": 0.4133,
+          "date": 1675036799999
+        },
+        {
+          "close": 0.419,
+          "date": 1675040399999
+        },
+        {
+          "close": 0.4125,
+          "date": 1675043999999
+        },
+        {
+          "close": 0.4103,
+          "date": 1675047599999
+        },
+        {
+          "close": 0.4133,
+          "date": 1675051199999
+        },
+        {
+          "close": 0.4134,
+          "date": 1675054799999
+        },
+        {
+          "close": 0.4125,
+          "date": 1675058399999
+        },
+        {
+          "close": 0.4126,
+          "date": 1675061999999
+        },
+        {
+          "close": 0.4107,
+          "date": 1675065599999
+        },
+        {
+          "close": 0.4097,
+          "date": 1675069199999
+        },
+        {
+          "close": 0.3991,
+          "date": 1675072799999
+        },
+        {
+          "close": 0.3993,
+          "date": 1675076399999
+        },
+        {
+          "close": 0.3975,
+          "date": 1675079999999
+        },
+        {
+          "close": 0.3998,
+          "date": 1675083599999
+        },
+        {
+          "close": 0.3991,
+          "date": 1675087199999
+        },
+        {
+          "close": 0.4029,
+          "date": 1675090799999
+        },
+        {
+          "close": 0.3998,
+          "date": 1675094399999
+        },
+        {
+          "close": 0.3998,
+          "date": 1675097999999
+        },
+        {
+          "close": 0.3996,
+          "date": 1675101599999
+        },
+        {
+          "close": 0.4009,
+          "date": 1675105199999
+        },
+        {
+          "close": 0.3948,
+          "date": 1675108799999
+        },
+        {
+          "close": 0.3946,
+          "date": 1675112399999
+        },
+        {
+          "close": 0.3932,
+          "date": 1675115999999
+        },
+        {
+          "close": 0.3928,
+          "date": 1675119599999
+        },
+        {
+          "close": 0.3932,
+          "date": 1675123199999
+        },
+        {
+          "close": 0.3923,
+          "date": 1675126799999
+        },
+        {
+          "close": 0.3908,
+          "date": 1675130399999
+        },
+        {
+          "close": 0.3925,
+          "date": 1675133999999
+        },
+        {
+          "close": 0.3914,
+          "date": 1675137599999
+        },
+        {
+          "close": 0.3911,
+          "date": 1675141199999
+        },
+        {
+          "close": 0.3893,
+          "date": 1675144799999
+        },
+        {
+          "close": 0.392,
+          "date": 1675148399999
+        },
+        {
+          "close": 0.3952,
+          "date": 1675151999999
+        },
+        {
+          "close": 0.3982,
+          "date": 1675155599999
+        },
+        {
+          "close": 0.3982,
+          "date": 1675159199999
+        },
+        {
+          "close": 0.3994,
+          "date": 1675162799999
+        },
+        {
+          "close": 0.3996,
+          "date": 1675166399999
+        },
+        {
+          "close": 0.4013,
+          "date": 1675169999999
+        },
+        {
+          "close": 0.4018,
+          "date": 1675173599999
+        },
+        {
+          "close": 0.4016,
+          "date": 1675177199999
+        },
+        {
+          "close": 0.4027,
+          "date": 1675180799999
+        }
+      ]
+    }
+
+  ],
+  "Transactions": [
+    {
+      "id":1,
+      "orderSignal":"Buy",
+      "date":"22 August 2022,19.32 PM",
+      "coin": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "abbreviation": "BTC",
+        "name": "Bitcoin",
+        "value1":0.0231,
+        "value2":498.36
+      }    
+    },
+    {
+      "id":2,
+      "orderSignal":"Buy",
+      "date":"22 August 2022,19.32 PM",
+      "coin": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "abbreviation": "BTC",
+        "name": "Bitcoin",
+        "value1":0.0231,
+        "value2":498.36
+      }    
+    },
+    {
+      "id":3,
+      "orderSignal":"Buy",
+      "date":"22 August 2022,19.32 PM",
+      "coin": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "abbreviation": "BTC",
+        "name": "Bitcoin",
+        "value1":0.0231,
+        "value2":498.36
+      }    
+    },
+    {
+      "id":4,
+      "orderSignal":"Buy",
+      "date":"22 August 2022,19.32 PM",
+      "coin": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "abbreviation": "BTC",
+        "name": "Bitcoin",
+        "value1":0.0231,
+        "value2":498.36
+      }    
+    },
+    {
+      "id":5,
+      "orderSignal":"Sell",
+      "date":"22 August 2022,19.32 PM",
+      "coin": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/ETH.png",
+        "abbreviation": "ETH",
+        "name": "Etherium",
+        "value1":-0.0231,
+        "value2":498.36
+      }    
+    },
+    {
+      "id":6,
+      "orderSignal":"Buy",
+      "date":"22 August 2022,19.32 PM",
+      "coin": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "abbreviation": "BTC",
+        "name": "Bitcoin",
+        "value1":0.0231,
+        "value2":498.36
+      }    
+    }
+
   ]
 }

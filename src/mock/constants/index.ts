@@ -24,3 +24,12 @@ export const TRADES_URLS = {
   GET_ALL_OPEN_TRADES: '/Trades',
 }
 
+export const BACKTEST_URLS = {
+  GET_ALL_BACKTESTS: '/Backtest'
+}
+
+export const DASHBOARD_URLS = {
+  GET_TRANSACTIONS: '/Transactions',
+  GET_DASHBOARD_ASSETS: '/DashboardAssets',
+  GET_ACTIVE_POSITIONS:'/ActivePositions'
+}
