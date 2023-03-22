@@ -495,7 +495,7 @@
       "Id": 1,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "BTC",
         "QuoteAsset": "USDT",
         "Name": "Bitcoin"
       },
@@ -709,7 +709,7 @@
       "Id": 2,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "ETH",
         "QuoteAsset": "USDT",
         "Name": "Ethereum"
       },
@@ -923,7 +923,7 @@
       "Id": 3,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "XRP",
         "QuoteAsset": "USDT",
         "Name": "Ripple"
       },
@@ -1351,7 +1351,7 @@
       "Id": 5,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "ETC",
         "QuoteAsset": "USDT",
         "Name": "TetherUS"
       },
@@ -1565,7 +1565,7 @@
       "Id": 6,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "BNB",
         "QuoteAsset": "USDT",
         "Name": "BNB"
       },
@@ -1779,7 +1779,7 @@
       "Id": 7,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "BUSD",
         "QuoteAsset": "USDT",
         "Name": "BUSD"
       },
@@ -1993,7 +1993,7 @@
       "Id": 8,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "ADA",
         "QuoteAsset": "USDT",
         "Name": "Cardano"
       },
@@ -2207,7 +2207,7 @@
       "Id": 9,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "DOGE",
         "QuoteAsset": "USDT",
         "Name": "Doge Coin"
       },
@@ -2421,7 +2421,7 @@
       "Id": 10,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "MATIC",
         "QuoteAsset": "USDT",
         "Name": "Polygon"
       },
@@ -2635,9 +2635,9 @@
       "Id": 11,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "APE",
         "QuoteAsset": "USDT",
-        "Name": "Bitcoin"
+        "Name": "APE"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -2849,9 +2849,9 @@
       "Id": 12,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "DOT",
         "QuoteAsset": "USDT",
-        "Name": "Ethereum"
+        "Name": "DOT"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3063,9 +3063,9 @@
       "Id": 13,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "SHIB",
         "QuoteAsset": "USDT",
-        "Name": "Ripple"
+        "Name": "SHIB"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3277,9 +3277,9 @@
       "Id": 14,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "LTC",
         "QuoteAsset": "USDT",
-        "Name": "Solana"
+        "Name": "LTC"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3491,9 +3491,9 @@
       "Id": 15,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "TRX",
         "QuoteAsset": "USDT",
-        "Name": "TetherUS"
+        "Name": "TRX"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3705,9 +3705,9 @@
       "Id": 16,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "DAI",
         "QuoteAsset": "USDT",
-        "Name": "BNB"
+        "Name": "DAI"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3919,9 +3919,9 @@
       "Id": 17,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "AVAX",
         "QuoteAsset": "USDT",
-        "Name": "BUSD"
+        "Name": "AVAX"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -4133,9 +4133,9 @@
       "Id": 18,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "UNI",
         "QuoteAsset": "USDT",
-        "Name": "Cardano"
+        "Name": "UNI"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -4347,9 +4347,9 @@
       "Id": 19,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "LINK",
         "QuoteAsset": "USDT",
-        "Name": "Doge Coin"
+        "Name": "LINK"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -4561,9 +4561,9 @@
       "Id": 20,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "ATOM",
         "QuoteAsset": "USDT",
-        "Name": "Polygon"
+        "Name": "ATOM"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,

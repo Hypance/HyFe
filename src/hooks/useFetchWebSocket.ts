@@ -1,17 +1,28 @@
-import useWebSocket, { ReadyState } from 'react-use-websocket'
+import { useState } from 'react';
+
+// export const useFetchWebSocket = (pair: string) => {
+//   const socketUrl = `wss://fstream.binance.com/ws/${pair}@kline_1m`
+//   const { lastJsonMessage, readyState } = useWebSocket(socketUrl)
+
+//   if (readyState === Number(ReadyState.OPEN)) {
+//     if (lastJsonMessage != null) {
+//       const object = lastJsonMessage as unknown as KlineHeader;
+//       if (object) {
+//         return object.k.c;
+//       }
+//     }
+//   }
+// }
 
 export const useFetchWebSocket = (pair: string) => {
   const socketUrl = `wss://fstream.binance.com/ws/${pair}@kline_1m`
-  const { lastJsonMessage, readyState } = useWebSocket(socketUrl)
-
-  if (readyState === Number(ReadyState.OPEN)) {
-    if (lastJsonMessage != null) {
-      const object = lastJsonMessage as unknown as KlineHeader;
-      if (object) {
-        return object.k.c;
-      }
-    }
-  }
+  const [currentPrice, setCurrentPrice] = useState(0)
+  const connection = new WebSocket(socketUrl);
+  connection.onmessage = function(event:any) {
+    const object = JSON.parse(event.data) as KlineHeader;
+    setCurrentPrice(object.k.c);
+  };
+  return currentPrice;
 }
 
 interface KlineHeader {

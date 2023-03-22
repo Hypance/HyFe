@@ -1,9 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { Button, Pagination, Table } from 'react-bootstrap'
 import { useFetchOpenTrades } from '../../hooks/useFetchOpenTrades'
-import { tradeServiceOpenTrade } from '../../services/tradeService/interfaces'
+import { KlineHeader, tradeServiceOpenTrade } from '../../services/tradeService/interfaces'
 import Example from '../../components/AppGraph/AppGraph'
-//import { useFetchWebSocket } from '../../hooks/useFetchWebSocket'
 
 export const Trades: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0)
@@ -11,7 +10,6 @@ export const Trades: React.FC = () => {
   const perPage = 10
   const pages: any = []
   const totalCount = data.length
-
   function initPagination() {
     for (let number = 0; number < data.length / perPage; number++) {
       pages.push(
@@ -24,12 +22,6 @@ export const Trades: React.FC = () => {
         </Pagination.Item>
       )
     }
-    // data.map((item) => {
-    //   let price = useFetchWebSocket(
-    //     `${item.Coin.BaseAsset}${item.Coin.QuoteAsset}`
-    //   )
-    //   console.log(price)
-    // })
   }
   initPagination()
   const [openTrades, setOpenTrades] = useState<tradeServiceOpenTrade[]>(data)
@@ -38,6 +30,7 @@ export const Trades: React.FC = () => {
       data.slice(currentPage * perPage, (currentPage + 1) * perPage)
     )
   }, [currentPage, data])
+
 
   // const getProfit = (oldPrice:number, newPrice:number) => {
   //   if (oldPrice === 0) oldPrice += 1;
