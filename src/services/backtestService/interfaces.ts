@@ -16,3 +16,19 @@ interface Strategy{
 interface Asset{
     image:string
 }
+
+export interface backtestServiceBacktestDetail {
+    id: number
+    assetName: AssetName
+    entryPrice: number
+    closePrice: number|undefined
+    profit: number
+    
+  }
+  
+  interface AssetName {
+    image: string
+    name: string
+  }
+
+

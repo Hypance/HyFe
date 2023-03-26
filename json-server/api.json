@@ -4968,6 +4968,48 @@
       "isActive":false
     }
   ],
+  "BacktestDetail": [
+    {
+      "id": 1,
+      "assetName": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
+        "name": "Bitcoin"
+      },
+      "entryPrice": 11911.48,
+      "closePrice": 11911.48,
+      "profit": 2.54
+    },
+    {
+      "id": 2,
+      "assetName": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/ETH.png",
+        "name": "Etherium"
+      },
+      "entryPrice": 11911.48,
+      "closePrice": 11911.48,
+      "profit": 2.54
+    },
+    {
+      "id": 3,
+      "assetName": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/SOL.png",
+        "name": "Solana"
+      },
+      "entryPrice": 11911.48,
+      "closePrice": 11911.48,
+      "profit": 2.54
+    },
+    {
+      "id": 4,
+      "assetName": {
+        "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BNB.png",
+        "name": "BNB"
+      },
+      "entryPrice": 11911.48,
+      "closePrice": 11911.48,
+      "profit": 2.54
+    }
+  ],
   "DashboardAssets": [
     {
       "Id": 1,

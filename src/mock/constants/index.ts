@@ -25,7 +25,8 @@ export const TRADES_URLS = {
 }
 
 export const BACKTEST_URLS = {
-  GET_ALL_BACKTESTS: '/Backtest'
+  GET_ALL_BACKTESTS: '/Backtest',
+  GET_BACKTEST_DETAIL:'/BacktestDetail'
 }
 
 export const DASHBOARD_URLS = {

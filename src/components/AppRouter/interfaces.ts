@@ -3,6 +3,7 @@ import { Strategy } from '../../pages/Strategy/Strategy'
 import { Bot } from '../../pages/Bots/Bot'
 import { CreateBot } from '../../pages/Bots/CreateBot'
 import { Backtest } from '../../pages/Backtest/Backtest'
+import { BacktestDetail } from '../../pages/Backtest/BacktestDetail'
 import { Alerts } from '../../pages/Alerts/Alerts'
 import { Trades } from '../../pages/Trades/Trades'
 import { Portfolios } from '../../pages/Portfolios'
@@ -23,6 +24,7 @@ export enum AppPathes {
   BOT = '/bot',
   CREATEBOT = '/create-bot',
   BACKTEST = '/backtest',
+  BACKTESTDETAIL = '/backtest-detail',
   ALERTS = '/alerts',
   TRADES = '/trades',
   PORTFOLIOS = '/portfolios',
@@ -37,6 +39,7 @@ export const publicRoutes: IRoute[] = [
   { path: AppPathes.BOT, element: Bot },
   { path: AppPathes.CREATEBOT, element: CreateBot },
   { path: AppPathes.BACKTEST, element: Backtest },
+  { path: AppPathes.BACKTESTDETAIL, element: BacktestDetail },
   { path: AppPathes.ALERTS, element: Alerts },
   { path: AppPathes.TRADES, element: Trades },
   { path: AppPathes.PORTFOLIOS, element: Portfolios },
