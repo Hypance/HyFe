@@ -71,7 +71,7 @@ export const Backtest: React.FC = () => {
                     Create Backtest
                   </Dropdown.Item>
                 </DropdownButton>
-                <OverlayTrigger
+                {/* <OverlayTrigger
                   trigger={['focus']}
                   overlay={popover}
                   placement="top-start"
@@ -79,7 +79,7 @@ export const Backtest: React.FC = () => {
                   <button className="btn btn-outline" type="button">
                     ...
                   </button>
-                </OverlayTrigger>
+                </OverlayTrigger> */}
               </Stack>
               <hr className="my-2" />
               <p className="small">{item.description}</p>
