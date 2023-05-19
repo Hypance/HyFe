@@ -1,31 +1,35 @@
-import { AxiosResponse } from "axios";
-import $api from "../../http";
-import { TRADES_URLS } from "../../mock/constants";
-import { tradeServiceOpenTrade } from "./interfaces";
+import { AxiosResponse } from "axios"; // Axios, HTTP istekleri yapmak için kullanılan bir kütüphane. AxiosResponse, Axios'tan dönen yanıtların türünü belirtir.
+import $api from "../../http"; // $api, HTTP istekleri yapmak için önceden ayarlanmış Axios nesnesi olabilir.
+import { TRADES_URLS } from "../../mock/constants"; // URL'lerin sabit değerlerini içeren bir obje.
+import { tradeServiceOpenTrade } from "./interfaces"; //tradeServiceOpenTrade, bir işlemi temsil eden bir TypeScript türü.
 
-  export const tradeServiceGetAllOpenTrades = async ()
-  : Promise<AxiosResponse<tradeServiceOpenTrade[]>> => {
-    const result:AxiosResponse<tradeServiceOpenTrade[]> =await $api.get(TRADES_URLS.GET_ALL_OPEN_TRADES)
-    console.log(result.data);
-    result.data.map(s => {
-       const pair = `${s.Coin.BaseAsset}${s.Coin.QuoteAsset}`.toLowerCase()
-        const socketUrl = `wss://fstream.binance.com/ws`
-        const ws = new WebSocket(socketUrl);
-        ws.onopen = () => {
-          ws.send(`{ "method": "SUBSCRIBE", "params": [ "${pair}@kline_1m" ], "id": 1 }`);
-        };
-        ws.onmessage = function(event:any) {
-          const obj = JSON.parse(event.data);
-          console.log(obj);
-          if (obj.e) {
-            const object = obj as KlineHeader;
-            s.CurrentPrice = object.k.c;
-          }
-        };
-        return s;
-    });
-    return result;
-  };
+export const tradeServiceGetAllOpenTrades = async (updateTrade: (tradeId: number, newCurrentPrice: string) => void)
+: Promise<AxiosResponse<tradeServiceOpenTrade[]>> => {
+  const result: AxiosResponse<tradeServiceOpenTrade[]> = await $api.get(TRADES_URLS.GET_ALL_OPEN_TRADES);
+  console.log(result.data);
+
+  result.data.forEach(s => {
+    const pair = `${s.Coin.BaseAsset}${s.Coin.QuoteAsset}`.toLowerCase();
+    const socketUrl = `wss://fstream.binance.com/ws`;
+    const ws = new WebSocket(socketUrl);
+
+    ws.onopen = () => {
+      ws.send(`{ "method": "SUBSCRIBE", "params": [ "${pair}@kline_1m" ], "id": 1 }`);
+    };
+
+    ws.onmessage = function(event: any) {
+      const obj = JSON.parse(event.data);
+      console.log(obj.E, result);
+
+      if (obj.e) {
+        const object = obj as KlineHeader;
+        updateTrade(s.Id, object.k.c.toString());  // Burada callback fonksiyonunu çağırıyoruz.
+      }
+    };
+  });
+
+  return result;
+};
 
 interface KlineHeader {
   e: string
