@@ -28,3 +28,13 @@ export const USER_URLS ={
   POST_USER_SETTINGS:'/Settings'
 }
 
+export const BACKTEST_URLS = {
+  GET_ALL_BACKTESTS: '/Backtest',
+  GET_BACKTEST_DETAIL:'/BacktestDetail'
+}
+
+export const DASHBOARD_URLS = {
+  GET_TRANSACTIONS: '/Transactions',
+  GET_DASHBOARD_ASSETS: '/DashboardAssets',
+  GET_ACTIVE_POSITIONS:'/ActivePositions'
+}

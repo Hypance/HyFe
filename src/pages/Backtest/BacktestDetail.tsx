@@ -1,15 +1,17 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { Button, Pagination, Table } from 'react-bootstrap'
-import { useFetchOpenTrades } from '../../hooks/useFetchOpenTrades'
-import {  tradeServiceOpenTrade } from '../../services/tradeService/interfaces'
-import Example from '../../components/AppGraph/AppGraph'
+import { useFetchBacktestDetail } from '../../hooks/useFetchBacktestDetail'
+import { backtestServiceBacktestDetail } from '../../services/backtestService/interfaces'
 
-export const Trades: React.FC = () => {
+
+
+export const BacktestDetail: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0)
-  const data = useFetchOpenTrades()
+  const data = useFetchBacktestDetail()
   const perPage = 10
   const pages: any = []
   const totalCount = data.length
+
   function initPagination() {
     for (let number = 0; number < data.length / perPage; number++) {
       pages.push(
@@ -24,18 +26,17 @@ export const Trades: React.FC = () => {
     }
   }
   initPagination()
-  const [openTrades, setOpenTrades] = useState<tradeServiceOpenTrade[]>(data)
+  const [openTrades, setOpenTrades] = useState<backtestServiceBacktestDetail  []>(data)
   useEffect(() => {
     setOpenTrades(
       data.slice(currentPage * perPage, (currentPage + 1) * perPage)
     )
   }, [currentPage, data])
 
-
-
+  
   return (
     <Fragment>
-      <h1>Open Trades</h1>
+      <h2 className='page-title'>Backtest Detail</h2>
       <Table hover size="sm" className="p-5">
         <thead>
           <tr>
@@ -51,29 +52,21 @@ export const Trades: React.FC = () => {
         <tbody>
           {openTrades.map((item) => {
             return (
-              <tr key={item.Id}>
-                <td>{item.Id}</td>
+              <tr key={item.id}>
+                <td>{item.id}</td>
                 <td>
-                  <img width={25} src={item.Coin.Image} alt={item.Coin.Name} />{' '}
-                  <b>{item.Coin.BaseAsset}</b> {item.Coin.Name}
+                  <img width={25} src={item.assetName.image} alt={item.assetName.name} />{' '}
+                {item.assetName.name}
                 </td>
-                <td className="text-center">{item.EntryPrice}</td>
-                <td className="text-center">{item.CurrentPrice}</td>
+                <td className="text-center">{item.entryPrice}</td>
+                <td className="text-center">{item.closePrice}</td>
                 <td
                   className={`text-center ${
-                    item.Profit > 0 ? 'text-success' : 'text-danger'
+                    item.profit > 0 ? 'text-success' : 'text-danger'
                   }`}
                 >
                   {' '}
-                  <b>{item.Profit}</b>{' '}
-                </td>
-                <td className="text-center cursor-none">
-                  <Example
-                    color={item.Profit > 0 ? '#09BD3C' : '#FD5353'}
-                    stock={item.Graph}
-                    width={150}
-                    height={36}
-                  />
+                  <b>{item.profit}</b>{' '}
                 </td>
                 <td>
                   <Button type="button" variant="light">
@@ -107,5 +100,3 @@ export const Trades: React.FC = () => {
     </Fragment>
   )
 }
-
-

@@ -1,15 +1,34 @@
-import {createGlobalStyle} from 'styled-components';
-
+import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 
+:root{
+    --title-color: #062046;
+    --comment-color: #757575;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.page-title{
+    color:var(--title-color);
+    font-weight:600;
+}
 .card-title{
-    font-size:24px;
-    color: #062046;
-    font-weight: 600;
-    
+    color: var(--title-color); 
+    font-weight:600;
+}
+.card-comment{
+    color: var(--comment-color);
+    font-weight:500;
+}
+.transactions-card{
+    overflow-y:scroll;
+    max-height:325px;
 }
 
-.card{
-    min-height:340px;
+.strategy-signals-height{
+    min-height:140px;   
+}
+.strategy-card-buttons{
 }
 `
