@@ -23,4 +23,8 @@ export const BOT_URLS = {
 export const TRADES_URLS = {
   GET_ALL_OPEN_TRADES: '/Trades',
 }
+export const USER_URLS ={
+  GET_USER_SETTINGS:'/Settings',
+  POST_USER_SETTINGS:'/Settings'
+}
 
