@@ -4,7 +4,7 @@ export interface tradeServiceOpenTrade {
   EntryPrice: number
   Connection: WebSocket
   OnMessage:any
-  CurrentPrice: number|undefined
+  CurrentPrice: string|number
   Profit: number
   Graph: any
 }
