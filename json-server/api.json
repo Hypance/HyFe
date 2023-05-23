@@ -145,31 +145,26 @@
   ],
   "GetIndicators": [
     {
-      
       "text": "RSI",
       "period": 40,
       "value": "0"
     },
     {
-      
       "text": "EMA",
       "period": 9,
       "value": "1"
     },
     {
-      
       "text": "DEMA",
       "period": 12,
       "value": "2"
     },
     {
-      
       "text": "MACD",
       "period": 26,
       "value": "3"
     },
     {
-      
       "text": "SMA",
       "period": 15,
       "value": "4"
@@ -278,7 +273,7 @@
           "period": "9",
           "rule": "Above",
           "indicator": "RSI",
-          "value": "3"         
+          "value": "3"
         },
         {
           "period": "9",
@@ -314,7 +309,7 @@
           "period": "9",
           "rule": "Above",
           "indicator": "RSI",
-          "value": "3"         
+          "value": "3"
         },
         {
           "period": "9",
@@ -335,7 +330,7 @@
           "period": "9",
           "rule": "Above",
           "indicator": "RSI",
-          "value": "3"         
+          "value": "3"
         },
         {
           "period": "9",
@@ -495,7 +490,7 @@
       "Id": 1,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "BTC",
         "QuoteAsset": "USDT",
         "Name": "Bitcoin"
       },
@@ -709,7 +704,7 @@
       "Id": 2,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "ETH",
         "QuoteAsset": "USDT",
         "Name": "Ethereum"
       },
@@ -923,7 +918,7 @@
       "Id": 3,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "XRP",
         "QuoteAsset": "USDT",
         "Name": "Ripple"
       },
@@ -1351,7 +1346,7 @@
       "Id": 5,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "ETC",
         "QuoteAsset": "USDT",
         "Name": "TetherUS"
       },
@@ -1565,7 +1560,7 @@
       "Id": 6,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "BNB",
         "QuoteAsset": "USDT",
         "Name": "BNB"
       },
@@ -1779,7 +1774,7 @@
       "Id": 7,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "BUSD",
         "QuoteAsset": "USDT",
         "Name": "BUSD"
       },
@@ -1993,7 +1988,7 @@
       "Id": 8,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "ADA",
         "QuoteAsset": "USDT",
         "Name": "Cardano"
       },
@@ -2207,7 +2202,7 @@
       "Id": 9,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "DOGE",
         "QuoteAsset": "USDT",
         "Name": "Doge Coin"
       },
@@ -2421,7 +2416,7 @@
       "Id": 10,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "MATIC",
         "QuoteAsset": "USDT",
         "Name": "Polygon"
       },
@@ -2635,9 +2630,9 @@
       "Id": 11,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "APE",
         "QuoteAsset": "USDT",
-        "Name": "Bitcoin"
+        "Name": "APE"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -2849,9 +2844,9 @@
       "Id": 12,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "DOT",
         "QuoteAsset": "USDT",
-        "Name": "Ethereum"
+        "Name": "DOT"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3063,9 +3058,9 @@
       "Id": 13,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "SHIB",
         "QuoteAsset": "USDT",
-        "Name": "Ripple"
+        "Name": "SHIB"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3277,9 +3272,9 @@
       "Id": 14,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "LTC",
         "QuoteAsset": "USDT",
-        "Name": "Solana"
+        "Name": "LTC"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3491,9 +3486,9 @@
       "Id": 15,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "TRX",
         "QuoteAsset": "USDT",
-        "Name": "TetherUS"
+        "Name": "TRX"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3705,9 +3700,9 @@
       "Id": 16,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "DAI",
         "QuoteAsset": "USDT",
-        "Name": "BNB"
+        "Name": "DAI"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -3919,9 +3914,9 @@
       "Id": 17,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "AVAX",
         "QuoteAsset": "USDT",
-        "Name": "BUSD"
+        "Name": "AVAX"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -4133,9 +4128,9 @@
       "Id": 18,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "UNI",
         "QuoteAsset": "USDT",
-        "Name": "Cardano"
+        "Name": "UNI"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -4347,9 +4342,9 @@
       "Id": 19,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "LINK",
         "QuoteAsset": "USDT",
-        "Name": "Doge Coin"
+        "Name": "LINK"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -4561,9 +4556,9 @@
       "Id": 20,
       "Coin": {
         "Image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
-        "BaseAsset": "SOL",
+        "BaseAsset": "ATOM",
         "QuoteAsset": "USDT",
-        "Name": "Polygon"
+        "Name": "ATOM"
       },
       "EntryPrice": 11911.48,
       "CurrentPrice": 11911.48,
@@ -4795,31 +4790,31 @@
           "interval": "30m"
         }
       ],
-      "totalEntryPrice":"350.49",
-      "assets":[
+      "totalEntryPrice": "350.49",
+      "assets": [
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive":true
+      "isActive": true
     },
     {
       "name": "Test Bot",
@@ -4843,33 +4838,34 @@
           "interval": "30m"
         }
       ],
-      "totalEntryPrice":"350.49",
-      "assets":[
+      "totalEntryPrice": "350.49",
+      "assets": [
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive":false
+      "isActive": false
     }
   ],
+
   "Backtest": [
     {
       "name": "Test Backtest",
@@ -5730,4 +5726,15 @@
     }
 
   ]
+
+  "Settings": {
+    "email": "berk@hypance.com",
+    "telegramToken": "5155431848:AAEloUrGxV90epvgF31XegNmwI9oTljQYXw",
+    "password": "123456",
+    "telegramChannelId": "-723963123",
+    "phone": "5555555555",
+    "newPassword": "berk",
+    "confirmNewPassword": "berk"
+  }
+
 }
