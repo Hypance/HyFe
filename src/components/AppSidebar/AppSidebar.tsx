@@ -78,9 +78,6 @@ export const AppSidebar: React.FC = () => (
     <Nav.Item>
       <Nav.Link as={NavLink} to="/trades"><span className='icon-trades me-3'></span>Trades</Nav.Link>
     </Nav.Item>
-    <Nav.Item>
-      <Nav.Link as={NavLink} to="/portfolios"><span className='icon-portfolios me-3'></span>Portfolios</Nav.Link>
-    </Nav.Item>
     <h5 className='ovw'>OTHER</h5>
     <Nav.Item>
       <Nav.Link as={NavLink} to="/settings"><span className='icon-settings me-3'></span>Settings</Nav.Link>
