@@ -1,110 +1,94 @@
-[![npm version](https://badge.fury.io/js/cra-template-typescript-redux.svg)](https://badge.fury.io/js/cra-template-typescript-redux)
-[![Action status](https://github.com/alexandr-g/cra-template-typescript-redux/workflows/CI/badge.svg?branch=master)](https://github.com/alexandr-g/cra-template-typescript-redux/actions)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-![npm downloads](https://img.shields.io/npm/dm/cra-template-typescript-redux)
+# Dashboard
+![Cüzdan Bilgileri](./readme/assets.png)
 
-# A quick start Redux + TypeScript Create React App template
+Sağa kaydırıldığı zaman 
+**Total Assets Value** Kulanıcının cüzdanındaki toplam para
 
-An opinionated quick start [Create React App](https://github.com/facebook/create-react-app) (CRA) _template_ with configured **Redux**, **TypeScript**, **React Router**, **Enzyme** and custom **ESlint** configuration.
+**All Time Profit** Kulanıcının toplam karı
 
-Original Create React App README available [here](./README_CRA.md)
+**30 Days Profit** Kulanıcının 30 gün toplam karı
 
-## Usage
+**7 Days Profit** Kulanıcının 7 gün toplam karı
 
-```bash
-npx create-react-app your-project-name --template typescript-redux
-```
+**24 Hours Profit** Kulanıcının 24 saat toplam karı
 
-Or
+## Transactions
+![Son İşlem Bilgileri](./readme/transactions.png)
 
-```bash
-yarn create react-app your-project-name --template typescript-redux
-```
+Kulanıcının son 10 işlemini gösterir. 
+**View All** butonuna tıklandığında Transaction sayfasına gider.(Transactions sayfası yapılacak. Open Trades sayfasının benzeri olacak)
 
-`npx` command installs the most recent stable version of CRA from npm.
+Coin ismi,İkon, Poziyonu Tipi**(LONG-SHORT)**, İşlem Tarihi, Kar Oranı, Pozisyona girilen tutar.
 
-`--template` parameter points to this template, note that `cra-template-` prefix is omitted.
+## Favorites Coins
+![Favorites Coins](./readme/fav-coin.png)
 
-## Motivation
+Kullanıcının favoriye aldığı coinleri gösterir. Yeni kullancılılara default olarak üç coin atar.
 
-You know the pain. You start a new project from scratch and need to configure it again and again. It needs routing, ok you setup Router, then you need Redux - ok, oh 😩 Redux boilerplate is taking so much time to type. Wait... what if you could have all the tools you want just from the beginning? I want to focus on building amazing projects and not spending hours configuring. That's why I've created this template. It's here for you to use.
+Coin adı, Resmi, Coinin anlık değeri, Son 24 içindeki yükseliş/düşüş oranı
 
-## Available Scripts
+## Open Trades
+![Open Trades](./readme/open-trades.png)
 
-In the project directory, you can run:
+Kullanıcının işlemde olan coinlerini listeler.
 
-- `yarn start` - runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Coin ikon, adı, işleme girdiği andaki fiyat, Son fiyat, kar oranı, Graph
 
-- `yarn test` - launches the test runner in the interactive watch mode.
+**View All Open Trades** butonuna tıkladığı zaman Open Trades sayfasına gidecek.
 
-- `yarn build` - builds the app for production to the `build` folder.
 
-- `yarn eject` - exposes content of `react-script` package
+# Markets
+![Markets](./readme/markets.png)
 
-- `yarn lint` - lints project files according to eslint rules, see below. Typical use case: continuous integration environments, Travis, CircleCI, etc.
+Websocket ile bilgileri Binance Futures API'dan alacak. Sadece görseldeki alanlar olacak. ***Change'de 1h-4h-24h olacak.***
 
-- `yarn fix` - same as `yarn lint`, but also fixes errors, when possible. Typical use case: local development environment, git hooks.
+# Strategies
+![Strategies](./readme/Strategies.png)
 
-Due to CRA template limitations (we can change only `scripts` and `dependencies` inside generated `package.json`) all configuration is done by adding config files where possible. Also no `devDependencies` for now, sorry.
+Sayfada infinity-scroll ile strategyler yüklenecek.
 
-## Redux configuration
+**Delete** butonuna basıldığı zaman popup açılacak. Mesaj olarak ***Bu stratejiyi silmek istediğinize emin misiniz?*** çıkacak. Ok ve Cancel butonları olacak. Seçime göre ilgili strateejiyi silecek veya iptal edecek.
 
-The template provides basic Redux configuration with [feature based](https://redux.js.org/style-guide/style-guide/#structure-files-as-feature-folders-or-ducks) folder structure. You can use [Redux devtools browser extension](http://extension.remotedev.io/). Sample feature included in `src/features` folder, note technology agnostic `features` folder name. Based on Redux maintainers recommendation.
+**Edit** butonuna basıldığı zaman CreateStrategy sayfası açılacak ama inputlar dolu olarak gelecek.
 
-## Testing
+![Strategies](./readme/edit-strategy.png)
 
-Testing is done with [Enzyme](https://airbnb.io/enzyme/).
+Başlıkda Edit Strategy yazacak. Altta yer alan butonda ise Save Changes yazacak.
 
-## [Prettier](https://prettier.io/)
+# Create Strategy
 
-I added `prettier` to force consistent formatting. Don't like trailing semicolons? Feel free to [tweak prettier rules](https://prettier.io/docs/en/configuration.html) inside `.prettierrc` file to match your code style.
+![Create Strategy](./readme/create-strategy.png)
 
-## Styles/CSS/Styling
+Create Strategy sayfasında Create butonuna tıklandığı zaman alert verecek. ***Stratejiniz başarılı bir şekilde oluşturuldu*** veya ***Strateji kaydedilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin veya sistem yöneticisi ile iletişime geçin.***
 
-Just for the styling purpose of the example app, I used [Materialize](https://materializecss.com/). The template is shipped with the Materialize by default. I want to make sure that this template is style agnostic so you can plugin any CSS-in-JS or whatever library/framework you want to use for styles on your own.
+Overview alanında girilen inputlar alt alta şekilde listelenecek.
 
-### How to remove materialize
+# Bot
 
-In order to remove Materialize [MaterializeCSS](https://materializecss.com/) navigate to the `public` folder, open `index.html` and remove following CDN link in the `<head>` lines 18-22:
+![Bot](./readme/bot-list.png)
 
-```html
-<!--Import materialize.css-->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-/>
-```
+Sayfada infinity-scroll ile botlar yüklenecek.
 
-Remove or adjust all the `classNames` related to the Materialize and feel free to use your own styling.
+Sağ-üst alanda yer alan butona basıldığı zaman
+- Detail
+- Bot aktif ise ***Passive*** değilse ***Active*** yazacak.
+- Delete butonuna basıldığı zaman popup açılacak. Mesaj olarak ***Bu botu silmek istediğinize emin misiniz?*** çıkacak. Ok ve Cancel butonları olacak. Seçime göre ilgili botu silecek veya iptal edecek.
 
-## Eslint configurations
+## Create Bot
+Bot oluşturulduktan sonra eğer işlem başarılı ise işlem başarılı diye uyarı verilecek ve bot listesine yönlendirilecek. Eğer işlem başarısız ise aynı sayfad kalacak.
 
-The template extends CRA ESLint rules with a custom set, tailored for the reasonable and clean development process.
 
-Eslint rules are commented for your convenience feel free to tweak or remove them inside `.eslintrc`. No judgment.
+# Bot
 
-## Testing template locally
+![Bot](./readme/backtest-list.png)
 
-To test the output of your template locally run
+Sayfada infinity-scroll ile backtestler yüklenecek.
 
-```bash
-npx create-react-app my-app --template file:/\path\to\file
-```
+Kutu içindeki sağ-üst alanda yer alan butona basıldığı zaman
+- Start Test - Stop Test
+- Detail
+- Delete butonuna basıldığı zaman popup açılacak. Mesaj olarak ***Bu testi silmek istediğinize emin misiniz?*** çıkacak. Ok ve Cancel butonları olacak. Seçime göre ilgili testi silecek veya iptal edecek.
 
-## How to create custom Create React App (CRA) templates
-
-I created a step by step guide on how to create your own templates.
-
-[View on Medium](https://medium.com/@alexgrischuk/how-to-create-custom-create-react-app-cra-templates-73a5196edeb)
-
-[View on personal blog](https://grischuk.de/how-to-create-custom-create-react-app-cra-templates)
-
-[View on dev.to](https://dev.to/alexandrg/how-to-create-custom-create-react-app-cra-templates-3nca)
-
-## My other templates
-
-[A light weight Create React App template with Recoil for state management](https://github.com/alexandr-g/cra-template-recoil)
-
-## Thank you
-
-I hope this template will be helpful for you and you will love using it 🖤
+## Create Backtest
+Create Bot'un aynısı olacak. 
+Test oluşturulduktan sonra eğer işlem başarılı ise işlem başarılı diye uyarı verilecek ve backtest listesine yönlendirilecek. Eğer işlem başarısız ise aynı sayfada kalacak.
