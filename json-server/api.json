@@ -143,6 +143,16 @@
       "value": "5"
     }
   ],
+  "GetOrderSignal": [
+    {
+      "text": "LONG",
+      "value": "LONG"
+    },
+    {
+      "text": "SHORT",
+      "value": "SHORT"
+    }
+  ],
   "GetIndicators": [
     {
       "text": "RSI",
@@ -259,6 +269,28 @@
       "interval": "0",
       "orderSignal": "2",
       "id": 1
+    },
+    {
+      "name": "TEST",
+      "description": "Strategy Description",
+      "indicator": "4",
+      "period": 15,
+      "provision": "5",
+      "value": "30",
+      "interval": "2",
+      "orderSignal": "SHORT",
+      "id": 2
+    },
+    {
+      "name": "TEST",
+      "description": "Strategy Description",
+      "indicator": "4",
+      "period": 15,
+      "provision": "5",
+      "value": "30",
+      "interval": "2",
+      "orderSignal": "SHORT",
+      "id": 3
     }
   ],
   "GetMyStrategies": [
@@ -483,6 +515,22 @@
       ],
       "formation": "3",
       "id": 6
+    },
+    {
+      "predefinedMarket": "1",
+      "priceStrategy": "1",
+      "tradeType": "0",
+      "trendStrategy": "1",
+      "name": "BOT",
+      "description": "Bot Description",
+      "assets": [
+        "2"
+      ],
+      "strategy": [
+        "30"
+      ],
+      "formation": "3",
+      "id": 7
     }
   ],
   "Trades": [
@@ -4865,7 +4913,6 @@
       "isActive": false
     }
   ],
-
   "Backtest": [
     {
       "name": "Test Backtest",
@@ -4889,31 +4936,31 @@
           "interval": "30m"
         }
       ],
-      "totalEntryPrice":"350.49",
-      "assets":[
+      "totalEntryPrice": "350.49",
+      "assets": [
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive":true
+      "isActive": true
     },
     {
       "name": "Test Bot",
@@ -4937,31 +4984,31 @@
           "interval": "30m"
         }
       ],
-      "totalEntryPrice":"350.49",
-      "assets":[
+      "totalEntryPrice": "350.49",
+      "assets": [
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         },
         {
-          "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive":false
+      "isActive": false
     }
   ],
   "BacktestDetail": [
@@ -5649,84 +5696,81 @@
         }
       ]
     }
-
   ],
   "Transactions": [
     {
-      "id":1,
-      "orderSignal":"Buy",
-      "date":"22 August 2022,19.32 PM",
+      "id": 1,
+      "orderSignal": "Buy",
+      "date": "22 August 2022,19.32 PM",
       "coin": {
         "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
         "abbreviation": "BTC",
         "name": "Bitcoin",
-        "value1":0.0231,
-        "value2":498.36
-      }    
+        "value1": 0.0231,
+        "value2": 498.36
+      }
     },
     {
-      "id":2,
-      "orderSignal":"Buy",
-      "date":"22 August 2022,19.32 PM",
+      "id": 2,
+      "orderSignal": "Buy",
+      "date": "22 August 2022,19.32 PM",
       "coin": {
         "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
         "abbreviation": "BTC",
         "name": "Bitcoin",
-        "value1":0.0231,
-        "value2":498.36
-      }    
+        "value1": 0.0231,
+        "value2": 498.36
+      }
     },
     {
-      "id":3,
-      "orderSignal":"Buy",
-      "date":"22 August 2022,19.32 PM",
+      "id": 3,
+      "orderSignal": "Buy",
+      "date": "22 August 2022,19.32 PM",
       "coin": {
         "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
         "abbreviation": "BTC",
         "name": "Bitcoin",
-        "value1":0.0231,
-        "value2":498.36
-      }    
+        "value1": 0.0231,
+        "value2": 498.36
+      }
     },
     {
-      "id":4,
-      "orderSignal":"Buy",
-      "date":"22 August 2022,19.32 PM",
+      "id": 4,
+      "orderSignal": "Buy",
+      "date": "22 August 2022,19.32 PM",
       "coin": {
         "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
         "abbreviation": "BTC",
         "name": "Bitcoin",
-        "value1":0.0231,
-        "value2":498.36
-      }    
+        "value1": 0.0231,
+        "value2": 498.36
+      }
     },
     {
-      "id":5,
-      "orderSignal":"Sell",
-      "date":"22 August 2022,19.32 PM",
+      "id": 5,
+      "orderSignal": "Sell",
+      "date": "22 August 2022,19.32 PM",
       "coin": {
         "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/ETH.png",
         "abbreviation": "ETH",
         "name": "Etherium",
-        "value1":-0.0231,
-        "value2":498.36
-      }    
+        "value1": -0.0231,
+        "value2": 498.36
+      }
     },
     {
-      "id":6,
-      "orderSignal":"Buy",
-      "date":"22 August 2022,19.32 PM",
+      "id": 6,
+      "orderSignal": "Buy",
+      "date": "22 August 2022,19.32 PM",
       "coin": {
         "image": "https://raw.githubusercontent.com/balthazar/cryptoicons-cdn/master/images/BTC.png",
         "abbreviation": "BTC",
         "name": "Bitcoin",
-        "value1":0.0231,
-        "value2":498.36
-      }    
+        "value1": 0.0231,
+        "value2": 498.36
+      }
     }
-
-  ]
-
+  ],
   "Settings": {
     "email": "berk@hypance.com",
     "telegramToken": "5155431848:AAEloUrGxV90epvgF31XegNmwI9oTljQYXw",
@@ -5736,5 +5780,4 @@
     "newPassword": "berk",
     "confirmNewPassword": "berk"
   }
-
 }
