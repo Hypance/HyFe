@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import { Col, Container, Row, Table } from 'react-bootstrap'
 import Graph from '../../components/AppGraph/AppGraph'
 import { useFetchActivePositions } from '../../hooks/useFetchActivePositions'
@@ -276,10 +276,10 @@ export const Dashboard: React.FC = () => {
 
                     {/* TRANSACTIONS CARD */}
                     <Col sm={5} >
-                        <div className='border p-4 rounded-4 '>
+                        <div className='border p-4 rounded-4 position-relative'>
                             <h2 className='page-title'>Transactions</h2>
                             <hr className='mt-2' />
-                            <div className='transactions-card'>
+                            <div className='transactions-card '>
 
                                 {transactions.map((item) =>
                                 (
@@ -301,11 +301,9 @@ export const Dashboard: React.FC = () => {
                                         <hr className='mt-2' />
 
                                     </div>
-
-
                                 ))}
-
                             </div>
+                                <button type="button" className="btn btn-light position-absolute bottom-0" style={{left: '21px',right: '20px',margin: '10px 0'}}>View All</button>
 
 
 
