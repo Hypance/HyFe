@@ -75,12 +75,26 @@ Sağ-üst alanda yer alan butona basıldığı zaman
 - Delete butonuna basıldığı zaman popup açılacak. Mesaj olarak ***Bu botu silmek istediğinize emin misiniz?*** çıkacak. Ok ve Cancel butonları olacak. Seçime göre ilgili botu silecek veya iptal edecek.
 
 ## Create Bot
-Bot oluşturulduktan sonra eğer işlem başarılı ise işlem başarılı diye uyarı verilecek ve bot listesine yönlendirilecek. Eğer işlem başarısız ise aynı sayfad kalacak.
+Bot oluşturulduktan sonra eğer işlem başarılı ise işlem başarılı diye uyarı verilecek ve bot listesine yönlendirilecek. Eğer işlem başarısız ise aynı sayfada kalacak.
 
+## Bot Detail
+![Bot Detail](./readme/bot-detail.png)
+### Sol Alan
+- ***RSI-EMA-MACD LONG BOT*** yazan kısım bot name olacak.
+- Altındaki kutuda bot descripiton olacak.
+### Sağ Alan
+- Total Profit: kullanıcının botu oluşturduğu günden mevcut güne kadar olan kar/zarar oranı
+- Order Statistics : bot girdiği işlemlerin kaçında kar/zarar ile pozisyon kapattı.
+- Supported Exchange : Bot hangi piyasalarda kullanılabiliyor. (Şu an için sadece Binance Futures)
+- Quoted Asset : Bot hangi stabil coin ile işlem yapıyor (Şu an için sadece USDT)
+- Used Strategies : Botun kullandığı stratejiler
+- Tick Interval : Bot hangi zaman diliminde işlem yapıyor.
+- Risk Profile : Botun kar/zarar işlem sayısına göre kaybetme riski yazacak.(Bununla ilgili hesap yapacağız)
+- Base Assets : Bot hangi coinlerde işlem yapıyor.
 
-# Bot
+# Backtest History
 
-![Bot](./readme/backtest-list.png)
+![Backtes History](./readme/backtest-list.png)
 
 Sayfada infinity-scroll ile backtestler yüklenecek.
 
@@ -92,3 +106,16 @@ Kutu içindeki sağ-üst alanda yer alan butona basıldığı zaman
 ## Create Backtest
 Create Bot'un aynısı olacak. 
 Test oluşturulduktan sonra eğer işlem başarılı ise işlem başarılı diye uyarı verilecek ve backtest listesine yönlendirilecek. Eğer işlem başarısız ise aynı sayfada kalacak.
+
+## Backtest Detail
+### Tablo halinde listelenecek.
+- Rank : Veritabanında gelen Id değeri olacak
+- Coin Name : İşlem yapan coin adı
+- Entry Price : İşleme girdiği fiyat
+- Close Price : İşlemden çıktığı fiyat
+- Profit : İşlemden elde ettğiğ kar/zarar oranı
+- Pozisyon : LONG veya SHORT
+
+# Güncellenecek Alanlar
+- Create Strategy sayfasına **Order Signal** yazan kısmı **Side** olacak
+- Create Bot sayfasında Formation pasif hale getirilecek
