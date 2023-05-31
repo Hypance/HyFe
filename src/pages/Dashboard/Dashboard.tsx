@@ -1,12 +1,13 @@
-import React, { Fragment, useState } from 'react'
-import { Col, Container, Row, Table } from 'react-bootstrap'
+import React, { Fragment, useEffect, useState } from 'react'
+import { Button, Col, Container, Row, Table, Pagination, Stack } from 'react-bootstrap'
 import Graph from '../../components/AppGraph/AppGraph'
-import { useFetchActivePositions } from '../../hooks/useFetchActivePositions'
 import { useFetchDashboardAssets } from '../../hooks/useFetchDashboardAssets'
 import { useFetchTransactions } from '../../hooks/useFetchTransactions'
 import icon from '../../images/icons/closed-eye.svg'
-
-
+import Example from '../../components/AppGraph/AppGraph'
+import { useFetchOpenTrades } from '../../hooks/useFetchOpenTrades'
+import { tradeServiceOpenTrade } from '../../services/tradeService/interfaces'
+import { Link } from 'react-router-dom'
 //Burayı düzelt api jsona profit ekle burayı sil
 const DashboardGrap: any = [
     {
@@ -228,9 +229,31 @@ const DashboardGrap: any = [
 export const Dashboard: React.FC = () => {
     const myAssets = useFetchDashboardAssets()
     const transactions = useFetchTransactions()
-    const activePositions = useFetchActivePositions()
-   
-    console.log(activePositions)
+    const [currentPage, setCurrentPage] = useState(0)
+    const data = useFetchOpenTrades()
+    const perPage = 10
+    const pages: any = []
+    function initPagination() {
+        for (let number = 0; number < data.length / perPage; number++) {
+            pages.push(
+                <Pagination.Item
+                    key={number}
+                    active={number === currentPage}
+                    onClick={() => setCurrentPage(number)}
+                >
+                    {number + 1}
+                </Pagination.Item>
+            )
+        }
+    }
+    initPagination()
+    const [openTrades, setOpenTrades] = useState<tradeServiceOpenTrade[]>(data)
+    useEffect(() => {
+        setOpenTrades(
+            data.slice(currentPage * perPage, (currentPage + 1) * perPage)
+        )
+    }, [currentPage, data])
+
     return (
         <Fragment>
 
@@ -313,29 +336,72 @@ export const Dashboard: React.FC = () => {
 
 
 
+
+                    </Col>
+                </Row>
+                
+                <Stack
+                    direction="horizontal"
+                    className="align-items-center justify-content-between pb-5 pt-5"
+                >
+                    <h2>Open Trades</h2>
                     
-                </Col>
-            </Row>
+                    <Link to="/trades" className=" btn btn-primary btn-md text-white">View All Open Trades</Link>
+                </Stack>
+                <Row className='mt-4'>
+                    <Table hover size="sm" className="p-5">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Coin</th>
+                                <th className="text-center">Entry Price</th>
+                                <th className="text-center">Current Price</th>
+                                <th className="text-center">Profit %</th>
+                                <th className="text-center">Graph</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {openTrades.slice(0, 3).map((item) => {
 
-            <h2 className='page-title mt-4' >Active Postions</h2>
-            <Row className='mt-4'>
-                <Table hover size="sm" className="p-5">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th className="text-center">Last Price</th>
-                            <th className="text-center">24h Change</th>
-                            <th className="text-center">Market Cap</th>
-                            <th className="text-center">Volume (24h)</th>
-                            <th>Graph?</th>
-                        </tr>
-                    </thead>
+                                return (
 
-                </Table>
+                                    <tr key={item.Id}>
+                                        <td>{item.Id}</td>
+                                        <td>
+                                            <img width={25} src={item.Coin.Image} alt={item.Coin.Name} />{' '}
+                                            <b>{item.Coin.BaseAsset}</b> {item.Coin.Name}
+                                        </td>
+                                        <td className="text-center">{item.EntryPrice}</td>
+                                        <td className="text-center">{item.CurrentPrice}</td>
+                                        <td
+                                            className={`text-center ${item.Profit > 0 ? 'text-success' : 'text-danger'
+                                                }`}
+                                        >
+                                            {' '}
+                                            <b>{item.Profit}</b>{' '}
+                                        </td>
+                                        <td className="text-center cursor-none">
+                                            <Example
+                                                color={item.Profit > 0 ? '#09BD3C' : '#FD5353'}
+                                                stock={item.Graph}
+                                                width={150}
+                                                height={36}
+                                            />
+                                        </td>
+                                        <td>
+                                            <Button type="button" variant="light">
+                                                <span className="material-symbols-outlined">more_vert</span>
+                                            </Button>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </Table>
 
-            </Row>
-        </Container>
+                </Row>
+            </Container>
 
         </Fragment >
     )
