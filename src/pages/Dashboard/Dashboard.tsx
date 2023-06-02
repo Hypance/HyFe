@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import { Col, Container, Row, Table } from 'react-bootstrap'
 import Graph from '../../components/AppGraph/AppGraph'
 import { useFetchActivePositions } from '../../hooks/useFetchActivePositions'
