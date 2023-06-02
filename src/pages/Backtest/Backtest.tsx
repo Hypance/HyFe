@@ -3,9 +3,6 @@ import {
   Col,
   Row,
   Stack,
-  OverlayTrigger,
-  Popover,
-  PopoverBody,
   Modal,
   Form,
   Dropdown,
@@ -27,19 +24,19 @@ export const Backtest: React.FC = () => {
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
 
-  const popover = (
-    <Popover id="popover-basic">
-      <PopoverBody>
-        <NavLink className="" to="/backtest-detail">
-          Backtest Detail
-        </NavLink>{' '}
-        <br />
-      </PopoverBody>
-      <PopoverBody>
-        <h6 onClick={handleModalShow}>Show Modal</h6>
-      </PopoverBody>
-    </Popover>
-  )
+  // const popover = (
+  //   <Popover id="popover-basic">
+  //     <PopoverBody>
+  //       <NavLink className="" to="/backtest-detail">
+  //         Backtest Detail
+  //       </NavLink>{' '}
+  //       <br />
+  //     </PopoverBody>
+  //     <PopoverBody>
+  //       <h6 onClick={handleModalShow}>Show Modal</h6>
+  //     </PopoverBody>
+  //   </Popover>
+  // )
 
   return (
     <Fragment>
