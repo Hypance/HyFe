@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
-import { Col, Row, Stack } from 'react-bootstrap'
+import { Col, Dropdown, Row, Stack } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { useFetchMyBots } from '../../hooks/useFetchMyBots'
-import InfiniteScroll from 'react-infinite-scroll-component';
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 export const Bot: React.FC = () => {
   const { myBots, fetchMoreData, hasMore } = useFetchMyBots()
@@ -33,9 +33,23 @@ export const Bot: React.FC = () => {
                   className="align-items-center justify-content-between"
                 >
                   <h5>{item.name}</h5>
-                  <button className="btn btn-outline" type="button">
-                    ...
-                  </button>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      variant="primary"
+                      id="dropdown-basic"
+                      className="no-caret"
+                    >
+                      ...
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">Action 1</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Action 2</Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">
+                        Something else
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
                 </Stack>
                 <hr className="my-2" />
                 <p className="small">{item.description}</p>
@@ -46,7 +60,8 @@ export const Bot: React.FC = () => {
                   <Stack>
                     <ul className="p-0 ps-3 fs-6">
                       {item.strategies.map((strategy) => (
-                        <li key={strategy.id}>
+                        // unique bir strategy id lazım
+                        <li key={strategy.name}>
                           {strategy.name} <span>{strategy.interval}</span>
                         </li>
                       ))}
@@ -94,12 +109,7 @@ export const Bot: React.FC = () => {
                     </div>
                     <div className="ps-3">
                       {item.assets.map((asset, index) => (
-                        <img
-                          key={index}
-                          src={asset.image}
-                          alt=""
-                          width={25}
-                        />
+                        <img key={index} src={asset.image} alt="" width={25} />
                       ))}
                     </div>
                   </Stack>

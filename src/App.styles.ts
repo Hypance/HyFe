@@ -31,4 +31,9 @@ p{
 }
 .strategy-card-buttons{
 }
+
+//Dropdown buttondaki oku yok ediyor.
+.no-caret::after{
+    display: none;
+}
 `
