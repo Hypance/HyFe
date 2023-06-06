@@ -32,5 +32,5 @@ export const useFetchMyBots = () => {
     setPage(nextPage);
   };
 
-  return { myBots, fetchMoreData, hasMore };
+  return { myBots, fetchMoreData, hasMore, setMyBots };
 };
