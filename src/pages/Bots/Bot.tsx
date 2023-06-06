@@ -1,11 +1,16 @@
 import React, { Fragment } from 'react'
 import { Col, Dropdown, Row, Stack } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { useFetchMyBots } from '../../hooks/useFetchMyBots'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import { AppPathes } from '../../components/AppRouter/interfaces'
 
 export const Bot: React.FC = () => {
-  const { myBots, fetchMoreData, hasMore } = useFetchMyBots()
+  const { myBots, fetchMoreData, hasMore, setMyBots } = useFetchMyBots()
+
+  const deleteBot = (botId:number) => {
+    setMyBots(myBots.filter(bot => bot.id !== botId));
+  };
 
   return (
     <Fragment>
@@ -32,7 +37,7 @@ export const Bot: React.FC = () => {
                   direction="horizontal"
                   className="align-items-center justify-content-between"
                 >
-                  <h5>{item.name}</h5>
+                  <h5>{item.name} {item.id}</h5>
                   <Dropdown>
                     <Dropdown.Toggle
                       variant="primary"
@@ -43,11 +48,10 @@ export const Bot: React.FC = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Action 1</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Action 2</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        Something else
-                      </Dropdown.Item>
+                      <Dropdown.Item as={Link} to={`${AppPathes.BOTDETAILS}/${item.id}`}>Bot Details</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Aktif Passive Toggle</Dropdown.Item>
+                      <Dropdown.Item onClick={() => deleteBot(item.id)}>Delete</Dropdown.Item>
+                      <Dropdown.Item as={Link} to="/bot-details/123">Go to Bot Details for Bot 123</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </Stack>
