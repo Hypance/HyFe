@@ -11,6 +11,7 @@ import { Settings } from '../../pages/Settings'
 import { Logout } from '../../pages/Logout'
 import { CreateStrategy } from '../../pages/Strategy/CreateStrategy'
 import { Market } from '../../pages/Market/Market'
+import { BotDetails }   from '../../pages/Bots/BotDetails'
 
 export interface IRoute {
   path: string
@@ -22,6 +23,7 @@ export enum AppPathes {
   STRATEGY = '/strategy',
   CREATESTRATEGY = '/create-strategy',
   BOT = '/bot',
+  BOTDETAILS = '/bot-details',
   CREATEBOT = '/create-bot',
   BACKTEST = '/backtest',
   BACKTESTDETAIL = '/backtest-detail',
@@ -45,4 +47,6 @@ export const publicRoutes: IRoute[] = [
   { path: AppPathes.PORTFOLIOS, element: Portfolios },
   { path: AppPathes.SETTINGS, element: Settings },
   { path: AppPathes.LOGOUT, element: Logout },
+
+  { path: `${AppPathes.BOTDETAILS}/:botId`, element: BotDetails  }
 ]
