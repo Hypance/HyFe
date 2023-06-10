@@ -44,7 +44,14 @@ export const botServiceCreateBot = async (
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(BOT_URLS.GET_BOT);
   };
+
   export const botServiceGetAllMyBots = async ()
   : Promise<AxiosResponse<IMyBot[]>> => {
     return $api.get(BOT_URLS.GET_MYBOTS);
   };
+
+  export const botServiceDeleteMyBot = async (botId:number)
+  :Promise<AxiosResponse<IMyBot[]>> => {
+    return $api.delete(`${BOT_URLS.GET_MYBOTS}/${botId}`);
+  };
+
