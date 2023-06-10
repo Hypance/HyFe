@@ -7,7 +7,7 @@ export const useFetchMyBots = () => {
   const [myBots, setMyBots] = useState<IMyBot[]>([]);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(0);
-  const PAGE_SIZE = 6;
+  const PAGE_SIZE = 9;
 
   useEffect(() => {
     const fetchBots = async () => {
