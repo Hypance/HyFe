@@ -1,15 +1,51 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { Col, Dropdown, Row, Stack } from 'react-bootstrap'
 import { Link, NavLink } from 'react-router-dom'
 import { useFetchMyBots } from '../../hooks/useFetchMyBots'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { AppPathes } from '../../components/AppRouter/interfaces'
+import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch'
+import { botServiceDeleteMyBot, botServiceUpdateBotStatus } from '../../services/botService/botService'
 
 export const Bot: React.FC = () => {
   const { myBots, fetchMoreData, hasMore, setMyBots } = useFetchMyBots()
 
-  const deleteBot = (botId:number) => {
-    setMyBots(myBots.filter(bot => bot.id !== botId));
+  useEffect(() => {
+    if (myBots.length > 1) {
+      console.log(myBots[1].isActive)
+    }
+  }, [myBots])
+
+  const deleteBot = async (id: any) => {
+    try {
+      await botServiceDeleteMyBot(id)
+      // Remove the bot from the state
+      setMyBots(myBots.filter((bot) => bot.id !== id))
+    } catch (error) {
+      // Handle deletion error
+      console.error('Failed to delete bot: ', error)
+    }
+  }
+
+  const handleBotToggle = async (botId:any, newIsActive:any) => {
+    try {
+      // Botun durumunu API üzerinden güncelle
+      await botServiceUpdateBotStatus(botId, newIsActive);
+  
+      // Bot listesini güncelle
+      const updatedBots = myBots.map((bot) => {
+        if (bot.id === botId) {
+          return { ...bot, isActive: newIsActive }; // Güncellenmiş bot durumu ile yeni bir bot nesnesi oluştur
+        } else {
+          return bot; // Diğer botlar aynı kalır
+        }
+      });
+  
+      setMyBots(updatedBots); // Yeni bot listesi ile state'i güncelle
+    } catch (error) {
+      console.error('Failed to update bot status: ', error);
+      // Burada hata durumunu işlemek için daha fazla eylem ekleyebilirsiniz.
+    }
   };
 
   return (
@@ -37,7 +73,9 @@ export const Bot: React.FC = () => {
                   direction="horizontal"
                   className="align-items-center justify-content-between"
                 >
-                  <h5>{item.name} {item.id}</h5>
+                  <h5>
+                    {item.name} {item.id}
+                  </h5>
                   <Dropdown>
                     <Dropdown.Toggle
                       variant="primary"
@@ -48,10 +86,22 @@ export const Bot: React.FC = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item as={Link} to={`${AppPathes.BOTDETAILS}/${item.id}`}>Bot Details</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Aktif Passive Toggle</Dropdown.Item>
-                      <Dropdown.Item onClick={() => deleteBot(item.id)}>Delete</Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/bot-details/123">Go to Bot Details for Bot 123</Dropdown.Item>
+                      <Dropdown.Item
+                        as={Link}
+                        to={`${AppPathes.BOTDETAILS}/${item.id}`}
+                      >
+                        Bot Details
+                      </Dropdown.Item>
+                      <ToggleSwitch
+                        botId={item.id}
+                        isActive={item.isActive}
+                        onToggle={(newIsActive) =>
+                          handleBotToggle(item.id, newIsActive)
+                        }
+                      />
+                      <Dropdown.Item onClick={() => deleteBot(item.id)}>
+                        Delete
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </Stack>
@@ -118,6 +168,7 @@ export const Bot: React.FC = () => {
                     </div>
                   </Stack>
                   <button
+                  onClick={() => handleBotToggle(item.id, !item.isActive)}
                     className={`btn btn-sm px-4 py-2  ${
                       item.isActive
                         ? 'btn-active-emphasis'

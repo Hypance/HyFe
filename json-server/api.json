@@ -4819,54 +4819,6 @@
     {
       "name": "Test Bot",
       "description": "Test bot description.",
-      "id": 1,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
       "id": 2,
       "strategies": [
         {
@@ -4910,7 +4862,7 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive": false
+      "isActive": true
     },
     {
       "name": "Test Bot",
@@ -4959,7 +4911,8 @@
         }
       ],
       "isActive": true
-    },{
+    },
+    {
       "name": "Test Bot",
       "description": "Test bot description.",
       "id": 4,
@@ -5053,7 +5006,7 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive": true
+      "isActive": false
     },
     {
       "name": "Test Bot",
@@ -5101,7 +5054,7 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive": true
+      "isActive": false
     },
     {
       "name": "Test Bot",
@@ -5149,7 +5102,7 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive": true
+      "isActive": false
     },
     {
       "name": "Test Bot",
@@ -5197,7 +5150,7 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive": true
+      "isActive": false
     },
     {
       "name": "Test Bot",
@@ -5245,391 +5198,7 @@
           "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
         }
       ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 10,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 11,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 12,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 13,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 14,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 16,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 17,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 18,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
+      "isActive": false
     }
   ],
   "Backtest": [

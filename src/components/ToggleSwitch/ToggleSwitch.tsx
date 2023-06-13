@@ -1,32 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-
-// interface ToggleSwitchProps {
-//     isActive: boolean;
-//     onToggle: (newIsActive: boolean) => void;
-// }
-
-const ToggleSwitch: React.FC = () => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // event.stopPropagation();
-    setIsChecked(!isChecked);
-  };
+import { botServiceUpdateBotStatus } from '../../services/botService/botService';
 
 
-  const handleDivClick = (event: React.MouseEvent<HTMLDivElement>) => {
+interface ToggleSwitchProps {
+    botId: number;
+    isActive: boolean;
+    onToggle: (newIsActive: boolean) => void;
+}
+
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ botId, isActive, onToggle }) => {
+  const [isChecked, setIsChecked] = useState(isActive);
+
+  useEffect(() => {
+    setIsChecked(isActive);
+  }, [isActive]);
+
+  const handleDivClick = async (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
     setIsChecked(!isChecked);
+
+    try {
+      const response = await botServiceUpdateBotStatus(botId, !isChecked);
+      if (response.data && response.data.isActive !== isChecked) {
+        onToggle(response.data.isActive);
+      }
+    } catch (error) {
+      console.error('Failed to update bot status', error);
+    }
   };
 
   return (
     <div onClick={handleDivClick} className='bg-danger'>
       <Form.Check 
-        type="switch"       
+        type="switch"
         label={isChecked ? "Active" : "Passive"}
         checked={isChecked}
-       
       />
     </div>
   );
