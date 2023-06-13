@@ -55,3 +55,12 @@ export const botServiceCreateBot = async (
     return $api.delete(`${BOT_URLS.GET_MYBOTS}/${botId}`);
   };
 
+  export const botServiceUpdateBotStatus = async (botId: number, isActive: boolean)
+  :Promise<AxiosResponse<{isActive: boolean}>> => {
+    return $api.patch(`${BOT_URLS.GET_MYBOTS}/${botId}`, {
+      isActive: isActive
+    });
+
+  }
+
+
