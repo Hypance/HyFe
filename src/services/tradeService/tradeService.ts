@@ -19,7 +19,7 @@ export const tradeServiceGetAllOpenTrades = async (updateTrade: (tradeId: number
 
     ws.onmessage = function(event: any) {
       const obj = JSON.parse(event.data);
-      console.log(obj.E, result);
+      // console.log(obj.E, result);
 
       if (obj.e) {
         const object = obj as KlineHeader;
