@@ -5,6 +5,7 @@ import { useFetchMyBots } from '../../hooks/useFetchMyBots'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { AppPathes } from '../../components/AppRouter/interfaces'
 import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch'
+import Confirm from '../../helpers/confirm-box'
 import { botServiceDeleteMyBot, botServiceUpdateBotStatus } from '../../services/botService/botService'
 
 export const Bot: React.FC = () => {
@@ -16,22 +17,34 @@ export const Bot: React.FC = () => {
     }
   }, [myBots])
 
-  const deleteBot = async (id: any) => {
-    try {
-      await botServiceDeleteMyBot(id)
-      // Remove the bot from the state
-      setMyBots(myBots.filter((bot) => bot.id !== id))
-    } catch (error) {
-      // Handle deletion error
-      console.error('Failed to delete bot: ', error)
-    }
-  }
+  const handleConfirm = (id: any) => {
+    // Onaylandığında yapılacak işlemler
+    console.log('Onaylandı');
+    botServiceDeleteMyBot(id)
+    // Remove the bot from the state
+    setMyBots(myBots.filter((bot) => bot.id !== id))
+  };
 
-  const handleBotToggle = async (botId:any, newIsActive:any) => {
+  // const deleteBot = async (id: any) => {
+  //   try {
+  //     setAlertDialog(ConfirmBox("Test", "Deneme İçerik", showDialog, setDialog(showDialog)));
+  //     //if (confirm('Are you sure you want to delete this item?')) {
+
+  //     // await botServiceDeleteMyBot(id)
+  //     // // Remove the bot from the state
+  //     // setMyBots(myBots.filter((bot) => bot.id !== id))
+  //     //}
+  //   } catch (error) {
+  //     // Handle deletion error
+  //     console.error('Failed to delete bot: ', error)
+  //   }
+  // }
+
+  const handleBotToggle = async (botId: any, newIsActive: any) => {
     try {
       // Botun durumunu API üzerinden güncelle
       await botServiceUpdateBotStatus(botId, newIsActive);
-  
+
       // Bot listesini güncelle
       const updatedBots = myBots.map((bot) => {
         if (bot.id === botId) {
@@ -40,7 +53,7 @@ export const Bot: React.FC = () => {
           return bot; // Diğer botlar aynı kalır
         }
       });
-  
+
       setMyBots(updatedBots); // Yeni bot listesi ile state'i güncelle
     } catch (error) {
       console.error('Failed to update bot status: ', error);
@@ -59,7 +72,7 @@ export const Bot: React.FC = () => {
           Create Bot
         </NavLink>
       </Stack>
-      <InfiniteScroll
+      <InfiniteScroll className='container-fluid'
         dataLength={myBots.length}
         next={fetchMoreData}
         hasMore={hasMore}
@@ -99,9 +112,10 @@ export const Bot: React.FC = () => {
                           handleBotToggle(item.id, newIsActive)
                         }
                       />
-                      <Dropdown.Item onClick={() => deleteBot(item.id)}>
-                        Delete
-                      </Dropdown.Item>
+                      <Confirm
+                        message="Bu öğeyi silmek istediğinize emin misiniz?"
+                        onConfirm={()=>handleConfirm(item.id)}
+                      />
                     </Dropdown.Menu>
                   </Dropdown>
                 </Stack>
@@ -168,20 +182,18 @@ export const Bot: React.FC = () => {
                     </div>
                   </Stack>
                   <button
-                  onClick={() => handleBotToggle(item.id, !item.isActive)}
-                    className={`btn btn-sm px-4 py-2  ${
-                      item.isActive
+                    onClick={() => handleBotToggle(item.id, !item.isActive)}
+                    className={`btn btn-sm px-4 py-2  ${item.isActive
                         ? 'btn-active-emphasis'
                         : 'btn-passive-emphasis'
-                    }`}
+                      }`}
                     type="button"
                   >
                     <span
-                      className={`rounded-circle p-1  me-2  ${
-                        item.isActive
+                      className={`rounded-circle p-1  me-2  ${item.isActive
                           ? 'bg-active-emphasis'
                           : 'bg-passive-emphasis'
-                      }`}
+                        }`}
                     ></span>
                     {item.isActive ? 'Active' : 'Passive'}
                   </button>
