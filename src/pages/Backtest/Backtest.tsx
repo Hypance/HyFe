@@ -12,9 +12,10 @@ import { useFetchBacktest } from '../../hooks/useFetchBacktest'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 export const Backtest: React.FC = () => {
-  const myBacktests = useFetchBacktest()
+  const {backtests, fetchMoreData, hasMore} = useFetchBacktest()
   const [showModal, setShowModal] = useState(false)
 
   const handleModalClose = () => setShowModal(false)
@@ -24,19 +25,7 @@ export const Backtest: React.FC = () => {
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
 
-  // const popover = (
-  //   <Popover id="popover-basic">
-  //     <PopoverBody>
-  //       <NavLink className="" to="/backtest-detail">
-  //         Backtest Detail
-  //       </NavLink>{' '}
-  //       <br />
-  //     </PopoverBody>
-  //     <PopoverBody>
-  //       <h6 onClick={handleModalShow}>Show Modal</h6>
-  //     </PopoverBody>
-  //   </Popover>
-  // )
+
 
   return (
     <Fragment>
@@ -46,8 +35,13 @@ export const Backtest: React.FC = () => {
       >
         <h1>Backtest</h1>
       </Stack>
+      <InfiniteScroll
+        dataLength={backtests.length}
+        next={fetchMoreData}
+        hasMore={hasMore}
+        loader={ <h4>Loading...</h4>}>          
       <Row>
-        {myBacktests.map((item) => (
+        {backtests.map((item) => (
           <Col md={6} xxl={4} className="p-3">
             <div className="border p-4 rounded-4">
               <Stack
@@ -161,6 +155,9 @@ export const Backtest: React.FC = () => {
           </Col>
         ))}
       </Row>
+
+      </InfiniteScroll>
+     
       <Modal centered show={showModal} onHide={handleModalClose}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
