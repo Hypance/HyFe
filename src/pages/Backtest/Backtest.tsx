@@ -1,21 +1,14 @@
 import React, { Fragment, useState } from 'react'
-import {
-  Col,
-  Row,
-  Stack,
-  Modal,
-  Form,
-  Dropdown,
-} from 'react-bootstrap'
+import { Col, Row, Stack, Modal, Form, Dropdown } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { useFetchBacktest } from '../../hooks/useFetchBacktest'
-import DropdownButton from 'react-bootstrap/DropdownButton'
+// import DropdownButton from 'react-bootstrap/DropdownButton'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 export const Backtest: React.FC = () => {
-  const {backtests, fetchMoreData, hasMore} = useFetchBacktest()
+  const { backtests, fetchMoreData, hasMore } = useFetchBacktest()
   const [showModal, setShowModal] = useState(false)
 
   const handleModalClose = () => setShowModal(false)
@@ -24,8 +17,6 @@ export const Backtest: React.FC = () => {
   //Data PICKER
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
-
-
 
   return (
     <Fragment>
@@ -39,125 +30,128 @@ export const Backtest: React.FC = () => {
         dataLength={backtests.length}
         next={fetchMoreData}
         hasMore={hasMore}
-        loader={ <h4>Loading...</h4>}>          
-      <Row>
-        {backtests.map((item) => (
-          <Col md={6} xxl={4} className="p-3">
-            <div className="border p-4 rounded-4">
-              <Stack
-                direction="horizontal"
-                className="align-items-center justify-content-between"
-              >
-                <h5>{item.name}</h5>
-                <DropdownButton id="dropdown-basic-button" title="...">
-                  <Dropdown.Item href="#/action-1">
-                    <NavLink
-                      className="text-decoration-none"
-                      to="/backtest-detail"
+        loader={<h4>Loading...</h4>}
+      >
+        <Row>
+          {backtests.map((item) => (
+            <Col md={6} xxl={4} className="p-3">
+              <div className="border p-4 rounded-4">
+                <Stack
+                  direction="horizontal"
+                  className="align-items-center justify-content-between"
+                >
+                  <h5>{item.name}</h5>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      variant="primary"
+                      id="dropdown-basic"
+                      className="no-caret"
                     >
-                      Backtest Detail
-                    </NavLink>
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={handleModalShow} href="#/action-2">
-                    Create Backtest
-                  </Dropdown.Item>
-                </DropdownButton>
-                {/* <OverlayTrigger
-                  trigger={['focus']}
-                  overlay={popover}
-                  placement="top-start"
-                >
-                  <button className="btn btn-outline" type="button">
-                    ...
-                  </button>
-                </OverlayTrigger> */}
-              </Stack>
-              <hr className="my-2" />
-              <p className="small">{item.description}</p>
-              <Stack
-                direction="horizontal"
-                className="align-items-start justify-content-between"
-              >
-                <Stack>
-                  <ul className="p-0 ps-3 fs-6">
-                    {item.strategies.map((strategy) => (
-                      <li>
-                        {strategy.name} <span>{strategy.interval}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Stack>
-                <Stack direction="horizontal">
-                  <Stack direction="vertical" className="me-3">
-                    <img
-                      src="https://cdn.cryptoprijzen.com/wp-content/uploads/binance-futures-review.png"
-                      alt=""
-                      width={100}
-                    />
-                    <img
-                      src="https://cdn.cryptoprijzen.com/wp-content/uploads/binance-futures-review.png"
-                      alt=""
-                      width={100}
-                    />
-                  </Stack>
-                  <Stack direction="vertical" className="text-end">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: item.totalEntryPrice
-                          .toString()
-                          .replace(
-                            /(\d*\.)/,
-                            '<span class="fs-3 fw-semibold">$</span><span class="fs-3 fw-semibold">$1</span>'
-                          ),
-                      }}
-                    ></div>
-                    <div>+1,3%</div>
-                  </Stack>
-                </Stack>
-              </Stack>
-              <Stack
-                direction="horizontal"
-                className="align-items-center justify-content-between"
-              >
-                <Stack direction="horizontal">
-                  <div className="border-end text-center fs-6 pe-3 lh-1">
-                    Selected
-                    <span className="fw-bold fs-3 d-block">
-                      {item.assets.length}
-                    </span>
-                    Coins
-                  </div>
-                  <div className="ps-3">
-                    {item.assets.map((asset) => (
-                      <img src={asset.image} width={25} />
-                    ))}
-                  </div>
-                </Stack>
-                <button
-                  className={`btn btn-sm px-4 py-2  ${
-                    item.isActive
-                      ? 'btn-active-emphasis'
-                      : 'btn-passive-emphasis'
-                  }`}
-                  type="button"
-                >
-                  <span
-                    className={`rounded-circle p-1  me-2  ${
-                      item.isActive
-                        ? 'bg-active-emphasis'
-                        : 'bg-passive-emphasis'
-                    }`}
-                  ></span>
-                  {item.isActive ? 'Active' : 'Passive'}
-                </button>
-              </Stack>
-            </div>
-          </Col>
-        ))}
-      </Row>
+                      ...
+                    </Dropdown.Toggle>
 
+                    <Dropdown.Menu>
+                      <Dropdown.Item onClick={handleModalShow}>
+                        Start Test Stop Test
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as={NavLink}
+                        to="/backtest-detail"
+                        className="text-decoration-none"
+                      >
+                        Backtest Detail
+                      </Dropdown.Item>
+                      <Dropdown.Item onClick={handleModalShow}>
+                        Delete12
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Stack>
+                <hr className="my-2" />
+                <p className="small">{item.description}</p>
+                <Stack
+                  direction="horizontal"
+                  className="align-items-start justify-content-between"
+                >
+                  <Stack>
+                    <ul className="p-0 ps-3 fs-6">
+                      {item.strategies.map((strategy) => (
+                        <li>
+                          {strategy.name} <span>{strategy.interval}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Stack>
+                  <Stack direction="horizontal">
+                    <Stack direction="vertical" className="me-3">
+                      <img
+                        src="https://cdn.cryptoprijzen.com/wp-content/uploads/binance-futures-review.png"
+                        alt=""
+                        width={100}
+                      />
+                      <img
+                        src="https://cdn.cryptoprijzen.com/wp-content/uploads/binance-futures-review.png"
+                        alt=""
+                        width={100}
+                      />
+                    </Stack>
+                    <Stack direction="vertical" className="text-end">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.totalEntryPrice
+                            .toString()
+                            .replace(
+                              /(\d*\.)/,
+                              '<span class="fs-3 fw-semibold">$</span><span class="fs-3 fw-semibold">$1</span>'
+                            ),
+                        }}
+                      ></div>
+                      <div>+1,3%</div>
+                    </Stack>
+                  </Stack>
+                </Stack>
+                <Stack
+                  direction="horizontal"
+                  className="align-items-center justify-content-between"
+                >
+                  <Stack direction="horizontal">
+                    <div className="border-end text-center fs-6 pe-3 lh-1">
+                      Selected
+                      <span className="fw-bold fs-3 d-block">
+                        {item.assets.length}
+                      </span>
+                      Coins
+                    </div>
+                    <div className="ps-3">
+                      {item.assets.map((asset) => (
+                        <img src={asset.image} width={25} />
+                      ))}
+                    </div>
+                  </Stack>
+                  <button
+                    className={`btn btn-sm px-4 py-2  ${
+                      item.isActive
+                        ? 'btn-active-emphasis'
+                        : 'btn-passive-emphasis'
+                    }`}
+                    type="button"
+                  >
+                    <span
+                      className={`rounded-circle p-1  me-2  ${
+                        item.isActive
+                          ? 'bg-active-emphasis'
+                          : 'bg-passive-emphasis'
+                      }`}
+                    ></span>
+                    {item.isActive ? 'Active' : 'Passive'}
+                  </button>
+                </Stack>
+              </div>
+            </Col>
+          ))}
+        </Row>
       </InfiniteScroll>
-     
+
       <Modal centered show={showModal} onHide={handleModalClose}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
