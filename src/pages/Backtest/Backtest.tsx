@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react'
 import { Col, Row, Stack, Modal, Form, Dropdown } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useFetchBacktest } from '../../hooks/useFetchBacktest'
-// import DropdownButton from 'react-bootstrap/DropdownButton'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch'
+import { AppPathes } from '../../components/AppRouter/interfaces'
 import {
   backtestServiceDeleteMyBacktest,
   backtestServiceUpdateBacktestStatus,
@@ -96,9 +96,8 @@ export const Backtest: React.FC = () => {
                         updateItemStatus={backtestServiceUpdateBacktestStatus}
                       />
                       <Dropdown.Item
-                        as={NavLink}
-                        to="/backtest-detail"
-                        className="text-decoration-none"
+                        as={Link}
+                        to={`${AppPathes.BACKTESTDETAILS}/${item.id}`}                        
                       >
                         Backtest Detail
                       </Dropdown.Item>
