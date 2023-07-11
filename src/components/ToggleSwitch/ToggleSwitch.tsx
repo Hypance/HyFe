@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
-import { botServiceUpdateBotStatus } from '../../services/botService/botService';
-
 
 interface ToggleSwitchProps {
-    botId: number;
+    itemId: number;
     isActive: boolean;
     onToggle: (newIsActive: boolean) => void;
+    updateItemStatus: (id: number, status: boolean) => Promise<any>;
 }
 
-const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ botId, isActive, onToggle }) => {
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ itemId, isActive, onToggle, updateItemStatus }) => {
   const [isChecked, setIsChecked] = useState(isActive);
 
   useEffect(() => {
@@ -21,12 +20,12 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ botId, isActive, onToggle }
     setIsChecked(!isChecked);
 
     try {
-      const response = await botServiceUpdateBotStatus(botId, !isChecked);
+      const response = await updateItemStatus(itemId, !isChecked);
       if (response.data && response.data.isActive !== isChecked) {
         onToggle(response.data.isActive);
       }
     } catch (error) {
-      console.error('Failed to update bot status', error);
+      console.error('Failed to update item status', error);
     }
   };
 
