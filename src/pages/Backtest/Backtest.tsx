@@ -6,9 +6,11 @@ import { useFetchBacktest } from '../../hooks/useFetchBacktest'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch'
+import { backtestServiceDeleteMyBacktest, backtestServiceUpdateBacktestStatus } from '../../services/backtestService/backtestService'
 
 export const Backtest: React.FC = () => {
-  const { backtests, fetchMoreData, hasMore } = useFetchBacktest()
+  const { backtests, fetchMoreData, hasMore, setBacktests } = useFetchBacktest()
   const [showModal, setShowModal] = useState(false)
 
   const handleModalClose = () => setShowModal(false)
@@ -17,6 +19,35 @@ export const Backtest: React.FC = () => {
   //Data PICKER
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
+
+  const deleteBacktest = async (id: any) => {
+    try {
+      await backtestServiceDeleteMyBacktest(id)
+      // Remove the bot from the state
+      setBacktests(backtests.filter((backtest) => backtest.id !== id))
+    } catch (error) {
+      // Handle deletion error
+      console.error('Failed to delete bot: ', error)
+    }
+  }
+
+  const handleBacktestToggle = async (backtestId: any, newIsActive: any) => {
+    try {
+      await backtestServiceUpdateBacktestStatus(backtestId, newIsActive)
+
+      const updatedBacktests = backtests.map((backtest) => {
+        if (backtest.id === backtestId) {
+          return { ...backtest, isActive: newIsActive }
+        } else {
+          return backtest
+        }
+      })
+
+      setBacktests(updatedBacktests)
+    } catch (error) {
+      console.log('Failed to update backtest status: ', error)
+    }
+  }
 
   return (
     <Fragment>
@@ -40,7 +71,9 @@ export const Backtest: React.FC = () => {
                   direction="horizontal"
                   className="align-items-center justify-content-between"
                 >
-                  <h5>{item.name}</h5>
+                  <h5>
+                    {item.name} {item.id}
+                  </h5>
                   <Dropdown>
                     <Dropdown.Toggle
                       variant="primary"
@@ -51,9 +84,14 @@ export const Backtest: React.FC = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item onClick={handleModalShow}>
-                        Start Test Stop Test
-                      </Dropdown.Item>
+                    <ToggleSwitch
+              itemId={item.id}
+              isActive={item.isActive}
+              onToggle={(newIsActive) =>
+                handleBacktestToggle(item.id, newIsActive)
+              }
+              updateItemStatus={backtestServiceUpdateBacktestStatus}
+            />
                       <Dropdown.Item
                         as={NavLink}
                         to="/backtest-detail"
@@ -61,7 +99,7 @@ export const Backtest: React.FC = () => {
                       >
                         Backtest Detail
                       </Dropdown.Item>
-                      <Dropdown.Item onClick={handleModalShow}>
+                      <Dropdown.Item onClick={() => deleteBacktest(item.id)}>
                         Delete12
                       </Dropdown.Item>
                     </Dropdown.Menu>
