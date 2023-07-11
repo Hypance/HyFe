@@ -7,7 +7,10 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch'
-import { backtestServiceDeleteMyBacktest, backtestServiceUpdateBacktestStatus } from '../../services/backtestService/backtestService'
+import {
+  backtestServiceDeleteMyBacktest,
+  backtestServiceUpdateBacktestStatus,
+} from '../../services/backtestService/backtestService'
 
 export const Backtest: React.FC = () => {
   const { backtests, fetchMoreData, hasMore, setBacktests } = useFetchBacktest()
@@ -84,14 +87,14 @@ export const Backtest: React.FC = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                    <ToggleSwitch
-              itemId={item.id}
-              isActive={item.isActive}
-              onToggle={(newIsActive) =>
-                handleBacktestToggle(item.id, newIsActive)
-              }
-              updateItemStatus={backtestServiceUpdateBacktestStatus}
-            />
+                      <ToggleSwitch
+                        itemId={item.id}
+                        isActive={item.isActive}
+                        onToggle={(newIsActive) =>
+                          handleBacktestToggle(item.id, newIsActive)
+                        }
+                        updateItemStatus={backtestServiceUpdateBacktestStatus}
+                      />
                       <Dropdown.Item
                         as={NavLink}
                         to="/backtest-detail"
