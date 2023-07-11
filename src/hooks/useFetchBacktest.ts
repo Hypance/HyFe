@@ -35,5 +35,5 @@ export const useFetchBacktest = () => {
     setPage(nextPage);
   };
 
-  return { backtests, fetchMoreData, hasMore };
+  return { backtests, fetchMoreData, hasMore, setBacktests };
 }
