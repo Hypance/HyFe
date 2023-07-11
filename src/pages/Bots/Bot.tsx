@@ -5,7 +5,10 @@ import { useFetchMyBots } from '../../hooks/useFetchMyBots'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { AppPathes } from '../../components/AppRouter/interfaces'
 import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch'
-import { botServiceDeleteMyBot, botServiceUpdateBotStatus } from '../../services/botService/botService'
+import {
+  botServiceDeleteMyBot,
+  botServiceUpdateBotStatus,
+} from '../../services/botService/botService'
 
 export const Bot: React.FC = () => {
   const { myBots, fetchMoreData, hasMore, setMyBots } = useFetchMyBots()
@@ -27,26 +30,26 @@ export const Bot: React.FC = () => {
     }
   }
 
-  const handleBotToggle = async (botId:any, newIsActive:any) => {
+  const handleBotToggle = async (botId: any, newIsActive: any) => {
     try {
       // Botun durumunu API üzerinden güncelle
-      await botServiceUpdateBotStatus(botId, newIsActive);
-  
+      await botServiceUpdateBotStatus(botId, newIsActive)
+
       // Bot listesini güncelle
       const updatedBots = myBots.map((bot) => {
         if (bot.id === botId) {
-          return { ...bot, isActive: newIsActive }; // Güncellenmiş bot durumu ile yeni bir bot nesnesi oluştur
+          return { ...bot, isActive: newIsActive } // Güncellenmiş bot durumu ile yeni bir bot nesnesi oluştur
         } else {
-          return bot; // Diğer botlar aynı kalır
+          return bot // Diğer botlar aynı kalır
         }
-      });
-  
-      setMyBots(updatedBots); // Yeni bot listesi ile state'i güncelle
+      })
+
+      setMyBots(updatedBots) // Yeni bot listesi ile state'i güncelle
     } catch (error) {
-      console.error('Failed to update bot status: ', error);
+      console.error('Failed to update bot status: ', error)
       // Burada hata durumunu işlemek için daha fazla eylem ekleyebilirsiniz.
     }
-  };
+  }
 
   return (
     <Fragment>
@@ -93,11 +96,12 @@ export const Bot: React.FC = () => {
                         Bot Details
                       </Dropdown.Item>
                       <ToggleSwitch
-                        botId={item.id}
+                        itemId={item.id}
                         isActive={item.isActive}
                         onToggle={(newIsActive) =>
                           handleBotToggle(item.id, newIsActive)
                         }
+                        updateItemStatus={botServiceUpdateBotStatus}
                       />
                       <Dropdown.Item onClick={() => deleteBot(item.id)}>
                         Delete
@@ -168,7 +172,7 @@ export const Bot: React.FC = () => {
                     </div>
                   </Stack>
                   <button
-                  onClick={() => handleBotToggle(item.id, !item.isActive)}
+                    onClick={() => handleBotToggle(item.id, !item.isActive)}
                     className={`btn btn-sm px-4 py-2  ${
                       item.isActive
                         ? 'btn-active-emphasis'
