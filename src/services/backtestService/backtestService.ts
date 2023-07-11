@@ -1,4 +1,4 @@
-import { Axios, AxiosResponse } from "axios";
+import {  AxiosResponse } from "axios";
 import $api from "../../http";
 import { BACKTEST_URLS } from "../../mock/constants";
 import { backtestServiceBacktestDetail, IBacktest } from "./interfaces";
