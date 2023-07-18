@@ -5,6 +5,9 @@ import { useFetchActivePositions } from '../../hooks/useFetchActivePositions'
 import { useFetchDashboardAssets } from '../../hooks/useFetchDashboardAssets'
 import { useFetchTransactions } from '../../hooks/useFetchTransactions'
 import icon from '../../images/icons/closed-eye.svg'
+import AssetsSlider from '../../components/AssetsSlider/AssetsSlider'
+
+
 
 
 //Burayı düzelt api jsona profit ekle burayı sil
@@ -238,6 +241,7 @@ export const Dashboard: React.FC = () => {
                 <h2 className='page-title'>My Assets </h2>
                 <Row className='mt-4'>
                     <Col sm={7} className="">
+                        <AssetsSlider></AssetsSlider>
                         <Row>
                             <Col sm={5}>
                                 <div className='border p-4 rounded-4'>

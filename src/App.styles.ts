@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 
+/* html {
+    font-size: calc(15px + 0.390625vw);
+} */
+
 :root{
     --title-color: #062046;
     --comment-color: #757575;
@@ -37,3 +41,5 @@ p{
     display: none;
 }
 `
+
+

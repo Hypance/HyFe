@@ -4,6 +4,9 @@ import { AppNavbar } from './components/AppNavbar/AppNavbar'
 import AppRouter from './components/AppRouter/AppRouter'
 import { AppSidebar } from './components/AppSidebar/AppSidebar'
 import { GlobalStyle } from './App.styles';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 const App: React.FC = () => {
