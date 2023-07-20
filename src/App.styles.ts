@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 
+/* html {
+    font-size: calc(15px + 0.390625vw);
+} */
+
 :root{
     --title-color: #062046;
     --comment-color: #757575;
@@ -31,4 +35,18 @@ p{
 }
 .strategy-card-buttons{
 }
+
+//Dropdown buttondaki oku yok ediyor.
+.no-caret::after{
+    display: none;
+}
+
+//Slider
+
+.slick-slide > div {
+    margin: 0 10px;
+}
+
 `
+
+

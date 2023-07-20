@@ -5,7 +5,7 @@ import { backtestServiceBacktestDetail } from '../../services/backtestService/in
 
 
 
-export const BacktestDetail: React.FC = () => {
+export const BacktestDetails: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(0)
   const data = useFetchBacktestDetail()
   const perPage = 10

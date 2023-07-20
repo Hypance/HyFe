@@ -3,7 +3,7 @@ import { Strategy } from '../../pages/Strategy/Strategy'
 import { Bot } from '../../pages/Bots/Bot'
 import { CreateBot } from '../../pages/Bots/CreateBot'
 import { Backtest } from '../../pages/Backtest/Backtest'
-import { BacktestDetail } from '../../pages/Backtest/BacktestDetail'
+import { BacktestDetails } from '../../pages/Backtest/BacktestDetails'
 import { Alerts } from '../../pages/Alerts/Alerts'
 import { Trades } from '../../pages/Trades/Trades'
 import { Portfolios } from '../../pages/Portfolios'
@@ -11,6 +11,7 @@ import { Settings } from '../../pages/Settings'
 import { Logout } from '../../pages/Logout'
 import { CreateStrategy } from '../../pages/Strategy/CreateStrategy'
 import { Market } from '../../pages/Market/Market'
+import { BotDetails }   from '../../pages/Bots/BotDetails'
 
 export interface IRoute {
   path: string
@@ -22,9 +23,10 @@ export enum AppPathes {
   STRATEGY = '/strategy',
   CREATESTRATEGY = '/create-strategy',
   BOT = '/bot',
+  BOTDETAILS = '/bot-details',
   CREATEBOT = '/create-bot',
   BACKTEST = '/backtest',
-  BACKTESTDETAIL = '/backtest-detail',
+  BACKTESTDETAILS = '/backtest-details',
   ALERTS = '/alerts',
   TRADES = '/trades',
   PORTFOLIOS = '/portfolios',
@@ -38,11 +40,14 @@ export const publicRoutes: IRoute[] = [
   { path: AppPathes.CREATESTRATEGY, element: CreateStrategy },
   { path: AppPathes.BOT, element: Bot },
   { path: AppPathes.CREATEBOT, element: CreateBot },
-  { path: AppPathes.BACKTEST, element: Backtest },
-  { path: AppPathes.BACKTESTDETAIL, element: BacktestDetail },
+  { path: AppPathes.BACKTEST, element: Backtest },  
   { path: AppPathes.ALERTS, element: Alerts },
   { path: AppPathes.TRADES, element: Trades },
   { path: AppPathes.PORTFOLIOS, element: Portfolios },
   { path: AppPathes.SETTINGS, element: Settings },
   { path: AppPathes.LOGOUT, element: Logout },
+
+  { path: `${AppPathes.BOTDETAILS}/:botId`, element: BotDetails  },
+  { path: `${AppPathes.BACKTESTDETAILS}/:backtestId`, element: BacktestDetails  }
+
 ]

@@ -1,23 +1,22 @@
 import React, { Fragment } from 'react'
 import { Container } from 'react-bootstrap'
-import Websocket from './websocket'
+
+import MarketTable from './MarketTable'
 
 
-export const Market: React.FC = () => {
-  return (
-    <Fragment>
-      <Container fluid>
-        <h2 className='page-title'>Market</h2>
+export const Market: React.FC = () => (
+  <Fragment>
+    <Container fluid>
+      <h2 className='page-title'>Market</h2>
 
-        <Websocket></Websocket>
-        
-        
+      <MarketTable></MarketTable>
 
 
 
-      </Container>
-      
-     
-    </Fragment>
-  )
-}
+
+
+    </Container>
+
+
+  </Fragment>
+)

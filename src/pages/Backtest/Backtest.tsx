@@ -1,23 +1,19 @@
 import React, { Fragment, useState } from 'react'
-import {
-  Col,
-  Row,
-  Stack,
-  OverlayTrigger,
-  Popover,
-  PopoverBody,
-  Modal,
-  Form,
-  Dropdown,
-} from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { Col, Row, Stack, Modal, Form, Dropdown } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { useFetchBacktest } from '../../hooks/useFetchBacktest'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import InfiniteScroll from 'react-infinite-scroll-component'
+import ToggleSwitch from '../../components/ToggleSwitch/ToggleSwitch'
+import { AppPathes } from '../../components/AppRouter/interfaces'
+import {
+  backtestServiceDeleteMyBacktest,
+  backtestServiceUpdateBacktestStatus,
+} from '../../services/backtestService/backtestService'
 
 export const Backtest: React.FC = () => {
-  const myBacktests = useFetchBacktest()
+  const { backtests, fetchMoreData, hasMore, setBacktests } = useFetchBacktest()
   const [showModal, setShowModal] = useState(false)
 
   const handleModalClose = () => setShowModal(false)
@@ -27,19 +23,34 @@ export const Backtest: React.FC = () => {
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
 
-  const popover = (
-    <Popover id="popover-basic">
-      <PopoverBody>
-        <NavLink className="" to="/backtest-detail">
-          Backtest Detail
-        </NavLink>{' '}
-        <br />
-      </PopoverBody>
-      <PopoverBody>
-        <h6 onClick={handleModalShow}>Show Modal</h6>
-      </PopoverBody>
-    </Popover>
-  )
+  const deleteBacktest = async (id: any) => {
+    try {
+      await backtestServiceDeleteMyBacktest(id)
+      // Remove the bot from the state
+      setBacktests(backtests.filter((backtest) => backtest.id !== id))
+    } catch (error) {
+      // Handle deletion error
+      console.error('Failed to delete bot: ', error)
+    }
+  }
+
+  const handleBacktestToggle = async (backtestId: any, newIsActive: any) => {
+    try {
+      await backtestServiceUpdateBacktestStatus(backtestId, newIsActive)
+
+      const updatedBacktests = backtests.map((backtest) => {
+        if (backtest.id === backtestId) {
+          return { ...backtest, isActive: newIsActive }
+        } else {
+          return backtest
+        }
+      })
+
+      setBacktests(updatedBacktests)
+    } catch (error) {
+      console.log('Failed to update backtest status: ', error)
+    }
+  }
 
   return (
     <Fragment>
@@ -49,121 +60,138 @@ export const Backtest: React.FC = () => {
       >
         <h1>Backtest</h1>
       </Stack>
-      <Row>
-        {myBacktests.map((item) => (
-          <Col md={6} xxl={4} className="p-3">
-            <div className="border p-4 rounded-4">
-              <Stack
-                direction="horizontal"
-                className="align-items-center justify-content-between"
-              >
-                <h5>{item.name}</h5>
-                <DropdownButton id="dropdown-basic-button" title="...">
-                  <Dropdown.Item href="#/action-1">
-                    <NavLink
-                      className="text-decoration-none"
-                      to="/backtest-detail"
+      <InfiniteScroll
+        dataLength={backtests.length}
+        next={fetchMoreData}
+        hasMore={hasMore}
+        loader={<h4>Loading...</h4>}
+      >
+        <Row>
+          {backtests.map((item) => (
+            <Col md={6} xxl={4} className="p-3">
+              <div className="border p-4 rounded-4">
+                <Stack
+                  direction="horizontal"
+                  className="align-items-center justify-content-between"
+                >
+                  <h5>
+                    {item.name} {item.id}
+                  </h5>
+                  <Dropdown>
+                    <Dropdown.Toggle
+                      variant="primary"
+                      id="dropdown-basic"
+                      className="no-caret"
                     >
-                      Backtest Detail
-                    </NavLink>
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={handleModalShow} href="#/action-2">
-                    Create Backtest
-                  </Dropdown.Item>
-                </DropdownButton>
-                {/* <OverlayTrigger
-                  trigger={['focus']}
-                  overlay={popover}
-                  placement="top-start"
+                      ...
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <ToggleSwitch
+                        itemId={item.id}
+                        isActive={item.isActive}
+                        onToggle={(newIsActive) =>
+                          handleBacktestToggle(item.id, newIsActive)
+                        }
+                        updateItemStatus={backtestServiceUpdateBacktestStatus}
+                      />
+                      <Dropdown.Item
+                        as={Link}
+                        to={`${AppPathes.BACKTESTDETAILS}/${item.id}`}                        
+                      >
+                        Backtest Detail
+                      </Dropdown.Item>
+                      <Dropdown.Item onClick={() => deleteBacktest(item.id)}>
+                        Delete12
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Stack>
+                <hr className="my-2" />
+                <p className="small">{item.description}</p>
+                <Stack
+                  direction="horizontal"
+                  className="align-items-start justify-content-between"
                 >
-                  <button className="btn btn-outline" type="button">
-                    ...
-                  </button>
-                </OverlayTrigger> */}
-              </Stack>
-              <hr className="my-2" />
-              <p className="small">{item.description}</p>
-              <Stack
-                direction="horizontal"
-                className="align-items-start justify-content-between"
-              >
-                <Stack>
-                  <ul className="p-0 ps-3 fs-6">
-                    {item.strategies.map((strategy) => (
-                      <li>
-                        {strategy.name} <span>{strategy.interval}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Stack>
-                <Stack direction="horizontal">
-                  <Stack direction="vertical" className="me-3">
-                    <img
-                      src="https://cdn.cryptoprijzen.com/wp-content/uploads/binance-futures-review.png"
-                      alt=""
-                      width={100}
-                    />
-                    <img
-                      src="https://cdn.cryptoprijzen.com/wp-content/uploads/binance-futures-review.png"
-                      alt=""
-                      width={100}
-                    />
+                  <Stack>
+                    <ul className="p-0 ps-3 fs-6">
+                      {item.strategies.map((strategy) => (
+                        <li>
+                          {strategy.name} <span>{strategy.interval}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </Stack>
-                  <Stack direction="vertical" className="text-end">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: item.totalEntryPrice
-                          .toString()
-                          .replace(
-                            /(\d*\.)/,
-                            '<span class="fs-3 fw-semibold">$</span><span class="fs-3 fw-semibold">$1</span>'
-                          ),
-                      }}
-                    ></div>
-                    <div>+1,3%</div>
+                  <Stack direction="horizontal">
+                    <Stack direction="vertical" className="me-3">
+                      <img
+                        src="https://cdn.cryptoprijzen.com/wp-content/uploads/binance-futures-review.png"
+                        alt=""
+                        width={100}
+                      />
+                      <img
+                        src="https://cdn.cryptoprijzen.com/wp-content/uploads/binance-futures-review.png"
+                        alt=""
+                        width={100}
+                      />
+                    </Stack>
+                    <Stack direction="vertical" className="text-end">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.totalEntryPrice
+                            .toString()
+                            .replace(
+                              /(\d*\.)/,
+                              '<span class="fs-3 fw-semibold">$</span><span class="fs-3 fw-semibold">$1</span>'
+                            ),
+                        }}
+                      ></div>
+                      <div>+1,3%</div>
+                    </Stack>
                   </Stack>
                 </Stack>
-              </Stack>
-              <Stack
-                direction="horizontal"
-                className="align-items-center justify-content-between"
-              >
-                <Stack direction="horizontal">
-                  <div className="border-end text-center fs-6 pe-3 lh-1">
-                    Selected
-                    <span className="fw-bold fs-3 d-block">
-                      {item.assets.length}
-                    </span>
-                    Coins
-                  </div>
-                  <div className="ps-3">
-                    {item.assets.map((asset) => (
-                      <img src={asset.image} width={25} />
-                    ))}
-                  </div>
-                </Stack>
-                <button
-                  className={`btn btn-sm px-4 py-2  ${
-                    item.isActive
-                      ? 'btn-active-emphasis'
-                      : 'btn-passive-emphasis'
-                  }`}
-                  type="button"
+                <Stack
+                  direction="horizontal"
+                  className="align-items-center justify-content-between"
                 >
-                  <span
-                    className={`rounded-circle p-1  me-2  ${
+                  <Stack direction="horizontal">
+                    <div className="border-end text-center fs-6 pe-3 lh-1">
+                      Selected
+                      <span className="fw-bold fs-3 d-block">
+                        {item.assets.length}
+                      </span>
+                      Coins
+                    </div>
+                    <div className="ps-3">
+                      {item.assets.map((asset) => (
+                        <img src={asset.image} width={25} />
+                      ))}
+                    </div>
+                  </Stack>
+                  <button
+                    className={`btn btn-sm px-4 py-2  ${
                       item.isActive
-                        ? 'bg-active-emphasis'
-                        : 'bg-passive-emphasis'
+                        ? 'btn-active-emphasis'
+                        : 'btn-passive-emphasis'
                     }`}
-                  ></span>
-                  {item.isActive ? 'Active' : 'Passive'}
-                </button>
-              </Stack>
-            </div>
-          </Col>
-        ))}
-      </Row>
+                    type="button"
+                  >
+                    <span
+                      className={`rounded-circle p-1  me-2  ${
+                        item.isActive
+                          ? 'bg-active-emphasis'
+                          : 'bg-passive-emphasis'
+                      }`}
+                    ></span>
+                    {item.isActive ? 'Active' : 'Passive'}
+                  </button>
+                </Stack>
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </InfiniteScroll>
+
       <Modal centered show={showModal} onHide={handleModalClose}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
