@@ -229,139 +229,52 @@ const DashboardGrap: any = [
 ]
 
 export const Dashboard: React.FC = () => {
-    const myAssets = useFetchDashboardAssets()
-    const transactions = useFetchTransactions()
-    const [currentPage, setCurrentPage] = useState(0)
-    const data = useFetchOpenTrades()
-    const perPage = 10
-    const pages: any = []
-    function initPagination() {
-        for (let number = 0; number < data.length / perPage; number++) {
-            pages.push(
-                <Pagination.Item
-                    key={number}
-                    active={number === currentPage}
-                    onClick={() => setCurrentPage(number)}
-                >
-                    {number + 1}
-                </Pagination.Item>
-            )
-        }
-    }
-    initPagination()
-    const [openTrades, setOpenTrades] = useState<tradeServiceOpenTrade[]>(data)
-    useEffect(() => {
-        setOpenTrades(
-            data.slice(currentPage * perPage, (currentPage + 1) * perPage)
-        )
-    }, [currentPage, data])
-
-    return (
-        <Fragment>
-
-            <Container fluid>
-                <h2 className='page-title'>My Assets </h2>
-                <Row className='mt-4'>
-                    <Col sm={7} className="">
-                        <Row>
-                            <Col sm={5}>
-                                <div className='border p-4 rounded-4'>
-                                    <h1 className='card-title'>$3,4210.99 <img className='ms-2' width={40} src={icon} alt="" /></h1>
-                                    <p className='card-comment mt-2'>Total Assets Value</p>
-                                </div>
-                            </Col>
-                            <Col sm={5}>
-                                <div className='border p-4 rounded-4'>
-                                    <h1 className='card-title'>$1,1210.29 <img className='ms-2' width={40} src={icon} alt="" /></h1>
-                                    <p className='card-comment mt-2'>All Time Profit</p>
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            {myAssets.map((item) => (
-                                <Col sm={3}>
-
-                                    <div className='border p-4 rounded-4 mt-4'>
-                                        <h4 className='card-title'>0.047 BTC</h4>
-                                        <p className='card-comment mt-1'>$1.019.26</p>
-                                        <Graph stock={item.Graph} color={'#09BD3C'} width={150} height={100}></Graph>
-                                        <div className='d-flex mt-4 justify-content-center'>
-                                            <img className='my-auto' height={40} src={item.Coin.Image} alt="" />
-                                            <div >
-                                                <p className='card-title ms-3 fw-semibold'>{item.Coin.Name}</p>
-                                                <p className={`ms-3 ${item.Profit > 0 ? 'text-success' : 'text-danger'} fw-semibold`}>{DashboardGrap[0].Profit}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Col>
-                            ))}
-
-                        </Row>
-                    </Col>
   const myAssets = useFetchDashboardAssets()
   const transactions = useFetchTransactions()
-  const activePositions = useFetchActivePositions()
+  const [currentPage, setCurrentPage] = useState(0)
+  const data = useFetchOpenTrades()
+  const perPage = 10
+  const pages: any = []
+  function initPagination() {
+    for (let number = 0; number < data.length / perPage; number++) {
+      pages.push(
+        <Pagination.Item
+          key={number}
+          active={number === currentPage}
+          onClick={() => setCurrentPage(number)}
+        >
+          {number + 1}
+        </Pagination.Item>
+      )
+    }
+  }
+  initPagination()
+  const [openTrades, setOpenTrades] = useState<tradeServiceOpenTrade[]>(data)
+  useEffect(() => {
+    setOpenTrades(
+      data.slice(currentPage * perPage, (currentPage + 1) * perPage)
+    )
+  }, [currentPage, data])
 
-  console.log(activePositions)
   return (
     <Fragment>
       <Container fluid>
-        <h2 className="page-title">My Assets </h2>
-        <Row className="mt-4">
+        <h2 className='page-title'>My Assets </h2>
+        <Row className='mt-4'>
           <Col sm={7} className="">
-           
-              <AssetsSlider />
-          
-            {/* <Row>
-              <Col sm={5}>
-                <div className="border p-4 rounded-4">
-                  <h1 className="card-title">
-                    $3,4210.99{' '}
-                    <img className="ms-2" width={40} src={icon} alt="" />
-                  </h1>
-                  <p className="card-comment mt-2">Total Assets Value</p>
-                </div>
-              </Col>
-              <Col sm={5}>
-                <div className="border p-4 rounded-4">
-                  <h1 className="card-title">
-                    $1,1210.29{' '}
-                    <img className="ms-2" width={40} src={icon} alt="" />
-                  </h1>
-                  <p className="card-comment mt-2">All Time Profit</p>
-                </div>
-              </Col>
-            </Row> */}
+            <AssetsSlider />
             <Row>
               {myAssets.map((item) => (
                 <Col sm={4}>
-                  <div className="border p-4 rounded-4 mt-4">
-                    <h4 className="card-title">0.047 BTC</h4>
-                    <p className="card-comment mt-1">$1.019.26</p>
-                    <Graph
-                      stock={item.Graph}
-                      color={'#09BD3C'}
-                      width={150}
-                      height={100}
-                    ></Graph>
-                    <div className="d-flex mt-4 justify-content-center">
-                      <img
-                        className="my-auto"
-                        height={40}
-                        src={item.Coin.Image}
-                        alt=""
-                      />
+                  <div className='border p-4 rounded-4 mt-4'>
+                    <h4 className='card-title'>0.047 BTC</h4>
+                    <p className='card-comment mt-1'>$1.019.26</p>
+                    <Graph stock={item.Graph} color={'#09BD3C'} width={150} height={100}></Graph>
+                    <div className='d-flex mt-4 justify-content-center'>
+                      <img className='my-auto' height={40} src={item.Coin.Image} alt="" />
                       <div>
-                        <p className="card-title ms-3 fw-semibold">
-                          {item.Coin.Name}
-                        </p>
-                        <p
-                          className={`ms-3 ${
-                            item.Profit > 0 ? 'text-success' : 'text-danger'
-                          } fw-semibold`}
-                        >
-                          {DashboardGrap[0].Profit}
-                        </p>
+                        <p className='card-title ms-3 fw-semibold'>{item.Coin.Name}</p>
+                        <p className={`ms-3 ${item.Profit > 0 ? 'text-success' : 'text-danger'} fw-semibold`}>{DashboardGrap[0].Profit}</p>
                       </div>
                     </div>
                   </div>
@@ -369,176 +282,81 @@ export const Dashboard: React.FC = () => {
               ))}
             </Row>
           </Col>
-
-                    {/* TRANSACTIONS CARD */}
-                    <Col sm={5} >
-                        <div className='border p-4 rounded-4 '>
-                            <h2 className='page-title'>Transactions</h2>
-                            <hr className='mt-2' />
-                            <div className='transactions-card'>
-
-                                {transactions.map((item) =>
-                                (
-                                    <div>
-                                        <div className='mt-4 '>
-                                            <div className='d-flex '>
-                                                <img className='my-auto' height={40} src={item.coin.image} alt="" />
-                                                <div className='ms-3'>
-                                                    <p className='fw-semibold'>{`${item.orderSignal} ${item.coin.name}`}</p>
-                                                    <p className='card-comment'>{item.date}</p>
-
-                                                </div>
-                                                <div className='ms-auto'>
-                                                    <p className={`fw-semibold ${item.coin.value1 > 0 ? 'text-success' : 'text-danger'}`}>{item.coin.value1}</p>
-                                                    <p className='float-end card-comment'>{item.coin.value2}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr className='mt-2' />
-
-                                    </div>
-
-
-                                ))}
-
-                            </div>
-
-
-
-                        </div>
-
-
-
-
-                    </Col>
-                </Row>
-                
-                <Stack
-                    direction="horizontal"
-                    className="align-items-center justify-content-between pb-5 pt-5"
-                >
-                    <h2>Open Trades</h2>
-                    
-                    <Link to="/trades" className=" btn btn-primary btn-md text-white">View All Open Trades</Link>
-                </Stack>
-                <Row className='mt-4'>
-                    <Table hover size="sm" className="p-5">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Coin</th>
-                                <th className="text-center">Entry Price</th>
-                                <th className="text-center">Current Price</th>
-                                <th className="text-center">Profit %</th>
-                                <th className="text-center">Graph</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {openTrades.slice(0, 3).map((item) => {
-
-                                return (
-
-                                    <tr key={item.Id}>
-                                        <td>{item.Id}</td>
-                                        <td>
-                                            <img width={25} src={item.Coin.Image} alt={item.Coin.Name} />{' '}
-                                            <b>{item.Coin.BaseAsset}</b> {item.Coin.Name}
-                                        </td>
-                                        <td className="text-center">{item.EntryPrice}</td>
-                                        <td className="text-center">{item.CurrentPrice}</td>
-                                        <td
-                                            className={`text-center ${item.Profit > 0 ? 'text-success' : 'text-danger'
-                                                }`}
-                                        >
-                                            {' '}
-                                            <b>{item.Profit}</b>{' '}
-                                        </td>
-                                        <td className="text-center cursor-none">
-                                            <Example
-                                                color={item.Profit > 0 ? '#09BD3C' : '#FD5353'}
-                                                stock={item.Graph}
-                                                width={150}
-                                                height={36}
-                                            />
-                                        </td>
-                                        <td>
-                                            <Button type="button" variant="light">
-                                                <span className="material-symbols-outlined">more_vert</span>
-                                            </Button>
-                                        </td>
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </Table>
-
-                </Row>
-            </Container>
-
-        </Fragment >
-    )
-          {/* TRANSACTIONS CARD */}
           <Col sm={5}>
-            <div className="border p-4 rounded-4 ">
-              <h2 className="page-title">Transactions</h2>
-              <hr className="mt-2" />
-              <div className="transactions-card">
-                {transactions.map((item) => (
+            <div className='border p-4 rounded-4 '>
+              <h2 className='page-title'>Transactions</h2>
+              <hr className='mt-2' />
+              <div className='transactions-card'>
+                {transactions.map((item) =>
+                (
                   <div>
-                    <div className="mt-4 ">
-                      <div className="d-flex ">
-                        <img
-                          className="my-auto"
-                          height={40}
-                          src={item.coin.image}
-                          alt=""
-                        />
-                        <div className="ms-3">
-                          <p className="fw-semibold">{`${item.orderSignal} ${item.coin.name}`}</p>
-                          <p className="card-comment">{item.date}</p>
+                    <div className='mt-4 '>
+                      <div className='d-flex '>
+                        <img className='my-auto' height={40} src={item.coin.image} alt="" />
+                        <div className='ms-3'>
+                          <p className='fw-semibold'>{`${item.orderSignal} ${item.coin.name}`}</p>
+                          <p className='card-comment'>{item.date}</p>
                         </div>
-                        <div className="ms-auto">
-                          <p
-                            className={`fw-semibold ${
-                              item.coin.value1 > 0
-                                ? 'text-success'
-                                : 'text-danger'
-                            }`}
-                          >
-                            {item.coin.value1}
-                          </p>
-                          <p className="float-end card-comment">
-                            {item.coin.value2}
-                          </p>
+                        <div className='ms-auto'>
+                          <p className={`fw-semibold ${item.coin.value1 > 0 ? 'text-success' : 'text-danger'}`}>{item.coin.value1}</p>
+                          <p className='float-end card-comment'>{item.coin.value2}</p>
                         </div>
                       </div>
                     </div>
-                    <hr className="mt-2" />
+                    <hr className='mt-2' />
                   </div>
                 ))}
               </div>
             </div>
           </Col>
         </Row>
-
-        <h2 className="page-title mt-4">Active Postions</h2>
-        <Row className="mt-4">
+        <Stack direction="horizontal" className="align-items-center justify-content-between pb-5 pt-5">
+          <h2>Open Trades</h2>
+          <Link to="/trades" className=" btn btn-primary btn-md text-white">View All Open Trades</Link>
+        </Stack>
+        <Row className='mt-4'>
           <Table hover size="sm" className="p-5">
             <thead>
               <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th className="text-center">Last Price</th>
-                <th className="text-center">24h Change</th>
-                <th className="text-center">Market Cap</th>
-                <th className="text-center">Volume (24h)</th>
-                <th>Graph?</th>
+                <th>Coin</th>
+                <th className="text-center">Entry Price</th>
+                <th className="text-center">Current Price</th>
+                <th className="text-center">Profit %</th>
+                <th className="text-center">Graph</th>
+                <th></th>
               </tr>
             </thead>
+            <tbody>
+              {openTrades.slice(0, 3).map((item) => {
+                return (
+                  <tr key={item.Id}>
+                    <td>{item.Id}</td>
+                    <td>
+                      <img width={25} src={item.Coin.Image} alt={item.Coin.Name} />{' '}
+                      <b>{item.Coin.BaseAsset}</b> {item.Coin.Name}
+                    </td>
+                    <td className="text-center">{item.EntryPrice}</td>
+                    <td className="text-center">{item.CurrentPrice}</td>
+                    <td className={`text-center ${item.Profit > 0 ? 'text-success' : 'text-danger'}`}>
+                      {' '}
+                      <b>{item.Profit}</b>{' '}
+                    </td>
+                    <td className="text-center cursor-none">
+                      <Example color={item.Profit > 0 ? '#09BD3C' : '#FD5353'} stock={item.Graph} width={150} height={36} />
+                    </td>
+                    <td>
+                      <Button type="button" variant="light">
+                        <span className="material-symbols-outlined">more_vert</span>
+                      </Button>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
           </Table>
         </Row>
       </Container>
-    </Fragment>
+    </Fragment >
   )
 }
