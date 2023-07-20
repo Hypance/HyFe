@@ -40,6 +40,13 @@ p{
 .no-caret::after{
     display: none;
 }
+
+//Slider
+
+.slick-slide > div {
+    margin: 0 10px;
+}
+
 `
 
 
