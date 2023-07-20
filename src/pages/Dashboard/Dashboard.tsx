@@ -11,12 +11,12 @@ import {
 import Graph from '../../components/AppGraph/AppGraph'
 import { useFetchDashboardAssets } from '../../hooks/useFetchDashboardAssets'
 import { useFetchTransactions } from '../../hooks/useFetchTransactions'
-import icon from '../../images/icons/closed-eye.svg'
 import Example from '../../components/AppGraph/AppGraph'
 import { useFetchOpenTrades } from '../../hooks/useFetchOpenTrades'
 import { tradeServiceOpenTrade } from '../../services/tradeService/interfaces'
 import { Link } from 'react-router-dom'
->>>>>>>>> Temporary merge branch 2
+import AssetsSlider from '../../components/AssetsSlider/AssetsSlider'
+
 //Burayı düzelt api jsona profit ekle burayı sil
 const DashboardGrap: any = [
   {
