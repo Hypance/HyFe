@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Toast, { ToastProps } from "./Toast";
+import { Toast,ToastProps } from 'react-bootstrap';
 
 interface ToastOptions {
   id?: string;
@@ -25,8 +25,7 @@ export class ToastManager {
     const toastId = Math.random().toString(36).substr(2, 9);
     const toast: ToastProps = {
       id: toastId,
-      ...options, // if id is passed within options, it will overwrite the auto-generated one
-      destroy: () => this.destroy(options.id ?? toastId),
+      //destroy: () => this.destroy(options.id ?? toastId),
     };
 
     this.toasts = [toast, ...this.toasts];

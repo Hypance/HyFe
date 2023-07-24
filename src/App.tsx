@@ -4,7 +4,7 @@ import { AppNavbar } from './components/AppNavbar/AppNavbar'
 import AppRouter from './components/AppRouter/AppRouter'
 import { AppSidebar } from './components/AppSidebar/AppSidebar'
 import { GlobalStyle } from './App.styles';
-import Notification, { NotificationType } from './helpers/notification';
+// import Notification, { NotificationType } from './helpers/notification';
 
 
 
@@ -21,11 +21,11 @@ const App: React.FC = () => {
         </Stack>
       </div>
     </div>
-    <Notification
+    {/* <Notification
           title="Bildirim Başlığı"
           message="Bildirim İçeriği"
           type={NotificationType.Success}
-        />
+        /> */}
     </>
    
   )
