@@ -22,6 +22,7 @@ export enum AppPathes {
   MARKET = '/market',
   STRATEGY = '/strategy',
   CREATESTRATEGY = '/create-strategy',
+  EDITSTRATEGY = '/edit-strategy',
   BOT = '/bot',
   BOTDETAILS = '/bot-details',
   CREATEBOT = '/create-bot',
@@ -48,6 +49,7 @@ export const publicRoutes: IRoute[] = [
   { path: AppPathes.LOGOUT, element: Logout },
 
   { path: `${AppPathes.BOTDETAILS}/:botId`, element: BotDetails  },
-  { path: `${AppPathes.BACKTESTDETAILS}/:backtestId`, element: BacktestDetails  }
+  { path: `${AppPathes.BACKTESTDETAILS}/:backtestId`, element: BacktestDetails  },
+  { path: `${AppPathes.EDITSTRATEGY}/:strategyId`, element:CreateStrategy  }
 
 ]

@@ -7,6 +7,7 @@ export const STRATEGY_URLS = {
     GET_VALUE: "/GetValue",
     GET_ORDERSIGNAL: "/GetOrderSignal",
     GET_MY_STRATEGIES:'/GetMyStrategies',
+    GET_MY_STRATEGY_BY_ID:'/GetMyStrategyById',
   };
 export const BOT_URLS = {
   CREATE_BOT: '/Bot',

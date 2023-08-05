@@ -20,8 +20,9 @@ export const strategyServiceCreateStrategy = async (
     return $api.get(STRATEGY_URLS.GET_PROVISIONS);
   };
 
-  export const strategyServiceGetMyStrategies = async ()
-  : Promise<AxiosResponse> => {
+  export const strategyServiceGetMyStrategies = async (
+    
+  )  : Promise<AxiosResponse> => {
     return $api.get(STRATEGY_URLS.GET_MY_STRATEGIES);
   };
     
@@ -33,4 +34,9 @@ export const strategyServiceCreateStrategy = async (
   export const strategyServiceGetAllOrderSignal = async ()
   : Promise<AxiosResponse<ISelectListItem[]>> => {
     return $api.get(STRATEGY_URLS.GET_ORDERSIGNAL);
+  };
+
+  export const strategyServiceGetMyStrategyById = async (strategyId:any)
+  : Promise<AxiosResponse> => {
+    return $api.get(STRATEGY_URLS.GET_MY_STRATEGIES+"/"+strategyId);
   };

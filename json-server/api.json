@@ -291,12 +291,117 @@
       "interval": "2",
       "orderSignal": "SHORT",
       "id": 3
+    },
+    {
+      "name": "berk",
+      "description": "berk123",
+      "indicator": "4",
+      "period": 15,
+      "provision": "5",
+      "value": "12",
+      "interval": "1",
+      "orderSignal": "SHORT",
+      "id": 4
+    },
+    {
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 5
+    },
+    {
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 6
+    },
+    {
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 7
+    },
+    {
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 8
+    },
+    {
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 9
+    },
+    {
+      "name": "cross",
+      "description": "cross",
+      "indicator": "1",
+      "period": 9,
+      "provision": "3",
+      "value": "4",
+      "interval": "1",
+      "orderSignal": "LONG",
+      "crossingIndicator": "2",
+      "crossingIndicatorPeriod": "6",
+      "id": 10
+    },
+    {
+      "name": "cross1",
+      "description": "cross",
+      "indicator": "1",
+      "period": 9,
+      "provision": "3",
+      "value": "4",
+      "interval": "1",
+      "orderSignal": "LONG",
+      "crossingIndicator": "1",
+      "crossingIndicatorPeriod": "6",
+      "id": 11
+    },
+    {
+      "name": "cross12",
+      "description": "cross",
+      "indicator": "1",
+      "period": 9,
+      "provision": "3",
+      "value": "4",
+      "interval": "1",
+      "orderSignal": "LONG",
+      "crossingIndicator": "0",
+      "crossingIndicatorPeriod": "6",
+      "id": 12
     }
   ],
   "GetMyStrategies": [
     {
       "id": 1,
-      "name": "test",
+      "name": "test1",
       "description": "test",
       "orderSignal": "BUY",
       "interval": "30m",
@@ -317,7 +422,7 @@
     },
     {
       "id": 2,
-      "name": "test",
+      "name": "test2",
       "description": "test",
       "orderSignal": "BUY",
       "interval": "30m",
@@ -332,7 +437,7 @@
     },
     {
       "id": 3,
-      "name": "test",
+      "name": "test3",
       "description": "test",
       "orderSignal": "BUY",
       "interval": "30m",
@@ -353,7 +458,7 @@
     },
     {
       "id": 4,
-      "name": "test",
+      "name": "test4",
       "description": "test",
       "orderSignal": "BUY",
       "interval": "30m",
@@ -369,6 +474,168 @@
           "rule": "Above",
           "indicator": "RSI",
           "value": "3"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "test5",
+      "description": "test",
+      "orderSignal": "BUY",
+      "interval": "15m",
+      "signals": [
+        {
+          "period": "16",
+          "rule": "Below",
+          "indicator": "SMA",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "test6",
+      "description": "testasdfsadf",
+      "orderSignal": "BUY",
+      "interval": "15m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        },
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "test7",
+      "description": "testasdfsadf",
+      "orderSignal": "BUY",
+      "interval": "15m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        },
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "test8",
+      "description": "testasdfsadf",
+      "orderSignal": "BUY",
+      "interval": "15m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        },
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "test9",
+      "description": "testasdfsadf",
+      "orderSignal": "BUY",
+      "interval": "15m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        },
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "test10",
+      "description": "testasdfsadf",
+      "orderSignal": "BUY",
+      "interval": "15m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        },
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "test11",
+      "description": "testasdfsadf",
+      "orderSignal": "BUY",
+      "interval": "15m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        },
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "test12",
+      "description": "testasdfsadf",
+      "orderSignal": "BUY",
+      "interval": "15m",
+      "signals": [
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
+        },
+        {
+          "period": "9",
+          "rule": "Below",
+          "indicator": "EMA",
+          "value": "4"
         }
       ]
     }
