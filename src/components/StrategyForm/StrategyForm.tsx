@@ -27,9 +27,9 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
     mode: 'onBlur',
     
   })
-  
+  const crossingIDs = [3,4]
 
-  const [isCrossed,setIsCrossed] = useState(false)
+  const [isCrossed,setIsCrossed] = useState(crossingIDs.includes(Number(myStrategy?.provision)))
 
   
 
@@ -47,7 +47,6 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
   } 
 
   const onChangeProvision = (e:any) => {
-    const crossingIDs = [3,4]
     if (crossingIDs.find(i => i == e.target.value))
     setIsCrossed(true)
     else
@@ -70,13 +69,10 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
 
   
   
-// useEffect(() => {
-//   Object.keys(myStrategy).forEach((key) => {
-//     setValue(key, myStrategy[key]);
-//   });
+useEffect(() => {
+  setIsCrossed(crossingIDs.includes(Number(myStrategy?.provision)))
+  }, [myStrategy])
 
-    // return () => { }
-  // }, [myStrategy])
 // console.log(myStrategy?.signals[0]?.indicator);
 
   return (
@@ -128,9 +124,7 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
               
               >
                {indicators.map((item) => (
-                  <option key={ item.value} value={ item.value} selected={item.text == myStrategy?.signals[0].indicator}  >
-                   
-                    
+                  <option key={ item.value} value={ item.value} selected={item.value == myStrategy?.indicator}  >
                     { item.text}
                   </option>
                 ))}
@@ -148,7 +142,7 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
                 })}
                 type="number"
                 placeholder="Give a number of period for your indicator"
-                defaultValue={myStrategy?.signals[0].period}
+                defaultValue={myStrategy?.period}
               />
             </Form.Group>
           </Col>
@@ -163,7 +157,7 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
                
               >
                {provisions.map((item) => (
-                  <option key={item.value} value={item.value} selected={item.text == myStrategy?.signals[0].rule}>
+                  <option key={item.value} value={item.value} selected={item.value == myStrategy?.provision}>
                     {item.text}
                   </option>
                 ))}
@@ -180,7 +174,7 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
                 })}
                 type="number"
                 placeholder="Give a number of value for your indicator"
-                defaultValue={myStrategy?.signals[0].value}
+                defaultValue={myStrategy?.value}
               />
         
             </Form.Group>
@@ -197,9 +191,9 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
                 })}
               >
                {indicators.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.text}
-                  </option>
+                   <option key={ item.value} value={ item.value} selected={item.value == myStrategy?.crossingIndicator}  >
+                   { item.text}
+                 </option>
                 ))}
               </Form.Select>
             </Form.Group>
@@ -230,7 +224,7 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
                 })}
               >
                 {intervals.map((item) => (
-                  <option key={item.value} value={item.value} selected={item.text == myStrategy?.interval}>
+                  <option key={item.value} value={item.value} selected={item.value == myStrategy?.interval}>
                     {item.text}
                   </option>
                 ))}
@@ -246,9 +240,9 @@ export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) =
                 })}
               >
                {orderSignal.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.text}
-                  </option>
+                  <option key={item.value} value={item.value} selected={item.text == myStrategy?.orderSignal}>
+                  {item.text}
+                </option>
                 ))}
               </Form.Select>
             </Form.Group>

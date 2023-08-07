@@ -49,20 +49,26 @@ export const Strategy: React.FC = () => {
               <h5 className='card-title'>{strategy.name}</h5>
               <hr className="my-2" />
               <div className='strategy-signals-height'>
-                {strategy.signals.map((signal, i) => (
-                  <div key={i}>
+                <StyledStack>
                     <StyledStack direction='horizontal' className=' justify-content-between'>
-                      <p className='fw-semibold'>{signal.indicator}</p>
-                      <p className='text-success fw-semibold'>{signal.rule}</p>
+                      <p className='fw-semibold'>{strategy.indicator}</p>
+                      <p className='text-success fw-semibold'>{strategy.provision}</p>
                     </StyledStack>
                     <StyledStack direction='horizontal' className=' justify-content-between'>
-                      <p className='text-secondary '>Period: {signal.period}</p>
+                      <p className='text-secondary '>Period: {strategy.period}</p>
                       <p className='text-secondary'>Interval:{strategy.interval}</p>
                     </StyledStack>
                     <hr className="my-2" />
-                  </div>
-                )
-                )}
+                  </StyledStack>
+                  <StyledStack>
+                    <StyledStack direction='horizontal' className=' justify-content-between'>
+                      <p className='fw-semibold'>{strategy.crossingIndicator}</p>
+                    </StyledStack>
+                    <StyledStack direction='horizontal' className=' justify-content-between'>
+                      <p className='text-secondary '>Period: {strategy.crossingIndicatorPeriod}</p>
+                    </StyledStack>
+                    <hr className="my-2" />
+                  </StyledStack>
               </div>
               <div className='strategy-card-buttons d-flex justify-content-between mt-5'>
                 <Link  
