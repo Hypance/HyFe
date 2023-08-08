@@ -209,6 +209,7 @@ useEffect(() => {
                 })}
                 type="number"
                 placeholder="Give a number of period for your indicator"
+                defaultValue={myStrategy?.crossingIndicatorPeriod}
               />
             </Form.Group>
           </Col>

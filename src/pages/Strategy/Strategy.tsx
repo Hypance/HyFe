@@ -50,25 +50,28 @@ export const Strategy: React.FC = () => {
               <hr className="my-2" />
               <div className='strategy-signals-height'>
                 <StyledStack>
-                    <StyledStack direction='horizontal' className=' justify-content-between'>
+                    <StyledStack direction='horizontal' className=' justify-content-between d-flex'>
                       <p className='fw-semibold'>{strategy.indicator}</p>
                       <p className='text-success fw-semibold'>{strategy.provision}</p>
                     </StyledStack>
-                    <StyledStack direction='horizontal' className=' justify-content-between'>
+                    <StyledStack direction='horizontal' className=' justify-content-between d-flex'>
                       <p className='text-secondary '>Period: {strategy.period}</p>
                       <p className='text-secondary'>Interval:{strategy.interval}</p>
                     </StyledStack>
                     <hr className="my-2" />
                   </StyledStack>
+                  {strategy.crossingIndicator && strategy.crossingIndicatorPeriod && (
                   <StyledStack>
-                    <StyledStack direction='horizontal' className=' justify-content-between'>
-                      <p className='fw-semibold'>{strategy.crossingIndicator}</p>
+                    <hr className='my-3 border-0' />
+                    <StyledStack direction='horizontal' className=' justify-content-between d-flex pt-3'>
+                      <p className='fw-semibold  '>{strategy.crossingIndicator}</p>
                     </StyledStack>
-                    <StyledStack direction='horizontal' className=' justify-content-between'>
-                      <p className='text-secondary '>Period: {strategy.crossingIndicatorPeriod}</p>
+                    <StyledStack direction='horizontal' className=' justify-content-between d-flex pt-3'>
+                      <p className='text-secondary  '>Period: {strategy.crossingIndicatorPeriod}</p>
                     </StyledStack>
                     <hr className="my-2" />
                   </StyledStack>
+                  )}
               </div>
               <div className='strategy-card-buttons d-flex justify-content-between mt-5'>
                 <Link  
