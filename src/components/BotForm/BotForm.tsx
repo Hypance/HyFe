@@ -13,8 +13,17 @@ import { useFetchAssets } from '../../hooks/useFetchAssets'
 import {useFetchFormation } from '../../hooks/useFetchFormation'
 import {useFetchTrendStrategy } from '../../hooks/useFetchTrendStrategy'
 import {useFetchPriceStrategy } from '../../hooks/useFetchPriceStrategy'
+import { useFetchMyBots } from '../../hooks/useFetchMyBots'
 
-export const BotForm: React.FC<CreateBotProps> = () => {
+interface BotFormProps extends CreateBotProps {
+  isEdit: boolean;
+  botId: any; 
+}
+
+export const BotForm: React.FC<CreateBotProps> = ({isEdit,botId}) => {
+
+  const myBot = useFetchMyBots(botId)
+
   const { register, handleSubmit } = useForm<BotFormInputs>({
     mode: 'onBlur',
     defaultValues:{
@@ -60,7 +69,7 @@ export const BotForm: React.FC<CreateBotProps> = () => {
     <Fragment>
       
       <Form onSubmit={handleSubmit(onSubmit)} className="w-100 px-5">
-        <h1 className="h3 mb-3">Create Your Bot</h1>
+      <h1 className="h3 mb-3">{isEdit?"Edit Your Bot":"Create Your Bot"}</h1>
         <Row>
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -224,9 +233,13 @@ export const BotForm: React.FC<CreateBotProps> = () => {
         </Row>
 
         <Button variant="primary" type="submit">
-          Create Bot
+        {isEdit?"Save Changes":"Create Bot"}
         </Button>
       </Form>
     </Fragment>
   )
 }
+function useFetchMyBot(botId: any) {
+  throw new Error('Function not implemented.')
+}
+

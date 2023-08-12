@@ -60,7 +60,11 @@ export const botServiceCreateBot = async (
     return $api.patch(`${BOT_URLS.GET_MYBOTS}/${botId}`, {
       isActive: isActive
     });
+  }
 
+    export const botServiceGetMyBotById = async (botId:any)
+  : Promise<AxiosResponse> => {
+    return $api.get(BOT_URLS.GET_MYBOTS +"/"+botId);
   }
 
 
