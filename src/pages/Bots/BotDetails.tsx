@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 export const BotDetails:React.FC = () => {
 
-  let { botId } = useParams();
+  // let { botId } = useParams();
 
   // botId ile API 'a istek atılacak bot details çekilecek.
 
@@ -16,7 +16,7 @@ export const BotDetails:React.FC = () => {
   // }, [botId]);
 
   return (
-    <div>BotDetails {botId}</div>
+    // <div>BotDetails {botId}</div>
 
   )
 }
