@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { IMyBot } from "../models/IMyBot";
 import { botServiceGetAllMyBots, botServiceGetMyBotById } from "../services/botService/botService";
 
-export const useFetchMyBots = (botId:any) => {
+export const useFetchMyBots = () => {
   const [myBot, setMyBot] = useState<IMyBot | null>(null);
   const [allBots, setAllBots] = useState<IMyBot[]>([]);
   const [myBots, setMyBots] = useState<IMyBot[]>([]);
@@ -10,10 +10,6 @@ export const useFetchMyBots = (botId:any) => {
   const [page, setPage] = useState(0);
   const PAGE_SIZE = 9;
 
-  const getMyBot = async () => {
-    const { data } = await botServiceGetMyBotById(botId);
-    setMyBot(data);
-  };
 
   useEffect(() => {
     const fetchBots = async () => {

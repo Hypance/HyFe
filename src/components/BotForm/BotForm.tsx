@@ -20,9 +20,9 @@ interface BotFormProps extends CreateBotProps {
   botId: any; 
 }
 
-export const BotForm: React.FC<CreateBotProps> = ({isEdit,botId}) => {
+export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
 
-  const myBot = useFetchMyBots(botId)
+  const myBot = useFetchMyBots()
 
   const { register, handleSubmit } = useForm<BotFormInputs>({
     mode: 'onBlur',
