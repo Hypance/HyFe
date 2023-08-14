@@ -11,7 +11,7 @@ import { Settings } from '../../pages/Settings'
 import { Logout } from '../../pages/Logout'
 import { CreateStrategy } from '../../pages/Strategy/CreateStrategy'
 import { Market } from '../../pages/Market/Market'
-import { BotDetails }   from '../../pages/Bots/BotDetails'
+import { BotDetail } from '../../pages/Bots/BotDetails'
 
 export interface IRoute {
   path: string
@@ -22,8 +22,10 @@ export enum AppPathes {
   MARKET = '/market',
   STRATEGY = '/strategy',
   CREATESTRATEGY = '/create-strategy',
+  EDITSTRATEGY = '/edit-strategy',
   BOT = '/bot',
-  BOTDETAILS = '/bot-details',
+  EDITBOT = '/edit-bot',
+  BOTDETAIL = '/bot-detail',
   CREATEBOT = '/create-bot',
   BACKTEST = '/backtest',
   BACKTESTDETAILS = '/backtest-details',
@@ -47,7 +49,9 @@ export const publicRoutes: IRoute[] = [
   { path: AppPathes.SETTINGS, element: Settings },
   { path: AppPathes.LOGOUT, element: Logout },
 
-  { path: `${AppPathes.BOTDETAILS}/:botId`, element: BotDetails  },
-  { path: `${AppPathes.BACKTESTDETAILS}/:backtestId`, element: BacktestDetails  }
+  { path: `${AppPathes.EDITBOT}/:botId`, element: CreateBot  },
+  { path: `${AppPathes.BOTDETAIL}/:botId`, element: BotDetail  },
+  { path: `${AppPathes.BACKTESTDETAILS}/:backtestId`, element: BacktestDetails  },
+  { path: `${AppPathes.EDITSTRATEGY}/:strategyId`, element:CreateStrategy  }
 
 ]

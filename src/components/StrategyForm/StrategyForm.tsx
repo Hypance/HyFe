@@ -1,4 +1,4 @@
-import React, { Fragment,useState} from 'react'
+import React, { Fragment,useEffect,useState} from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { CreateStrategyProps } from '../../pages/Strategy/interfaces'
@@ -8,14 +8,28 @@ import { useFetchIntervals } from '../../hooks/useFetchInterval'
 import { useFetchIndicators } from '../../hooks/useFetchIndicators'
 import { useFetchOrderSignal } from '../../hooks/useFetchOrderSignal'
 import { useFetchProvisions } from '../../hooks/useFetchInterval copy'
+import { useFetchMyStrategy } from '../../hooks/useFetchMyStrategy'
 
 
-export const StrategyForm: React.FC<CreateStrategyProps> = () => {
+interface StrategyFormProps extends CreateStrategyProps {
+  isEdit: boolean;
+  strategyId: any; 
+}
+
+
+export const StrategyForm: React.FC<StrategyFormProps> = ({isEdit,strategyId}) => {
+  
+  const myStrategy = useFetchMyStrategy(strategyId)
+  // console.log(myStrategy.name);
+  
   const { register, handleSubmit,setValue } = useForm<StrategyFormInputs>({
+    
     mode: 'onBlur',
+    
   })
+  const crossingIDs = [3,4]
 
-  const [isCrossed,setIsCrossed] = useState(false)
+  const [isCrossed,setIsCrossed] = useState(crossingIDs.includes(Number(myStrategy?.provision)))
 
   
 
@@ -33,7 +47,6 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
   } 
 
   const onChangeProvision = (e:any) => {
-    const crossingIDs = [3,4]
     if (crossingIDs.find(i => i == e.target.value))
     setIsCrossed(true)
     else
@@ -50,16 +63,22 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
     await strategyServiceCreateStrategy(data)
   }
 
-// useEffect(() => {
-  
 
-//     return () => { }
-//   }, [register])
+  
+    
+
+  
+  
+useEffect(() => {
+  setIsCrossed(crossingIDs.includes(Number(myStrategy?.provision)))
+  }, [myStrategy])
+
+// console.log(myStrategy?.signals[0]?.indicator);
 
   return (
     <Fragment>
       <Form onSubmit={handleSubmit(onSubmit)} className="w-100 px-5">
-        <h1 className="h3 mb-3">Create Your Strategy</h1>
+        <h1 className="h3 mb-3">{isEdit?"Edit Your Strategy":"Create Your Strategy"}</h1>
         <Row>
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -69,7 +88,9 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                   required: 'Please give a name to your strategy',
                 })}
                 type="text"
-                placeholder="Give a name to your strategy"
+                placeholder={"Give a name to your strategy"}
+                defaultValue={myStrategy?.name}
+                
               />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid city.
@@ -82,7 +103,8 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
               <Form.Control
                 {...register('description')}
                 type="text"
-                placeholder="Give a name to your description"
+                placeholder={"Give a name to your description"}
+                defaultValue={myStrategy?.description}
               />
             </Form.Group>
           </Col>
@@ -95,12 +117,15 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
               <Form.Select 
                 {...register('indicator', {
                   required: 'Please choose an indicator',
-                    onChange: (e) => onChangeIndicator(e)
-                })}
+                    onChange: (e) => onChangeIndicator(e),
+                    
+                }
+                )}
+              
               >
                {indicators.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.text}
+                  <option key={ item.value} value={ item.value} selected={item.value == myStrategy?.indicator}  >
+                    { item.text}
                   </option>
                 ))}
               </Form.Select>
@@ -117,6 +142,7 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                 })}
                 type="number"
                 placeholder="Give a number of period for your indicator"
+                defaultValue={myStrategy?.period}
               />
             </Form.Group>
           </Col>
@@ -131,7 +157,7 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                
               >
                {provisions.map((item) => (
-                  <option key={item.value} value={item.value}>
+                  <option key={item.value} value={item.value} selected={item.value == myStrategy?.provision}>
                     {item.text}
                   </option>
                 ))}
@@ -148,6 +174,7 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                 })}
                 type="number"
                 placeholder="Give a number of value for your indicator"
+                defaultValue={myStrategy?.value}
               />
         
             </Form.Group>
@@ -164,9 +191,9 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                 })}
               >
                {indicators.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.text}
-                  </option>
+                   <option key={ item.value} value={ item.value} selected={item.value == myStrategy?.crossingIndicator}  >
+                   { item.text}
+                 </option>
                 ))}
               </Form.Select>
             </Form.Group>
@@ -182,6 +209,7 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                 })}
                 type="number"
                 placeholder="Give a number of period for your indicator"
+                defaultValue={myStrategy?.crossingIndicatorPeriod}
               />
             </Form.Group>
           </Col>
@@ -197,7 +225,7 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                 })}
               >
                 {intervals.map((item) => (
-                  <option key={item.value} value={item.value}>
+                  <option key={item.value} value={item.value} selected={item.value == myStrategy?.interval}>
                     {item.text}
                   </option>
                 ))}
@@ -213,9 +241,9 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
                 })}
               >
                {orderSignal.map((item) => (
-                  <option key={item.value} value={item.value}>
-                    {item.text}
-                  </option>
+                  <option key={item.value} value={item.value} selected={item.text == myStrategy?.orderSignal}>
+                  {item.text}
+                </option>
                 ))}
               </Form.Select>
             </Form.Group>
@@ -223,7 +251,7 @@ export const StrategyForm: React.FC<CreateStrategyProps> = () => {
         </Row>
 
         <Button variant="primary" type="submit">
-          Create Strategy
+        {isEdit?"Save Changes":"Create Strategy"}
         </Button>
       </Form>
     </Fragment>

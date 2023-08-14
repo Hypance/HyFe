@@ -13,17 +13,20 @@ import { useFetchAssets } from '../../hooks/useFetchAssets'
 import {useFetchFormation } from '../../hooks/useFetchFormation'
 import {useFetchTrendStrategy } from '../../hooks/useFetchTrendStrategy'
 import {useFetchPriceStrategy } from '../../hooks/useFetchPriceStrategy'
+import { useFetchMyBot } from '../../hooks/useFetchMyBot'
 
-export const BotForm: React.FC<CreateBotProps> = () => {
+interface BotFormProps extends CreateBotProps {
+  isEdit: boolean;
+  botId: any; 
+}
+
+export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
+
+  const myBot = useFetchMyBot(botId)
+  console.log(myBot);
+  
   const { register, handleSubmit } = useForm<BotFormInputs>({
     mode: 'onBlur',
-    defaultValues:{
-      predefinedMarket:"0",
-      priceStrategy:0,
-      tradeType:"0",
-      trendStrategy:"0"
-
-    }
   })
   const markets = useFetchMarkets();
   const orderType = useFetchOrderType();
@@ -60,7 +63,7 @@ export const BotForm: React.FC<CreateBotProps> = () => {
     <Fragment>
       
       <Form onSubmit={handleSubmit(onSubmit)} className="w-100 px-5">
-        <h1 className="h3 mb-3">Create Your Bot</h1>
+      <h1 className="h3 mb-3">{isEdit?"Edit Your Bot":"Create Your Bot"}</h1>
         <Row>
           <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -71,6 +74,7 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                 })}
                 type="text"
                 placeholder="Give a name to your Bot"
+                defaultValue={myBot?.name}
               />
               <Form.Control.Feedback type="invalid">
                 Please provide a valid city.
@@ -84,6 +88,7 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                 {...register('description')}
                 type="text"
                 placeholder="Give a name to your description"
+                defaultValue={myBot?.description}
               />
             </Form.Group>
           </Col>
@@ -98,7 +103,7 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                 })}
               >
                  {markets.map((item,index) => (
-                  <option key={index} value={item.value}>
+                  <option key={index} value={item.value} selected={item.value == myBot?.predefinedMarket}>
                     {item.text}
                   </option>
                 ))}
@@ -113,8 +118,8 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                   required: 'Please give a name to your signal',
                 })}
               >
-                 {priceStrategy.map((item) => (
-                  <option key={item.value} value={item.value}>
+                 {priceStrategy.map((item) => ( 
+                  <option key={item.value} value={item.value} selected={item.value == myBot?.priceStrategy}>
                     {item.text}
                   </option>
                 ))}
@@ -130,7 +135,7 @@ export const BotForm: React.FC<CreateBotProps> = () => {
                 })}
               >
                 {assets.map((item) => (
-                  <option key={item.value} value={item.value}>
+                  <option key={item.value} value={item.value} selected={myBot?.assets.includes(item.value)} >
                     {item.name}
                   </option>
                   ))}
@@ -224,9 +229,10 @@ export const BotForm: React.FC<CreateBotProps> = () => {
         </Row>
 
         <Button variant="primary" type="submit">
-          Create Bot
+        {isEdit?"Save Changes":"Create Bot"}
         </Button>
       </Form>
     </Fragment>
   )
 }
+

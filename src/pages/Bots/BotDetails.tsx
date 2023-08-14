@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-export const BotDetails:React.FC = () => {
+export const BotDetail:React.FC = () => {
 
   let { botId } = useParams();
 

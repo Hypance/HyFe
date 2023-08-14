@@ -258,7 +258,7 @@
       "value": "2"
     }
   ],
-  "Strategy": [
+  "GetMyStrategies": [
     {
       "name": "test",
       "description": "test",
@@ -291,86 +291,111 @@
       "interval": "2",
       "orderSignal": "SHORT",
       "id": 3
-    }
-  ],
-  "GetMyStrategies": [
-    {
-      "id": 1,
-      "name": "test",
-      "description": "test",
-      "orderSignal": "BUY",
-      "interval": "30m",
-      "signals": [
-        {
-          "period": "9",
-          "rule": "Above",
-          "indicator": "RSI",
-          "value": "3"
-        },
-        {
-          "period": "9",
-          "rule": "Above",
-          "indicator": "RSI",
-          "value": "3"
-        }
-      ]
     },
     {
-      "id": 2,
-      "name": "test",
-      "description": "test",
-      "orderSignal": "BUY",
-      "interval": "30m",
-      "signals": [
-        {
-          "period": "9",
-          "rule": "Above",
-          "indicator": "RSI",
-          "value": "3"
-        }
-      ]
+      "name": "berk",
+      "description": "berk123",
+      "indicator": "4",
+      "period": 15,
+      "provision": "5",
+      "value": "12",
+      "interval": "1",
+      "orderSignal": "SHORT",
+      "id": 4
     },
     {
-      "id": 3,
-      "name": "test",
-      "description": "test",
-      "orderSignal": "BUY",
-      "interval": "30m",
-      "signals": [
-        {
-          "period": "9",
-          "rule": "Above",
-          "indicator": "RSI",
-          "value": "3"
-        },
-        {
-          "period": "9",
-          "rule": "Above",
-          "indicator": "RSI",
-          "value": "3"
-        }
-      ]
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 5
     },
     {
-      "id": 4,
-      "name": "test",
-      "description": "test",
-      "orderSignal": "BUY",
-      "interval": "30m",
-      "signals": [
-        {
-          "period": "9",
-          "rule": "Above",
-          "indicator": "RSI",
-          "value": "3"
-        },
-        {
-          "period": "9",
-          "rule": "Above",
-          "indicator": "RSI",
-          "value": "3"
-        }
-      ]
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 6
+    },
+    {
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 7
+    },
+    {
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 8
+    },
+    {
+      "name": "adfsad",
+      "description": "asdfasdf",
+      "indicator": "2",
+      "period": 12,
+      "provision": "2",
+      "value": "4",
+      "interval": "13",
+      "orderSignal": "SHORT",
+      "id": 9
+    },
+    {
+      "name": "cross",
+      "description": "cross",
+      "indicator": "1",
+      "period": 9,
+      "provision": "3",
+      "value": "4",
+      "interval": "1",
+      "orderSignal": "LONG",
+      "crossingIndicator": "2",
+      "crossingIndicatorPeriod": "6",
+      "id": 10
+    },
+    {
+      "name": "cross1",
+      "description": "cross",
+      "indicator": "1",
+      "period": 9,
+      "provision": "3",
+      "value": "4",
+      "interval": "1",
+      "orderSignal": "LONG",
+      "crossingIndicator": "1",
+      "crossingIndicatorPeriod": "6",
+      "id": 11
+    },
+    {
+      "name": "cross12",
+      "description": "cross",
+      "indicator": "1",
+      "period": 9,
+      "provision": "3",
+      "value": "4",
+      "interval": "1",
+      "orderSignal": "LONG",
+      "crossingIndicator": "0",
+      "crossingIndicatorPeriod": "6",
+      "id": 12
     }
   ],
   "GetAssets": [
@@ -4816,54 +4841,6 @@
     }
   ],
   "MyBots": [
-    {
-      "name": "Test Bot",
-      "description": "Test bot description.",
-      "id": 3,
-      "strategies": [
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        },
-        {
-          "name": "RSI",
-          "interval": "30m"
-        }
-      ],
-      "totalEntryPrice": "350.49",
-      "assets": [
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        },
-        {
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoY8E5F48EDxwFpx22rlAGciRoq52vl1TDoJwcMTO8yw&s"
-        }
-      ],
-      "isActive": true
-    },
     {
       "name": "Test Bot",
       "description": "Test bot description.",

@@ -16,5 +16,5 @@ export type BotFormInputs =
 
 export interface CreateBot{
     isEdit?:boolean,
-    bot?:ICreateBot
+    botId?:ICreateBot
 }

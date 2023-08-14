@@ -7,6 +7,7 @@ export const STRATEGY_URLS = {
     GET_VALUE: "/GetValue",
     GET_ORDERSIGNAL: "/GetOrderSignal",
     GET_MY_STRATEGIES:'/GetMyStrategies',
+    GET_MY_STRATEGY_BY_ID:'/GetMyStrategyById',
   };
 export const BOT_URLS = {
   CREATE_BOT: '/Bot',
@@ -18,7 +19,6 @@ export const BOT_URLS = {
   GET_TRENDSTRATEGY: '/GetTrendStrategy',
   GET_PRICESTRATEGY: '/GetPriceStrategy',
   GET_BOT:'/Bot',
-  GET_MYBOTS:'/MyBots'
 }
 export const TRADES_URLS = {
   GET_ALL_OPEN_TRADES: '/Trades',

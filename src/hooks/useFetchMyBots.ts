@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { IMyBot } from "../models/IMyBot";
-import { botServiceGetAllMyBots } from "../services/botService/botService";
+import { botServiceGetAllMyBots, botServiceGetMyBotById } from "../services/botService/botService";
 
 export const useFetchMyBots = () => {
+  const [myBot, setMyBot] = useState<IMyBot | null>(null);
   const [allBots, setAllBots] = useState<IMyBot[]>([]);
   const [myBots, setMyBots] = useState<IMyBot[]>([]);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(0);
   const PAGE_SIZE = 9;
+
 
   useEffect(() => {
     const fetchBots = async () => {
