@@ -93,6 +93,12 @@ export const Bot: React.FC = () => {
                         as={Link}
                         to={`${AppPathes.EDITBOT}/${item.id}`}
                       >
+                        Edit Bot
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        as={Link}
+                        to={`${AppPathes.BOTDETAIL}/${item.id}`}
+                      >
                         Bot Details
                       </Dropdown.Item>
                       <ToggleSwitch

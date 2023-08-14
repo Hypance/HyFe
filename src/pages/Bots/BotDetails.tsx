@@ -1,9 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-// export const BotDetails:React.FC = () => {
+export const BotDetail:React.FC = () => {
 
-  // let { botId } = useParams();
+  let { botId } = useParams();
 
   // botId ile API 'a istek atılacak bot details çekilecek.
 
@@ -15,8 +15,8 @@ import { useParams } from 'react-router-dom'
   //   fetchBot();
   // }, [botId]);
 
-  // return (
-    // <div>BotDetails {botId}</div>
+  return (
+    <div>BotDetails {botId}</div>
 
-  // )
-// }
+  )
+}
