@@ -47,24 +47,24 @@ export const botServiceCreateBot = async (
 
   export const botServiceGetAllMyBots = async ()
   : Promise<AxiosResponse<IMyBot[]>> => {
-    return $api.get(BOT_URLS.GET_MYBOTS);
+    return $api.get(BOT_URLS.GET_BOT);
   };
 
   export const botServiceDeleteMyBot = async (botId:number)
   :Promise<AxiosResponse<IMyBot[]>> => {
-    return $api.delete(`${BOT_URLS.GET_MYBOTS}/${botId}`);
+    return $api.delete(`${BOT_URLS.GET_BOT}/${botId}`);
   };
 
   export const botServiceUpdateBotStatus = async (botId: number, isActive: boolean)
   :Promise<AxiosResponse<{isActive: boolean}>> => {
-    return $api.patch(`${BOT_URLS.GET_MYBOTS}/${botId}`, {
+    return $api.patch(`${BOT_URLS.GET_BOT}/${botId}`, {
       isActive: isActive
     });
   }
 
     export const botServiceGetMyBotById = async (botId:any)
   : Promise<AxiosResponse> => {
-    return $api.get(BOT_URLS.GET_MYBOTS +"/"+botId);
+    return $api.get(`${BOT_URLS.GET_BOT}/${botId}`);
   }
 
 

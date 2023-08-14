@@ -16,3 +16,20 @@ interface Strategy{
 interface Asset{
     image:string
 }
+
+export interface IEditMyBot{
+    id:number,
+    name:string,
+    description:string,
+    totalEntryPrice:number,
+    isActive:boolean,
+    strategy:Array<Number>,
+    formation:string,
+    assets:Array<string>,
+    trendStrategy:number,
+    tradeType:string,
+    priceStrategy:string,
+    predefinedMarket:string
+    
+}
+
