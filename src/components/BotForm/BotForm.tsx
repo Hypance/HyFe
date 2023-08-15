@@ -23,7 +23,6 @@ interface BotFormProps extends CreateBotProps {
 export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
 
   const myBot = useFetchMyBot(botId)
-  console.log(myBot);
   
   const { register, handleSubmit } = useForm<BotFormInputs>({
     mode: 'onBlur',
@@ -35,6 +34,7 @@ export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
   const assets = useFetchAssets();
   const formation = useFetchFormation();
   const priceStrategy = useFetchPriceStrategy();
+  
 
   const onSubmit: SubmitHandler<BotFormInputs> = async (data) => {
     const result = await botServiceCreateBot(data);
@@ -151,7 +151,7 @@ export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
                 })}
               >
                 {strategy.map((item) => (
-                  <option key={item.value} value={item.value}>
+                  <option key={item.value} value={item.value} selected={myBot?.strategy.includes(item.value)}>
                     {item.name}
                   </option>
                   ))}

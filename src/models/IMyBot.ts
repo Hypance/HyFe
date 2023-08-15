@@ -23,7 +23,7 @@ export interface IEditMyBot{
     description:string,
     totalEntryPrice:number,
     isActive:boolean,
-    strategy:Array<Number>,
+    strategy:Array<string>,
     formation:string,
     assets:Array<string>,
     trendStrategy:number,
