@@ -50,7 +50,7 @@ export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
   // }, [])
 
 
-  const [radioValue, setRadioValue] = useState('1');
+  const [radioValue, setRadioValue] = useState('2');
 
   const radios = [
     { name: '25%', value: '1' },
@@ -167,7 +167,7 @@ export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
                 })}
               >
                 {orderType.map((item) => (
-                  <option key={item.value} value={item.value}>
+                  <option key={item.value} value={item.value} selected={item.value == myBot?.tradeType}>
                     {item.text}
                   </option>
                   ))}
@@ -181,7 +181,7 @@ export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
                 {...register('formation')}>
                  <option value="">Choose a Formation</option>
                  {formation.map((item) => (
-                <option key={item.value} value={item.value}>
+                <option key={item.value} value={item.value} selected={item.value == myBot?.formation}>
                     {item.name}
                   </option>
                   ))}
@@ -193,11 +193,11 @@ export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
               <Form.Label>Trend Strategy</Form.Label>
               <Form.Select
                 {...register('trendStrategy', {
-                  required: 'Please choose an interval',
+                  required: 'Please choose a trend strategy',
                 })}
               >
               {trendStrategy.map((item) => (
-                  <option key={item.value} value={item.value}>
+                  <option key={item.value} value={item.value} selected={item.value == myBot?.trendStrategy}>
                     {item.text} {item.value}
                   </option>
                   ))}
@@ -208,7 +208,11 @@ export const BotForm: React.FC<BotFormProps> = ({isEdit,botId}) => {
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Price Volume</Form.Label>
               <br />
-              <ButtonGroup>
+              <ButtonGroup
+               {...register('priceVolume', {
+                required: 'Please choose a price volume',
+              })}
+              >
                 {radios.map((radio, idx) => (
                   <ToggleButton
                     key={idx}

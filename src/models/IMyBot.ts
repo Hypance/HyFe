@@ -26,7 +26,7 @@ export interface IEditMyBot{
     strategy:Array<string>,
     formation:string,
     assets:Array<string>,
-    trendStrategy:number,
+    trendStrategy:string,
     tradeType:string,
     priceStrategy:string,
     predefinedMarket:string
