@@ -5,6 +5,7 @@ import { ICreateBot } from "../../models/ICreateBot";
 import { IMyBot } from "../../models/IMyBot";
 import { ISelectListItem } from "../../models/ISelectListItem";
 import { botServiceCreateBotInput } from "./interfaces";
+import { IMyStrategy } from "../../models/IMyStrategy";
 
 export const botServiceCreateBot = async (
     data: botServiceCreateBotInput
@@ -20,7 +21,7 @@ export const botServiceCreateBot = async (
     return $api.get(BOT_URLS.GET_ORDERTYPE);
   };
   export const botServiceGetAllStrategy = async ()
-  : Promise<AxiosResponse<ISelectListItem[]>> => {
+  : Promise<AxiosResponse<IMyStrategy[]>> => {
     return $api.get(BOT_URLS.GET_STRATEGY);
   };
   export const botServiceGetAllAssets = async ()
@@ -42,22 +43,22 @@ export const botServiceCreateBot = async (
   };
   export const botServiceGetAllBot = async ()
   : Promise<AxiosResponse<ISelectListItem[]>> => {
-    return $api.get(BOT_URLS.GET_BOT);
+    return $api.get(BOT_URLS.GET_MYBOTS);
   };
 
   export const botServiceGetAllMyBots = async ()
   : Promise<AxiosResponse<IMyBot[]>> => {
-    return $api.get(BOT_URLS.GET_BOT);
+    return $api.get(BOT_URLS.GET_MYBOTS);
   };
 
   export const botServiceDeleteMyBot = async (botId:number)
   :Promise<AxiosResponse<IMyBot[]>> => {
-    return $api.delete(`${BOT_URLS.GET_BOT}/${botId}`);
+    return $api.delete(`${BOT_URLS.GET_MYBOTS}/${botId}`);
   };
 
   export const botServiceUpdateBotStatus = async (botId: number, isActive: boolean)
   :Promise<AxiosResponse<{isActive: boolean}>> => {
-    return $api.patch(`${BOT_URLS.GET_BOT}/${botId}`, {
+    return $api.patch(`${BOT_URLS.GET_MYBOTS}/${botId}`, {
       isActive: isActive
     });
   }
