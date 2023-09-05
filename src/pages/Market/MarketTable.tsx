@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import { useFetchCoins } from "../../hooks/useFetchCoins";
 
 interface KlineData {
+  s: string;
   t: number;
   o: string;
   c: string;
@@ -11,15 +13,22 @@ interface KlineData {
 
 const MarketTable = () => {
   const [klineData, setKlineData] = useState<KlineData[]>([]);
-
+  const coins = useFetchCoins();
+  let coinKlines = coins.map((c)=>{return `${c.name.toLowerCase()}@kline_1m`})
+  console.log(coinKlines);
+  
   useEffect(() => {
-    const socket = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@kline_1h/btcusdt@kline_4h/btcusdt@kline_1d");
+    const socket = new WebSocket("wss://stream.binance.com:9443/ws");
 
     socket.onopen = () => {
       socket.send(
         JSON.stringify({
           method: "SUBSCRIBE",
-          params: ["btcusdt@kline_1h","btcusdt@kline_4h","btcusdt@kline_1d"],
+          params: 
+            [coinKlines],
+            // [
+            //   "btcusdt@kline_1m"
+            // ],
           id: 1,
         })
       );
@@ -29,8 +38,8 @@ const MarketTable = () => {
       const data = JSON.parse(event.data);
       
       if (data.e === "kline") {
-        const kline = data.k;
-        setKlineData((prevData) => [...prevData, kline]);
+        const kline = data.k; 
+        setKlineData((prevData) => [prevData, kline]);
       }
     };
 
@@ -46,6 +55,7 @@ const MarketTable = () => {
         <Table>
           <thead>
             <tr>
+              <th>Symbol</th>
               <th>Timestamp</th>
               <th>Open</th>
               <th>Close</th>
@@ -56,6 +66,7 @@ const MarketTable = () => {
           <tbody>
             {data.map((kline, index) => (
               <tr key={index}>
+                <td>{kline.s}</td>
                 <td>{new Date(kline.t).toLocaleString()}</td>
                 <td>{kline.o}</td>
                 <td>{kline.c}</td>
@@ -73,9 +84,8 @@ const MarketTable = () => {
     <div className="container">
       <h1>Kline Data Table</h1>
       <div className="columns">
-        {renderKlineColumn(klineData, "1 Hour (1h)")}
-        {renderKlineColumn(klineData, "4 Hours (4h)")}
-        {renderKlineColumn(klineData, "1 Day (1d)")}
+        {renderKlineColumn(klineData, "1 Minute (1m)")}
+
       </div>
     </div>
   );

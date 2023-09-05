@@ -38,3 +38,7 @@ export const DASHBOARD_URLS = {
   GET_DASHBOARD_ASSETS: '/DashboardAssets',
   GET_ACTIVE_POSITIONS:'/ActivePositions'
 }
+
+export const COIN_URLS = {
+  GET_COINS :"/MarketCoins"
+}

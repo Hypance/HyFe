@@ -6019,5 +6019,34 @@
     "phone": "5555555555",
     "newPassword": "berk",
     "confirmNewPassword": "berk"
-  }
+  },
+  "MarketCoins":[
+    {
+      "name": "LRCUSDT"
+    },
+    {
+      "name": "COCOSUSDT"
+    },
+    {
+      "name": "TRUUSDT"
+    },
+    {
+      "name": "GTCUSDT"
+    },
+    {
+      "name": "ACHUSDT"
+    },
+    {
+      "name": "MINAUSDT"
+    },
+    {
+      "name": "LINAUSDT"
+    },
+    {
+      "name": "YGGUSDT"
+    },
+    {
+      "name": "CKBUSDT"
+    }
+]
 }
