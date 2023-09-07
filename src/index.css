@@ -53,3 +53,8 @@ tbody, td, tfoot, th, thead, tr {
 .cursor-none{
     cursor: none !important;
 }
+
+/* BOT DETAILS */
+.textAlJustify {
+    text-align: justify;
+}
