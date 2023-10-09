@@ -15,7 +15,7 @@ const MarketTable = () => {
   const [klineData, setKlineData] = useState<KlineData[]>([]);
   const coins = useFetchCoins();
   let coinKlines = coins.map((c)=>{return `${c.name.toLowerCase()}@kline_1m`})
-  console.log(coinKlines);
+  // console.log(coinKlines);
   
   useEffect(() => {
     const socket = new WebSocket("wss://stream.binance.com:9443/ws");
@@ -25,7 +25,7 @@ const MarketTable = () => {
         JSON.stringify({
           method: "SUBSCRIBE",
           params: 
-            [coinKlines],
+            coinKlines,
             // [
             //   "btcusdt@kline_1m"
             // ],
@@ -36,17 +36,51 @@ const MarketTable = () => {
 
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
-      
+      // console.log(data.e);
+      console.log(klineData);
       if (data.e === "kline") {
-        const kline = data.k; 
-        setKlineData((prevData) => [prevData, kline]);
+        const kline = data.k;
+  
+        let kData = klineData.find(k=>k.s.toLowerCase()==kline.s.toLowerCase())
+        
+        
+        
+        if(kData !== undefined) {
+          console.log(kData.s + " "+kline.s);
+          console.log("deneme");
+          
+          kData.o = kline.o;
+          kData.c = kline.c;
+          kData.h = kline.h;
+          kData.l = kline.l;
+          setKlineData((prevData)=> prevData.filter(e =>{
+            if(e.s !==data.k.s){
+              console.log(e);
+              
+              return e;
+            } else if(e.s == data.k.s){
+    
+              e.o=data.k.o;
+              console.log(e);
+              
+              return e;
+            } else{
+              return e;
+            }
+          }))
+        } else{
+          setKlineData((prevData) => [...prevData, kline]);
+        }
+       
       }
     };
 
     return () => {
       socket.close();
     };
-  }, []);
+  }, [coins]);
+
+  
 
   const renderKlineColumn = (data: KlineData[], title: string) => {
     return (
