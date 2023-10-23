@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col,  Form } from "react-bootstrap";
 import { useFetchCoins } from "../../hooks/useFetchCoins";
-import DataTable, { TableColumn } from "react-data-table-component";
+import  DataTable,  {TableColumn } from "react-data-table-component";
+
 
 interface KlineData {
   s: string;
@@ -15,9 +16,17 @@ interface KlineData {
 const MarketTable = () => {
   const [klineData, setKlineData] = useState<KlineData[]>([]);
   const [klineInterval, setKlineInterval] = useState("1m");
+  const [filterText, setFilterText] = useState('');
   const coins = useFetchCoins();
-  let coinKlines = coins.map((c)=>{return `${c.name.toLowerCase()}@kline_${klineInterval}`})
   
+  
+  let coinKlines = coins.map((c)=>{return `${c.name.toLowerCase()}@kline_${klineInterval}`})
+  const handleFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFilterText(e.target.value);
+  };
+  const filteredItems = klineData.filter((item) =>
+  item.s.toLowerCase().includes(filterText.toLowerCase())
+);
   
   // console.log(coinKlines);
   const onChangeInterval = (e:any) => {
@@ -140,9 +149,8 @@ const MarketTable = () => {
 ];
 
 
-  const renderKlineColumn = (data: KlineData[]) => {
-    return (
-      <DataTable columns={columns} data={data} />
+  
+   
 
       // <div className="column">
         
@@ -171,12 +179,12 @@ const MarketTable = () => {
       //     </tbody>
       //   </Table>
       // </div>
-    );
-  };
+    
+  
 
   return (
     <div className="container">
-      <div>
+      <div className="d-flex justify-content-between">
       <Col xs sm="6">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Predefined Market</Form.Label>
@@ -200,9 +208,18 @@ const MarketTable = () => {
               </Form.Select>
             </Form.Group>
           </Col>
+          <Form.Group className="mb-3">
+          <Form.Label>Filter</Form.Label>
+          <Form.Control
+            type="text"
+            value={filterText}
+            onChange={handleFilter}
+            placeholder="Filter by symbol"
+          />
+        </Form.Group>
       </div>
       <div className="columns">
-        {renderKlineColumn(klineData)}
+      <DataTable columns={columns} data={filteredItems} />
 
       </div>
     </div>
