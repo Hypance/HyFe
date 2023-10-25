@@ -17,7 +17,16 @@ const MarketTable = () => {
   const [klineData, setKlineData] = useState<KlineData[]>([]);
   const [klineInterval, setKlineInterval] = useState("1m");
   const [filterText, setFilterText] = useState('');
+  const [pending, setPending] = useState(true);
+  
   const coins = useFetchCoins();
+  // useEffect(() => {
+	// 	const timeout = setTimeout(() => {
+			
+	// 		setPending(false);
+	// 	}, 6000);
+  //   return () => clearTimeout(timeout);
+	// }, [klineInterval]);
   
   
   let coinKlines = coins.map((c)=>{return `${c.name.toLowerCase()}@kline_${klineInterval}`})
@@ -35,6 +44,7 @@ const MarketTable = () => {
 
   }
   useEffect(() => {
+    setPending(true);
     const socket = new WebSocket("wss://stream.binance.com:9443/ws");
     socket.onopen = () => {
       console.log(coinKlines);
@@ -78,6 +88,7 @@ const MarketTable = () => {
           }
         
         });
+        setPending(false);
       }
     };
   return () => {
@@ -219,7 +230,7 @@ const MarketTable = () => {
         </Form.Group>
       </div>
       <div className="columns">
-      <DataTable columns={columns} data={filteredItems} />
+      <DataTable columns={columns} data={filteredItems} progressPending={pending} pagination/>
 
       </div>
     </div>
